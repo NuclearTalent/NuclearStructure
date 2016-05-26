@@ -1,0 +1,174 @@
+# Strange way of testing for vortex...
+TITLE: Overview of course material for "Nuclear Talent":"http://www.nucleartalent.org" course on Nuclear Theory for Nuclear Structure Experiments
+AUTHOR: Alex Brown at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+AUTHOR: Alexandra  at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+AUTHOR: Robert Grzywacz  at "Oak Ridge National Laboratory":"http://www.ornl.gov/" and "Department of Physics and Astronomy":"https://www.phys.utk.edu/", "University of Tennessee":"http://www.utk.edu/", Knoxville, TN 37996-1200, USA
+AUTHOR: Morten Hjorth-Jensen  at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+
+
+
+
+
+
+
+
+
+
+
+The teaching material is produced in various formats for printing and on-screen reading.
+
+!split
+The PDF files are based on LaTeX and have seldom technical
+failures that cannot be easily corrected.
+The HTML-based files, called ``HTML'' and ``ipynb'' below, apply MathJax
+for rendering LaTeX formulas and sometimes this technology gives rise
+to unexpected failures (e.g.,
+incorrect rendering in a web page despite correct LaTeX syntax in the
+formula). Consult the corresponding PDF
+files if you find missing or incorrectly rendered
+formulas in HTML or ipython notebook files.
+
+
+======= Lecture notes  =======
+
+===== Introduction and proposal =====
+
+
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-print6.pdf"
+   * For screen viewing:
+     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-beamer.pdf"
+ * HTML:
+   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/html/proposal.html"
+   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/html/proposal-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/html/proposal-bs.html"
+ * iPython notebook:
+   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/ipynb/proposal.ipynb"
+
+
+
+===== Single-particle data, experimental information and simple models =====
+
+
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-print6.pdf"
+   * For screen viewing:
+     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-beamer.pdf"
+ * HTML:
+   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/html/spdata.html"
+   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/html/spdata-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/html/spdata-bs.html"
+ * iPython notebook:
+   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/ipynb/spdata.ipynb"
+
+
+
+===== Mean-field theories =====
+
+
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-print6.pdf"
+   * For screen viewing:
+     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-beamer.pdf"
+ * HTML:
+   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/html/hfock.html"
+   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/html/hfock-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/html/hfock-bs.html"
+ * iPython notebook:
+   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/ipynb/hfock.ipynb"
+
+
+
+===== Second quantization =====
+
+
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-print6.pdf"
+   * For screen viewing:
+     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-beamer.pdf"
+ * HTML:
+   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/html/secondquant.html"
+   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/html/secondquant-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/html/secondquant-bs.html"
+ * iPython notebook:
+   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/ipynb/secondquant.ipynb"
+
+
+
+===== Angular momentum algebra =====
+
+
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-print6.pdf"
+   * For screen viewing:
+     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-beamer.pdf"
+ * HTML:
+   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/html/angmom.html"
+   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/html/angmom-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/html/angmom-bs.html"
+ * iPython notebook:
+   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/ipynb/angmom.ipynb"
+
+
+
+===== The nuclear shell model and full configuration interaction theory =====
+
+
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-print6.pdf"
+   * For screen viewing:
+     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-beamer.pdf"
+ * HTML:
+   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/html/fci.html"
+   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/html/fci-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/html/fci-bs.html"
+ * iPython notebook:
+   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/ipynb/fci.ipynb"
+
+
+
+===== Nuclear decays =====
+
+
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-print6.pdf"
+   * For screen viewing:
+     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-beamer.pdf"
+ * HTML:
+   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/html/decays.html"
+   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/html/decays-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/html/decays-bs.html"
+ * iPython notebook:
+   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/ipynb/decays.ipynb"
+
+
+
+
+
+===== Selected Texts on Nuclear Structure and Many-body theory =====
+!bblock
+* Nuclear structure
+ * Heyde, *The Nuclear Shell Model*, Springer 1990
+ * Lawson, *Theory of the Nuclear Shell Model*, Oxford 1980
+ * Ring and Schuck, *Nuclear Many-Body Theory*, Springer 1980
+ * Talmi, *Simple Models of Complex Nuclei: The Shell Model and Interacting Boson Model*, Harwood Academic Publishers 1993.
+* Many-body theories
+ * Blaizot and Ripka, *Quantum Theory of Finite systems*, MIT press 1986
+ * Fetter and Walecka, *Quantum Theory of Many-Particle Systems*, McGraw-Hill, 1971.
+ * Dickhoff and Van Neck, *Many-Body Theory Exposed*, World Scientific, 2006.
+!eblock
+
