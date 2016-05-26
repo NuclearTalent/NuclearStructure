@@ -1,0 +1,260 @@
+TITLE: Training in Advanced Low Energy Nuclear Theory: Proposal for a "Nuclear Talent":"http://www.nucleartalent.org" course at the ECT* in 2017: Theory for Exploring Nuclear Structure Experiments
+AUTHOR: Alex Brown at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+AUTHOR: Alexandra Gade at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+AUTHOR: Robert Grzywacz  at "Oak Ridge National Laboratory":"http://www.ornl.gov/" and "Department of Physics and Astronomy":"https://www.phys.utk.edu/", "University of Tennessee":"http://www.utk.edu/", Knoxville, TN 37996-1200, USA
+AUTHOR: Morten Hjorth-Jensen  at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+DATE: May 26 2016
+
+
+
+===== Motivation =====
+
+The study of nuclear structure and the models used to describe atomic
+nuclei are experiencing a renaissance. This is driven by three
+technological revolutions: accelerators capable of producing and
+accelerating exotic nuclei far from stability; instrumentation capable
+of detecting the resulting reaction products and gamma radiation,
+often on an event-by-event basis, in situations where data rates may
+be many orders of magnitude less than has been traditional; and
+computing power adequate to analyze the resulting data, often on-line,
+and to carry out sophisticated theoretical calculations to understand
+these nuclei at the limits of stability and to unravel what they tell
+us about nuclei and their structural evolution. The newly gathered
+data are revolutionizing our understanding of nuclei and leading to
+great strides in the models used to describe them. The models of the
+last half-century are now being seen as merely projections onto a
+subset of nuclei (those near stability and onto the proton-rich side
+of the line of stability) of more general theoretical approaches.  As
+noted above, we cannot expect the same quantity of data on exotic
+nuclei that we have traditionally had. Therefore we need to develop
+better signatures of structure, better models, with fewer parameters
+and with the richness needed to describe a much larger variety of
+structures. From the student's perspective, understanding the
+underlying theory, the differences in competing interpretations and
+how to distinguish them becomes all the more important. Finally, one
+of the best opportunities provided by the study of such a wider swath
+of nuclei is the ability to follow chains of isotopes (or isotones)
+over wide ranges of nucleon number, often spanning two or more major
+shells, to see how structure changes and how the occupation of very
+different nucleonic orbits affects the interplay of residual
+interactions and configuration mixing.  It is the goal and motivation
+of this course to introduce and develop many of the tools needed to
+carry out forefront research in this new era.
+
+===== Introduction to the Talent Courses =====
+
+A recently established initiative, "Training in Advanced Low Energy Nuclear Theory":"www.nucleartalent.org",  
+aims at providing an advanced and comprehensive training to graduate students
+and young researchers in low-energy nuclear theory. The initiative
+is a multinational network between several European and Northern
+American institutions and aims at developing a broad curriculum that
+will provide the platform for a cutting-edge theory for understanding
+nuclei and nuclear reactions. These objectives will be met by
+offering series of lectures, commissioned from experienced teachers
+in nuclear theory. The educational material generated under this
+program will be collected in the form of WEB-based courses,
+textbooks, and a variety of modern educational resources. No such
+all-encompassing material is available at present; its development
+will allow dispersed university groups to profit from the best
+expertise available.
+
+The advanced training network in nuclear theory will provide students
+(theorists and experimentalists) with a broad background in methods
+and techniques that can be easily applied to other domains of science
+and technology. The characteristic feature of this initiative is
+training in multi-scale nuclear physics. This knowledge is crucial,
+not only for a basic understanding of atomic nuclei, but also for
+further development of knowledge-oriented industry; from
+nanotechnology and material science to biological sciences, to high
+performance computing. As such, the proposed training aims at
+providing an inter-disciplinary education when it comes to theories
+and methods.
+
+The ultimate goal of the proposal is to develop a graduate program of
+excellence in low-energy nuclear theory. The program will build strong
+connections between universities and research laboratories and
+institutes worldwide and provide a unique training ground for the
+future needs of nuclear physics.
+
+
+
+===== Aims and Learning Outcomes =====
+
+This three-week TALENT course on nuclear theory focused on the
+interpretation of data on the structure of nuclei. The aims were to
+familiarize the student with the phenomenology of nuclear structure
+and to discuss a wide variety of models and techniques to interpret
+such data. The theoretical bases of these approaches was discussed and
+practical exercise sessions were organized requiring the use of
+available computer codes as well as hand calculations. The set of
+lectures provided students with the tools necessary to perform
+calculations, and to use these calculations to interpret data from
+experiments on nuclei near and far from stability.
+
+=== Format: === 
+We propose approximately forty-five hours of lectures and a
+comparable amount of practical exercise sessions, including the
+setting of individual problems and the organization of
+mini-projects. The mornings will consist of lectures and the
+afternoons will be devoted to exercises and student projects. These
+two components will be coordinated to foster student engagement,
+maximize learning and create lasting value for the students. For the
+benefit of the TALENT series and of the community, material (courses,
+slides, problems and solutions, reports on students' projects) will be
+made publicly available. As with previous TALENT courses, we envision
+the following features for the exercise sessions:
+
+We will use both individual and group work to carry out tasks that are
+very specific in technical instructions, but leave freedom for
+creativity.  Groups will be carefully put together to maximize
+diversity of backgrounds.  Results will be presented in a
+conference-like setting to create accountability.  We will organize
+events where individuals and groups exchange their experiences,
+difficulties and successes to foster interaction.  During the school,
+on-line and lecture-based training tailored to technical issues will
+be provided. Students will learn to use and interpret the results of
+computer-based and hand calculations of nuclear models. The lectures
+will be aligned with the practical exercises and the lecturers will be
+available to help students and work with them during the exercise
+sessions.  Often, these interactions will raise topics not originally
+envisioned for the course but which are recognized to be valuable for
+the students. There will be flexibility to organize mini-lectures and
+discussion sessions on an ad-hoc basis in such cases.  Each group of
+students will maintain an online logbook of their activities and
+results.  Training modules, codes, lectures, practical exercise
+instructions, online logbooks, instructions and information created by
+participants will be merged into a comprehensive website that will be
+available to the community and the public for self-guided training or
+for use in various educational settings (for example, a graduate
+course at a university could assign some of the projects as homework
+or an extra credit project, etc).
+
+
+=== Objectives: ===
+At the end of the course students should have greatly
+expanded familiarity with a variety of nuclear models, should be able
+to carry out explicit calculations with these models and to think
+about new data on atomic nuclei in order to understand their
+structural implications, and should have a grasp of the evolution of
+structure with proton and neutron number and the drivers of such
+evolution. Efficient methods to estimate structure from a minimum of
+data and to predict the structure of unknown nuclei in the absence of
+data will be developed. The students will also have an enhanced
+ability to decide which observables and which experiments are key to
+further progress in a variety of structural domains (magic nuclei,
+near-magic nuclei, nuclei with emergent collectivity, well-deformed
+nuclei, both even- and odd-mass nuclei). More specifically, at the end
+of the course students should:
+
+Be able to look up and interpret data on the evolution of nuclear
+structure.  Have a working knowledge of angular momentum or SO(3)
+theory in quantum mechanics and have a qualitative idea of its
+generalization to arbitrary Lie algebras.  Understand the uses and
+limitations of algebraic methods in many-body physics.  Be familiar
+with the basic models of nuclei (spherical shell model, Nilsson model,
+pairing models, geometric and algebraic collective models).  Be able
+to carry out simple calculations (hand and computer, for both
+even-mass and odd-mass nuclei) with a variety of the above models.  Be
+able to use all of the above models and techniques to understand
+drivers of shell structure and structural evolution.  Be able to
+exploit a number of phenomenological schemes to interpret data on
+nuclear structure and to estimate the properties of unknown nuclei.
+
+
+===== Course Content =====
+
+
+=== Overview: ===
+
+
+Given that several sub-topics are involved and that students will have
+a variety of backgrounds and experience, it is important to give
+students the language needed to communicate. After this background is
+introduced we will begin by looking at the data on atomic nuclei. It
+has been said often in recent years that there are two general
+perspectives with which to view nuclei: a *microscopic* (literally *femtoscopic*) 
+approach focusing on nucleonic motion, quantum numbers
+and interactions, and a *macroscopic* approach that looks at the
+nucleus as a whole, as a coherent many-body system with its own
+properties. The course will look at both avenues to understanding
+nuclei, to their inter-relationships, and will illustrate how advances
+in one can illuminate the other. The development of nuclear models
+divorced from the context of the data that they need to interpret is
+often confusing and bewildering. Therefore, early lectures will
+provide an overview of the data on atomic nuclei spanning from light
+nuclei to superheavy species, looking at data ranging from integral
+observables such as masses and charge radii to specific spectroscopic
+data that provide insights into structure either from the nucleonic
+perspective or from the many-body perspective of nuclear symmetries,
+many-body quantum numbers, selection rules and the like.
+
+
+
+
+The course ends with a final assignment. The final assignment will be graded
+with marks A, B, C, D, E and failed for Master students and passed/not passed for PhD students.
+
+===== Teaching =====
+
+The course will be taught as an intensive  course of duration of three weeks, with a
+total time of 45 h of lectures, 45 h of exercises and  a final assignment of 2 weeks of work.
+The total load will be approximately 160-170 hours, corresponding to  _7 ECTS_ in Europe.
+Organization of the day: 9am-12pm lectures, time for exercises with assistance (including lunch)
+till 6pm (3 hours of allocated exercise sessions per day).
+Summary and questions and student presentations till 7pm.
+The course will be run at the premises ECT* (Villazzano) in Trento, Italy, from
+June 25 to July 13 in 2012.
+
+===== Teachers and organizers =====
+
+o "Alex Brown":"https://people.nscl.msu.edu/~brown/", "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+o "Alexandra Gade":"https://people.nscl.msu.edu/~gade/" at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+o "Robert Grzywacz":"http://web.utk.edu/~rgrzywac/"  at "Oak Ridge National Laboratory":"http://www.ornl.gov/" and "Department of Physics and Astronomy":"https://www.phys.utk.edu/", "University of Tennessee":"http://www.utk.edu/", Knoxville, TN 37996-1200, USA
+o "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/"  at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+
+* Student advisor and coordinator: Morten Hjorth-Jensen.
+* There will be one to two post-doctoral researchers and/or advanced graduate students who will assist with the exercise sessions. 
+
+===== Audience and Prerequisites =====
+
+Students and post-doctoral fellows interested in models for
+nuclear structure, phenomenological techniques for interpreting and
+predicting the structure of stable as well as exotic nuclei. The
+material will be of interest, and accessible, to both theorists and
+experimentalists, and will include learning the practical use of shell-model approaches in order
+to interpret and study nuclear structure experiments. 
+
+The students are expected to have operating programming skills in
+Fortran/C++/Python and knowledge of quantum mechanics at an
+intermediate level.  Preparatory modules on second quantization,
+Wick's theorem, representation of Hamiltonians and calculations of
+Hamiltonian matrix elements, independent particle models and
+Hartree-Fock theory are provided at the website of the course
+Students who have not studied the above topics are expected to
+gain this knowledge prior to attendance.  Additional modules for
+self-teaching on Fortran and/or C++ or Python are also provided.
+
+===== Admission =====
+
+The target group is Master of Science students, PhD students and early
+post-doctoral fellows.  Attendance should be both experimentalists and
+theorists.  Also senior staff can attend but they have to be
+self-supported.  The maximum number of students is 20-25, of which only
+at most 15 can receive full local support. 
+
+The process of selections of the students will be managed in
+agreement with the ECT.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
