@@ -37,7 +37,7 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-minted.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-beamer-handouts2x3.pdf"
    * For screen viewing:
      * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-beamer.pdf"
  * HTML:
@@ -55,7 +55,7 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-minted.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-beamer-handouts2x3.pdf"
    * For screen viewing:
      * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-beamer.pdf"
  * HTML:
@@ -73,7 +73,7 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-minted.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-beamer-handouts2x3.pdf"
    * For screen viewing:
      * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-beamer.pdf"
  * HTML:
@@ -91,7 +91,7 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-minted.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-beamer-handouts2x3.pdf"
    * For screen viewing:
      * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-beamer.pdf"
  * HTML:
@@ -109,7 +109,7 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-minted.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-beamer-handouts2x3.pdf"
    * For screen viewing:
      * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-beamer.pdf"
  * HTML:
@@ -127,7 +127,7 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-minted.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-beamer-handouts2x3.pdf"
    * For screen viewing:
      * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-beamer.pdf"
  * HTML:
@@ -145,7 +145,7 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-minted.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-beamer-handouts2x3.pdf"
    * For screen viewing:
      * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-beamer.pdf"
  * HTML:
