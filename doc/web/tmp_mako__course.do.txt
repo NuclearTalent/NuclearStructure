@@ -1,7 +1,7 @@
 # Strange way of testing for vortex...
 TITLE: Overview of course material for "Nuclear Talent":"http://www.nucleartalent.org" course on Nuclear Theory for Nuclear Structure Experiments
 AUTHOR: Alex Brown at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
-AUTHOR: Alexandra  at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+AUTHOR: Alexandra Gade at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
 AUTHOR: Robert Grzywacz  at "Oak Ridge National Laboratory":"http://www.ornl.gov/" and "Department of Physics and Astronomy":"https://www.phys.utk.edu/", "University of Tennessee":"http://www.utk.edu/", Knoxville, TN 37996-1200, USA
 AUTHOR: Morten Hjorth-Jensen  at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
 
@@ -37,15 +37,15 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-print6.pdf"
    * For screen viewing:
-     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-beamer.pdf"
+     * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-beamer.pdf"
  * HTML:
-   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/html/proposal.html"
-   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/html/proposal-reveal.html"
-   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/html/proposal-bs.html"
+   * "Plain html style": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/html/proposal.html"
+   * "Reveal html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/html/proposal-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/html/proposal-bs.html"
  * iPython notebook:
-   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/ipynb/proposal.ipynb"
+   * "ipynb file": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/ipynb/proposal.ipynb"
 
 
 
@@ -55,15 +55,15 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-print6.pdf"
    * For screen viewing:
-     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-beamer.pdf"
+     * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/pdf/spdata-beamer.pdf"
  * HTML:
-   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/html/spdata.html"
-   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/html/spdata-reveal.html"
-   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/html/spdata-bs.html"
+   * "Plain html style": "http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/html/spdata.html"
+   * "Reveal html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/html/spdata-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/html/spdata-bs.html"
  * iPython notebook:
-   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/ipynb/spdata.ipynb"
+   * "ipynb file": "http://nucleartalent.github.io/NuclearStructure/doc/pub/spdata/ipynb/spdata.ipynb"
 
 
 
@@ -73,15 +73,15 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-print6.pdf"
    * For screen viewing:
-     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-beamer.pdf"
+     * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/pdf/hfock-beamer.pdf"
  * HTML:
-   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/html/hfock.html"
-   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/html/hfock-reveal.html"
-   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/html/hfock-bs.html"
+   * "Plain html style": "http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/html/hfock.html"
+   * "Reveal html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/html/hfock-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/html/hfock-bs.html"
  * iPython notebook:
-   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/ipynb/hfock.ipynb"
+   * "ipynb file": "http://nucleartalent.github.io/NuclearStructure/doc/pub/hfock/ipynb/hfock.ipynb"
 
 
 
@@ -91,15 +91,15 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-print6.pdf"
    * For screen viewing:
-     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-beamer.pdf"
+     * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/pdf/secondquant-beamer.pdf"
  * HTML:
-   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/html/secondquant.html"
-   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/html/secondquant-reveal.html"
-   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/html/secondquant-bs.html"
+   * "Plain html style": "http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/html/secondquant.html"
+   * "Reveal html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/html/secondquant-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/html/secondquant-bs.html"
  * iPython notebook:
-   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/ipynb/secondquant.ipynb"
+   * "ipynb file": "http://nucleartalent.github.io/NuclearStructure/doc/pub/secondquant/ipynb/secondquant.ipynb"
 
 
 
@@ -109,15 +109,15 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-print6.pdf"
    * For screen viewing:
-     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-beamer.pdf"
+     * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/pdf/angmom-beamer.pdf"
  * HTML:
-   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/html/angmom.html"
-   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/html/angmom-reveal.html"
-   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/html/angmom-bs.html"
+   * "Plain html style": "http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/html/angmom.html"
+   * "Reveal html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/html/angmom-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/html/angmom-bs.html"
  * iPython notebook:
-   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/ipynb/angmom.ipynb"
+   * "ipynb file": "http://nucleartalent.github.io/NuclearStructure/doc/pub/angmom/ipynb/angmom.ipynb"
 
 
 
@@ -127,15 +127,15 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-print6.pdf"
    * For screen viewing:
-     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-beamer.pdf"
+     * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/pdf/fci-beamer.pdf"
  * HTML:
-   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/html/fci.html"
-   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/html/fci-reveal.html"
-   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/html/fci-bs.html"
+   * "Plain html style": "http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/html/fci.html"
+   * "Reveal html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/html/fci-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/html/fci-bs.html"
  * iPython notebook:
-   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/ipynb/fci.ipynb"
+   * "ipynb file": "http://nucleartalent.github.io/NuclearStructure/doc/pub/fci/ipynb/fci.ipynb"
 
 
 
@@ -145,15 +145,15 @@ formulas in HTML or ipython notebook files.
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-print.pdf", compact: "6 pages per sheet": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-print6.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-print.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-print6.pdf"
    * For screen viewing:
-     * "standard Beamer format": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-beamer.pdf"
+     * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/pdf/decays-beamer.pdf"
  * HTML:
-   * "Plain html style": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/html/decays.html"
-   * "Reveal html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/html/decays-reveal.html"
-   * "Bootstrap html style for easy reading on mobile devices": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/html/decays-bs.html"
+   * "Plain html style": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/html/decays.html"
+   * "Reveal html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/html/decays-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/html/decays-bs.html"
  * iPython notebook:
-   * "ipynb file": " http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/ipynb/decays.ipynb"
+   * "ipynb file": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/ipynb/decays.ipynb"
 
 
 
