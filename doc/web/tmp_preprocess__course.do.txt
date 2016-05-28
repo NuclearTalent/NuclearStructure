@@ -70,6 +70,8 @@ ${text_types(ch)}
 ===== Selected Texts on Nuclear Structure and Many-body theory =====
 !bblock
 * Nuclear structure
+ * "Alex Brown's Lecture notes":"https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Literature"
+ * "Jouni Suhonen's textbook":"https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Literature"
  * Heyde, *The Nuclear Shell Model*, Springer 1990
  * Lawson, *Theory of the Nuclear Shell Model*, Oxford 1980
  * Ring and Schuck, *Nuclear Many-Body Theory*, Springer 1980
