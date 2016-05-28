@@ -63,7 +63,7 @@ about nuclei and their structural evolution.
 The nuclear shell model plays  a central role in guiding our analysis of this wealth of 
 experimental data.
 It provides an excellent link to the underlying nuclear forces and the pertinent laws of motion,
-allowing nuclear physicist to interpret complicated experiments in terms of various 
+allowing nuclear physicists to interpret complicated experiments in terms of various 
 components of the nuclear Hamiltonian and to understand a swath of nuclei by following chains of isotopes and isotoones over wide ranges of nucleon numbers. The nuclear shell model allows us to see how the structure of nuclei changes and how the occupation of specific nucleonic orbits affects the interplay of residual interactions and configuration mixing.  The computed expectation values and transition probabilities 
 can be directly linked to experiment, with the potential to indicate new phenomena and guide future experiments. 
 Large-scale shell-model calculations represent also 
@@ -197,7 +197,7 @@ At the end of the course the students should have a basic understanding of
 |    |  Lecture Topics |   Projects and exercises                                    |
 |--------------------------------------------------------------------------|
 | Monday |   Shell-model Hamiltonians and the $sd$-shell as case | Extend shell-model to realistic nuclear structure cases| 
-|       |  Efficient computations of Hamiltonians matrices|                |
+|       |  Efficient computations of Hamiltonian matrices|                |
 |--------------------------------------------------------------------------|
 | Tuesday|  Effective Hamiltonians and angular momentum algebra | Bit representations of state functions and setup of Hamiltonian matrices |
 |--------------------------------------------------------------------------|
