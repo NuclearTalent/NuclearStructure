@@ -14,13 +14,20 @@ of 2017.  A similar course was
 run and organized at Ganil by Rick Casten and Piet van Isacker in
 2014. The course was oversubscribed with more than 60 student
 applications, clearly demonstrating the need in the community for the
-selected topic. We believe such a course has a strong potential to
-attract many students, theorists and experimentalists alike.
+selected topics. We believe such a course has a strong potential to
+attract many students, theorists and experimentalists alike. Since the Nuclear Talent 
+initiative aims at proposing the various courses in cycles of three to four years, it 
+is timely to propose the above course again. This course provides a hands-on 
+approach to experimental data and their interpretrations. 
 
 Below we give a short motivation for the proposed course and the
 rationale behind the Nuclear Talent initiative. Thereafter we detail
 our course plans with learning outcomes, objectives and teaching
-philosophy, as well as various organizational and practictal matters.
+philosophy, as well as various organizational and practical matters.
+
+The teaching teams consists of both theorists and experimentalists. We believe such a mix
+is important as it gives the students a better understanding on how data are obtained, and what are the limitations and possibilities in understanding and interpreting the experimental information. 
+
 !eblock
 
 !split
@@ -60,10 +67,10 @@ allowing nuclear physicist to interpret complicated experiments in terms of vari
 components of the nuclear Hamiltonian and to understand a swath of nuclei by following chains of isotopes and isotoones over wide ranges of nucleon numbers. The nuclear shell model allows us to see how the structure of nuclei changes and how the occupation of specific nucleonic orbits affects the interplay of residual interactions and configuration mixing.  The computed expectation values and transition probabilities 
 can be directly linked to experiment, with the potential to indicate new phenomena and guide future experiments. 
 Large-scale shell-model calculations represent also 
-challenging computational and theoretical topics, spanning from efficient usage of high-performance computing aspects to consistent theories for deriving effective Hamiltonians and operators. 
+challenging computational and theoretical topics, spanning from efficient usage of high-performance computing facilities  to consistent theories for deriving effective Hamiltonians and operators. 
 Alltogether, these various facets of nuclear theory represent important elements in our endeavors to understand nuclei and their limits of stability.  
 It is the goal and motivation of this course to introduce and
-develop the nuclear structure tools  needed to carry out forefront research using the shell model as the central tool. The various projects will focus on the development of a shell-model code for simpler systems like $sd$-shell nuclei, giving the participants the essential ideas of configuraton interaction methods. During the first two weeks the aim is to develop such a shell-model code. With these insights, the students can divert into several directions
+develop the nuclear structure tools  needed to carry out forefront research using the shell model as the central tool. The various projects will focus on the development of a shell-model code for simpler systems like $sd$-shell nuclei, giving the participants the essential ideas of configuration interaction methods. During the first two weeks the aim is to develop such a shell-model code. With these insights, the students can divert into several directions
 the last week, from the usage of the NushellX suite of nuclear structure programs to further developing 
 their own shell-model program. After completion, it is our hope that the participants have understood the overarching ideas 
 behind central theoretical tools used to analyse nuclear structure experiments. 
@@ -141,10 +148,24 @@ be provided. Students will learn to use and interpret the results of computer-ba
 course at a university could assign some of the projects as homework or an extra credit project, etc).
 
 
-=== Objectives: ===
+=== Objectives and learning outcomes: ===
 At the end of the course the students should have a basic understanding of
 * Configuration interaction methods (nuclear shell-model here) as a central tool to interpret nuclear structure experiment
-* Have an understanding of the  
+* Have an understanding of single-particle basis functions and the construction of many-body basis states built thereupon. Examples are basis states from a Woods-Saxon potential, harmonic oscillator states and mean-field based states from a Hartree-Fock calculation. The single-particle basis states are orthonormal and are used to construct  a corresponding orthonormal basis set of Slater determinants.
+* Develop an understanding of what defines an observable. 
+* Understand how theory  can be used to interpret experimental quantities (separation energies and shell gaps for example).
+* Understand how experiment is used to extract transition probabilities and information about ground and exited states. 
+* Understand how second-quantization is used to represent states and compute expectation values and transition probabilities  of operators
+* Understand how the Hamiltonian matrix is constructed from this orthonormal basis set of many-body states (linear expansion of Slater determinants)
+* For nuclear systems like the $sd$-shell, essentially all nuclei can be studied using direct diagonalization methods. In the construction of the shell-model code during the first two weeks, the students will learn to compute  the ground state and the excited states of selected $sd$-shell nuclei. This project applies to all students. During the last week, students can pursue more individually defined projects
+* The students will also learn to understand the basic elements of effective shell-model Hamiltonians and how to interpret the calculated properties in terms of various components of the nuclear forces (spin-orbit force, tensor force, central force etc). We will provide the students with the necessary tools to perform such analyses. 
+* Understand how to use shell-model calculations to calculate decay rates and transition probabilities and relate these to various electromagnetic transition operators and operators for beta-decays and double-beta decays.  
+* Develop a critical understanding the limits of shell-model studies and how these can be related to interpretations of data.
+* Understand how to use second-quantization to construct one-body and two-body transition probabilities and 
+spectroscopic factors. 
+* For the students which wish to follow a more computational path during the last week, iterative eigenvalue solvers will discussed. Similarly, efficient representations of many-body states and computations of Hamiltonian matrices will also be discussed.
+* We will also discuss modern shell-model codes like NushellX. This suite of programs can be used by students to
+pursue their own projects. Applications of NushellX to the calculations of various observables will discussed and students who wish to use NushellX, can define individual projects during the last week.
 
 !eblock
 
@@ -294,7 +315,17 @@ The process of selections of the students will be managed in
 agreement with the ECT*.
 !eblock
 
+!split
+===== Preliminary budget =====
+!bblock
+We expect to accept between 20-25 students. Local students from the University of Trento are fully self-supported. 
+If approved, we would very much appreciate if the ECT* can sponsor 15 of the selected students with local expenses, that is lodging and meals during weekdays. Any additional funds for sponsoring further students is highly appreciated. 
+All travel expenses will be covered by the respective home institute. 
+Teachers are self-supported. We plan to raise additional funds to cover local support for additional students and the expenses of the teachers. 
 
+There is no participation fee. Administrative support from the ECT* in organizing the course and setting up the application procedure is essential for a smooth (as always) outcome. The administrative experience of the staff at the ECT* has been unique and essential in running successully our previous Talent courses (2012, 2014 and 2015). We would thus highly appreciate it if these services are provided if the proposal is approved.  
+
+!eblock
 
 
 
