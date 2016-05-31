@@ -1,9 +1,9 @@
 TITLE: Proposal for a Nuclear Talent course at the ECT* in 2017: Theory for Exploring Nuclear Structure Experiments
 AUTHOR: "Alex Brown":"https://people.nscl.msu.edu/~brown/" at National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, MI 48824, USA
 AUTHOR: "Alexandra Gade":"https://people.nscl.msu.edu/~gade/" at National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, MI 48824, USA
-AUTHOR: "Robert Grzywacz":"http://web.utk.edu/~rgrzywac/" at Oak Ridge National Laboratory and Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996-1200, USA
+AUTHOR: "Robert Grzywacz":"http://web.utk.edu/~rgrzywac/" at Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996-1200, USA &  Oak Ridge National Laboratory, Oak Ridge, TN 37831, USA
 AUTHOR: "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/"  at National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, MI 48824, USA & Department of Physics, University of Oslo, N-0316 Oslo, Norway
-AUTHOR: "Gustav Jansen":"https://www.ornl.gov/staff-profile/gustav-r-jansen"  at Oak Ridge National Laboratory and Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996-1200, USA
+AUTHOR: "Gustav Jansen":"https://www.ornl.gov/staff-profile/gustav-r-jansen"  at Oak Ridge National Laboratory, Oak Ridge, TN 37831, USA
 DATE: May 26 2016
 
 !split
@@ -274,9 +274,9 @@ The teachers are
 
 o "Alex Brown":"https://people.nscl.msu.edu/~brown/", "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
 o "Alexandra Gade":"https://people.nscl.msu.edu/~gade/"  "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
-o "Robert Grzywacz":"http://web.utk.edu/~rgrzywac/"  at "Oak Ridge National Laboratory":"http://www.ornl.gov/" and "Department of Physics and Astronomy":"https://www.phys.utk.edu/", "University of Tennessee":"http://www.utk.edu/", Knoxville, TN 37996-1200, USA
+o "Robert Grzywacz":"http://web.utk.edu/~rgrzywac/"  at "Oak Ridge National Laboratory":"http://www.ornl.gov/", Oak Ridge, TN 37831  and "Department of Physics and Astronomy":"https://www.phys.utk.edu/", "University of Tennessee":"http://www.utk.edu/", Knoxville, TN 37996-1200, USA
 o "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/"  at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA and  Department of Physics, University of Oslo, N-0316 Oslo, Norway
-o "Gustav Jansen":"https://www.ornl.gov/staff-profile/gustav-r-jansen"  at "Oak Ridge National Laboratory":"http://www.ornl.gov/" and "Department of Physics and Astronomy":"https://www.phys.utk.edu/", "University of Tennessee":"http://www.utk.edu/", Knoxville, TN 37996-1200, USA
+o "Gustav Jansen":"https://www.ornl.gov/staff-profile/gustav-r-jansen"  at "Oak Ridge National Laboratory":"http://www.ornl.gov/", Oak Ridge, TN 37831, USA
 o An eventual Post-doctoral fellow and an advanced graduate student as teaching assistants. 
 !eblock
 
