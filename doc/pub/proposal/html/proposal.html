@@ -111,7 +111,7 @@ MathJax.Hub.Config({
 <center><h1>Proposal for a Nuclear Talent course at the ECT* in 2017: Theory for Exploring Nuclear Structure Experiments</h1></center>  <!-- document title -->
 
 <p>
-<!-- author(s): Alex Brown, Alexandra Gade, Robert Grzywacz, Morten Hjorth-Jensen, and Gustav Jansen -->
+<!-- author(s): Alex Brown, Alexandra Gade, Robert Grzywacz, Morten Hjorth-Jensen, and <a href="https://www.ornl.gov/staff-profile/gustav-r-jansen" target="_blank">Gustav Jansen</a> -->
 
 <center>
 <b>Alex Brown</b> [1]
@@ -126,11 +126,11 @@ MathJax.Hub.Config({
 </center>
 
 <center>
-<b>Morten Hjorth-Jensen</b> [1]
+<b>Morten Hjorth-Jensen</b> [1, 3]
 </center>
 
 <center>
-<b>Gustav Jansen</b> [2]
+<b><a href="https://www.ornl.gov/staff-profile/gustav-r-jansen" target="_blank">Gustav Jansen</a></b> [2]
 </center>
 
 <p>
@@ -138,6 +138,7 @@ MathJax.Hub.Config({
 
 <center>[1] <b>National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, MI 48824, USA</b></center>
 <center>[2] <b>Oak Ridge National Laboratory and Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996-1200, USA</b></center>
+<center>[3] <b>Department of Physics, University of Oslo, N-0316 Oslo, Norway</b></center>
 <br>
 <p>
 <center><h4>May 26 2016</h4></center> <!-- date -->
@@ -151,14 +152,14 @@ MathJax.Hub.Config({
 <p>
 We would like to propose a three-week Nuclear Talent course on Theory
 for exploring nuclear structure experiments at the ECT* for the summer
-of 2017.  A similar course was
-run and organized at Ganil by Rick Casten and Piet van Isacker in
+of 2017.  A similar course, but with a strong focus on collective models and symmetries,
+was run and organized at Ganil by Rick Casten and Piet van Isacker in
 2014. The course was oversubscribed with more than 60 student
 applications, clearly demonstrating the need in the community for the
 selected topics. We believe such a course has a strong potential to
 attract many students, theorists and experimentalists alike. Since the Nuclear Talent 
 initiative aims at proposing the various courses in cycles of three to four years, it 
-is timely to propose the above course again. This course provides a hands-on 
+is timely to propose the above course again, but this time focusing on the nuclear shell model. This course provides a hands-on 
 approach to experimental data and their interpretrations.
 
 <p>
@@ -217,7 +218,7 @@ experimental data.
 It provides an excellent link to the underlying nuclear forces and the pertinent laws of motion,
 allowing nuclear physicists to interpret complicated experiments in terms of various 
 components of the nuclear Hamiltonian and to understand a swath of nuclei by following chains of isotopes and isotoones over wide ranges of nucleon numbers. The nuclear shell model allows us to see how the structure of nuclei changes and how the occupation of specific nucleonic orbits affects the interplay of residual interactions and configuration mixing.  The computed expectation values and transition probabilities 
-can be directly linked to experiment, with the potential to indicate new phenomena and guide future experiments. 
+can be directly linked to experiment, with the potential to single out new phenomena and guide future experiments. 
 Large-scale shell-model calculations represent also 
 challenging computational and theoretical topics, spanning from efficient usage of high-performance computing facilities  to consistent theories for deriving effective Hamiltonians and operators. 
 Alltogether, these various facets of nuclear theory represent important elements in our endeavors to understand nuclei and their limits of stability.  
@@ -328,8 +329,8 @@ At the end of the course the students should have a basic understanding of
 <li> For nuclear systems like the \( sd \)-shell, essentially all nuclei can be studied using direct diagonalization methods. In the construction of the shell-model code during the first two weeks, the students will learn to compute  the ground state and the excited states of selected \( sd \)-shell nuclei. This project applies to all students. During the last week, students can pursue more individually defined projects</li>
 <li> The students will also learn to understand the basic elements of effective shell-model Hamiltonians and how to interpret the calculated properties in terms of various components of the nuclear forces (spin-orbit force, tensor force, central force etc). We will provide the students with the necessary tools to perform such analyses.</li> 
 <li> Understand how to use shell-model calculations to calculate decay rates and transition probabilities and relate these to various electromagnetic transition operators and operators for beta-decays and double-beta decays.</li>  
-<li> Develop a critical understanding the limits of shell-model studies and how these can be related to interpretations of data.</li>
-<li> Understand how to use second-quantization to construct one-body and two-body transition probabilities and  spectroscopic factors.</li> 
+<li> Develop a critical understanding the limits of shell-model studies and how these can be related to interpretations of data such as results from in-beam and decay experiments.</li>
+<li> Understand how to use second-quantization to construct one-body and two-body transfer operators, overlap functions, spectroscopic factors and experiments related to spectroscopic factors.</li> 
 <li> For the students which wish to follow a more computational path during the last week, iterative eigenvalue solvers will discussed. Similarly, efficient representations of many-body states and computations of Hamiltonian matrices will also be discussed.</li>
 <li> We will also discuss modern shell-model codes like NushellX. This suite of programs can be used by students to pursue their own projects. Applications of NushellX to the calculations of various observables will discussed and students who wish to use NushellX, can define individual projects during the last week.</li>
 </ul>
@@ -367,17 +368,18 @@ At the end of the course the students should have a basic understanding of
 <p>
 <table border="1">
 <thead>
-<tr><th align="center">         </th> <th align="center">                     Lecture Topics                    </th> <th align="center">                         Projects and exercises                         </th> </tr>
+<tr><th align="center">         </th> <th align="center">                                Lecture Topics                               </th> <th align="center">                         Projects and exercises                         </th> </tr>
 </thead>
 <tbody>
-<tr><td align="center">   Monday       </td> <td align="center">   Shell-model Hamiltonians and the \( sd \)-shell as case    </td> <td align="center">   Extend shell-model to realistic nuclear structure cases                     </td> </tr>
-<tr><td align="center">                </td> <td align="center">   Efficient computations of Hamiltonian matrices             </td> <td align="center">                                                                               </td> </tr>
-<tr><td align="center">   Tuesday      </td> <td align="center">   Effective Hamiltonians and angular momentum algebra        </td> <td align="center">   Bit representations of state functions and setup of Hamiltonian matrices    </td> </tr>
-<tr><td align="center">   Wednesday    </td> <td align="center">   Effective Hamiltonians from data                           </td> <td align="center">   Continue work on shell-model code                                           </td> </tr>
-<tr><td align="center">   Thursday     </td> <td align="center">   Electromagnetic decays, theory and experiment              </td> <td align="center">   Computing angular momentum expectation values                               </td> </tr>
-<tr><td align="center">                </td> <td align="center">   Onebody transitions and what can be measured               </td> <td align="center">                                                                               </td> </tr>
-<tr><td align="center">   Friday       </td> <td align="center">   Electromagnetic decays, theory and experiment              </td> <td align="center">   Finalize shell-model code for spectra                                       </td> </tr>
-<tr><td align="center">                </td> <td align="center">   Introducing NushellX                                       </td> <td align="center">   Demonstrations of NushellX  and comparison with own code                    </td> </tr>
+<tr><td align="center">   Monday       </td> <td align="center">   Shell-model Hamiltonians and the \( sd \)-shell as case                          </td> <td align="center">   Extend shell-model to realistic nuclear structure cases                     </td> </tr>
+<tr><td align="center">                </td> <td align="center">   Efficient computations of Hamiltonian matrices                                   </td> <td align="center">                                                                               </td> </tr>
+<tr><td align="center">   Tuesday      </td> <td align="center">   Effective Hamiltonians and angular momentum algebra                              </td> <td align="center">   Bit representations of state functions and setup of Hamiltonian matrices    </td> </tr>
+<tr><td align="center">   Wednesday    </td> <td align="center">   Effective Hamiltonians from data                                                 </td> <td align="center">   Continue work on shell-model code                                           </td> </tr>
+<tr><td align="center">   Thursday     </td> <td align="center">   One- and two-particle transfer operators                                         </td> <td align="center">   Computing angular momentum expectation values                               </td> </tr>
+<tr><td align="center">                </td> <td align="center">   Spectroscopic factors (SFs), overlap functions and experiments related to SFs    </td> <td align="center">                                                                               </td> </tr>
+<tr><td align="center">                </td> <td align="center">                                                                                    </td> <td align="center">                                                                               </td> </tr>
+<tr><td align="center">   Friday       </td> <td align="center">   Electromagnetic decays, theory and experiment                                    </td> <td align="center">   Finalize shell-model code for spectra                                       </td> </tr>
+<tr><td align="center">                </td> <td align="center">   Introducing NushellX                                                             </td> <td align="center">   Demonstrations of NushellX  and comparison with own code                    </td> </tr>
 </tbody>
 </table>
 
@@ -395,7 +397,6 @@ At the end of the course the students should have a basic understanding of
 <tr><td align="center">   Wednesday    </td> <td align="center">   Beta-decays and Gamow-Teller transitions, theory and experiments    </td> <td align="center">   Individual projects       </td> </tr>
 <tr><td align="center">                </td> <td align="center">   Using NushellX for studies of beta-decays                           </td> <td align="center">                             </td> </tr>
 <tr><td align="center">   Thursday     </td> <td align="center">   Two-body transition operators and double-beta decay                 </td> <td align="center">   Individual projects       </td> </tr>
-<tr><td align="center">                </td> <td align="center">   Spectroscopic factors and experiment                                </td> <td align="center">                             </td> </tr>
 <tr><td align="center">   Friday       </td> <td align="center">   Double-beta decay and wrap-up of course                             </td> <td align="center">   Work on final projects    </td> </tr>
 </tbody>
 </table>
@@ -450,7 +451,7 @@ The organizers are
 
 <ol>
 <li> <a href="https://people.nscl.msu.edu/~brown/" target="_blank">Alex Brown</a>, <a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA</li>
-<li> <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a>, <a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA</li>
+<li> <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a>, <a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA &amp; Department of Physics, University of Oslo, N-0316 Oslo, Norway</li> 
 </ol>
 
 Morten Hjorth-Jensen will also function as student advisor and coordinator.
@@ -462,8 +463,8 @@ The teachers are
 <li> <a href="https://people.nscl.msu.edu/~brown/" target="_blank">Alex Brown</a>, <a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA</li>
 <li> <a href="https://people.nscl.msu.edu/~gade/" target="_blank">Alexandra Gade</a>  <a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA</li>
 <li> <a href="http://web.utk.edu/~rgrzywac/" target="_blank">Robert Grzywacz</a>  at <a href="http://www.ornl.gov/" target="_blank">Oak Ridge National Laboratory</a> and <a href="https://www.phys.utk.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.utk.edu/" target="_blank">University of Tennessee</a>, Knoxville, TN 37996-1200, USA</li>
-<li> <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a>  at <a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA</li>
-<li> Gustav Jansen  at <a href="http://www.ornl.gov/" target="_blank">Oak Ridge National Laboratory</a> and <a href="https://www.phys.utk.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.utk.edu/" target="_blank">University of Tennessee</a>, Knoxville, TN 37996-1200, USA</li>
+<li> <a href="http://mhjgit.github.io/info/doc/web/" target="_blank">Morten Hjorth-Jensen</a>  at <a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA &amp; Department of Physics, University of Oslo, N-0316 Oslo, Norway</li>
+<li> <a href="https://www.ornl.gov/staff-profile/gustav-r-jansen" target="_blank">Gustav Jansen</a>  at <a href="http://www.ornl.gov/" target="_blank">Oak Ridge National Laboratory</a> and <a href="https://www.phys.utk.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.utk.edu/" target="_blank">University of Tennessee</a>, Knoxville, TN 37996-1200, USA</li>
 <li> An eventual Post-doctoral fellow and an advanced graduate student as teaching assistants.</li> 
 </ol>
 </div>

@@ -2,8 +2,8 @@ TITLE: Proposal for a Nuclear Talent course at the ECT* in 2017: Theory for Expl
 AUTHOR: Alex Brown at National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, MI 48824, USA
 AUTHOR: Alexandra Gade at National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, MI 48824, USA
 AUTHOR: Robert Grzywacz  at Oak Ridge National Laboratory and Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996-1200, USA
-AUTHOR: Morten Hjorth-Jensen  at National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, MI 48824, USA
-AUTHOR: Gustav Jansen  at Oak Ridge National Laboratory and Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996-1200, USA
+AUTHOR: Morten Hjorth-Jensen  at National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, MI 48824, USA & Department of Physics, University of Oslo, N-0316 Oslo, Norway
+AUTHOR: "Gustav Jansen":"https://www.ornl.gov/staff-profile/gustav-r-jansen"  at Oak Ridge National Laboratory and Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996-1200, USA
 DATE: May 26 2016
 
 !split
@@ -11,14 +11,14 @@ DATE: May 26 2016
 !bblock
 We would like to propose a three-week Nuclear Talent course on Theory
 for exploring nuclear structure experiments at the ECT* for the summer
-of 2017.  A similar course was
-run and organized at Ganil by Rick Casten and Piet van Isacker in
+of 2017.  A similar course, but with a strong focus on collective models and symmetries,
+was run and organized at Ganil by Rick Casten and Piet van Isacker in
 2014. The course was oversubscribed with more than 60 student
 applications, clearly demonstrating the need in the community for the
 selected topics. We believe such a course has a strong potential to
 attract many students, theorists and experimentalists alike. Since the Nuclear Talent 
 initiative aims at proposing the various courses in cycles of three to four years, it 
-is timely to propose the above course again. This course provides a hands-on 
+is timely to propose the above course again, but this time focusing on the nuclear shell model. This course provides a hands-on 
 approach to experimental data and their interpretrations. 
 
 Below we give a short motivation for the proposed course and the
@@ -66,7 +66,7 @@ experimental data.
 It provides an excellent link to the underlying nuclear forces and the pertinent laws of motion,
 allowing nuclear physicists to interpret complicated experiments in terms of various 
 components of the nuclear Hamiltonian and to understand a swath of nuclei by following chains of isotopes and isotoones over wide ranges of nucleon numbers. The nuclear shell model allows us to see how the structure of nuclei changes and how the occupation of specific nucleonic orbits affects the interplay of residual interactions and configuration mixing.  The computed expectation values and transition probabilities 
-can be directly linked to experiment, with the potential to indicate new phenomena and guide future experiments. 
+can be directly linked to experiment, with the potential to single out new phenomena and guide future experiments. 
 Large-scale shell-model calculations represent also 
 challenging computational and theoretical topics, spanning from efficient usage of high-performance computing facilities  to consistent theories for deriving effective Hamiltonians and operators. 
 Alltogether, these various facets of nuclear theory represent important elements in our endeavors to understand nuclei and their limits of stability.  
@@ -159,8 +159,8 @@ At the end of the course the students should have a basic understanding of
 * For nuclear systems like the $sd$-shell, essentially all nuclei can be studied using direct diagonalization methods. In the construction of the shell-model code during the first two weeks, the students will learn to compute  the ground state and the excited states of selected $sd$-shell nuclei. This project applies to all students. During the last week, students can pursue more individually defined projects
 * The students will also learn to understand the basic elements of effective shell-model Hamiltonians and how to interpret the calculated properties in terms of various components of the nuclear forces (spin-orbit force, tensor force, central force etc). We will provide the students with the necessary tools to perform such analyses. 
 * Understand how to use shell-model calculations to calculate decay rates and transition probabilities and relate these to various electromagnetic transition operators and operators for beta-decays and double-beta decays.  
-* Develop a critical understanding the limits of shell-model studies and how these can be related to interpretations of data.
-* Understand how to use second-quantization to construct one-body and two-body transition probabilities and  spectroscopic factors. 
+* Develop a critical understanding the limits of shell-model studies and how these can be related to interpretations of data such as results from in-beam and decay experiments.
+* Understand how to use second-quantization to construct one-body and two-body transfer operators, overlap functions, spectroscopic factors and experiments related to spectroscopic factors. 
 * For the students which wish to follow a more computational path during the last week, iterative eigenvalue solvers will discussed. Similarly, efficient representations of many-body states and computations of Hamiltonian matrices will also be discussed.
 * We will also discuss modern shell-model codes like NushellX. This suite of programs can be used by students to pursue their own projects. Applications of NushellX to the calculations of various observables will discussed and students who wish to use NushellX, can define individual projects during the last week.
 
@@ -204,8 +204,9 @@ At the end of the course the students should have a basic understanding of
 |--------------------------------------------------------------------------|
 | Wednesday | Effective Hamiltonians from data    | Continue work on shell-model code|
 |--------------------------------------------------------------------------|
-| Thursday  | Electromagnetic decays, theory and experiment |  Computing angular momentum expectation values|
-|           | Onebody transitions and what can be measured  |       |
+| Thursday  | One- and two-particle transfer operators |  Computing angular momentum expectation values|
+|           | Spectroscopic factors (SFs), overlap functions and experiments related to SFs  |       |
+|           |   |       |
 |--------------------------------------------------------------------------|
 | Friday    | Electromagnetic decays, theory and experiment |  Finalize shell-model code for spectra|
 |           | Introducing NushellX                          | Demonstrations of NushellX  and comparison with own code|
@@ -227,7 +228,6 @@ At the end of the course the students should have a basic understanding of
 |           | Using NushellX for studies of beta-decays |    | 
 |--------------------------------------------------------------------------|
 | Thursday  | Two-body transition operators and double-beta decay| Individual projects         |
-|           | Spectroscopic factors and experiment  |                              |
 |--------------------------------------------------------------------------|
 | Friday    | Double-beta decay and wrap-up of course | Work on final projects|
 |--------------------------------------------------------------------------|
@@ -266,7 +266,7 @@ If approved by the ECT* board of directors, our preferred time slot would be fro
 The organizers are 
 
 o "Alex Brown":"https://people.nscl.msu.edu/~brown/", "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
-o "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/", "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+o "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/", "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA & Department of Physics, University of Oslo, N-0316 Oslo, Norway 
 
 Morten Hjorth-Jensen will also function as student advisor and coordinator.
 
@@ -275,8 +275,8 @@ The teachers are
 o "Alex Brown":"https://people.nscl.msu.edu/~brown/", "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
 o "Alexandra Gade":"https://people.nscl.msu.edu/~gade/"  "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
 o "Robert Grzywacz":"http://web.utk.edu/~rgrzywac/"  at "Oak Ridge National Laboratory":"http://www.ornl.gov/" and "Department of Physics and Astronomy":"https://www.phys.utk.edu/", "University of Tennessee":"http://www.utk.edu/", Knoxville, TN 37996-1200, USA
-o "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/"  at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
-o Gustav Jansen  at "Oak Ridge National Laboratory":"http://www.ornl.gov/" and "Department of Physics and Astronomy":"https://www.phys.utk.edu/", "University of Tennessee":"http://www.utk.edu/", Knoxville, TN 37996-1200, USA
+o "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/"  at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA & Department of Physics, University of Oslo, N-0316 Oslo, Norway
+o "Gustav Jansen":"https://www.ornl.gov/staff-profile/gustav-r-jansen"  at "Oak Ridge National Laboratory":"http://www.ornl.gov/" and "Department of Physics and Astronomy":"https://www.phys.utk.edu/", "University of Tennessee":"http://www.utk.edu/", Knoxville, TN 37996-1200, USA
 o An eventual Post-doctoral fellow and an advanced graduate student as teaching assistants. 
 !eblock
 
