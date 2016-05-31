@@ -3,6 +3,7 @@ AUTHOR: Alex Brown at National Superconducting Cyclotron Laboratory and Departme
 AUTHOR: Alexandra Gade at National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, MI 48824, USA
 AUTHOR: Robert Grzywacz  at Oak Ridge National Laboratory and Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996-1200, USA
 AUTHOR: Morten Hjorth-Jensen  at National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, MI 48824, USA
+AUTHOR: Gustav Jansen  at Oak Ridge National Laboratory and Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996-1200, USA
 DATE: May 26 2016
 
 !split
@@ -256,7 +257,7 @@ The organization of a typical course day is as follows:
 | 6pm-7pm |  Wrap-up of the day and eventual student presentations       |
 |------------------------------------------------------------------------| 
 
-If approved byt the ECT* board of directors, our preferred time slot would be from the second half of June till the second half of July. 
+If approved by the ECT* board of directors, our preferred time slot would be from the second half of June till the second half of July. 
 !eblock
 
 !split
@@ -275,7 +276,8 @@ o "Alex Brown":"https://people.nscl.msu.edu/~brown/", "National Superconducting 
 o "Alexandra Gade":"https://people.nscl.msu.edu/~gade/"  "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
 o "Robert Grzywacz":"http://web.utk.edu/~rgrzywac/"  at "Oak Ridge National Laboratory":"http://www.ornl.gov/" and "Department of Physics and Astronomy":"https://www.phys.utk.edu/", "University of Tennessee":"http://www.utk.edu/", Knoxville, TN 37996-1200, USA
 o "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/"  at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
-o Post-doctoral fellow and advanced graduate student to be added later
+o Gustav Jansen  at "Oak Ridge National Laboratory":"http://www.ornl.gov/" and "Department of Physics and Astronomy":"https://www.phys.utk.edu/", "University of Tennessee":"http://www.utk.edu/", Knoxville, TN 37996-1200, USA
+o An eventual Post-doctoral fellow and an advanced graduate student as teaching assistants. 
 !eblock
 
 !split
