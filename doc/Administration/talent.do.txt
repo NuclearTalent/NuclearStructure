@@ -1,0 +1,66 @@
+TITLE: Theory for Exploring Nuclear Structure Experiments
+AUTHOR: Nuclear TALENT COURSE 2017 at The European Center for Theoretical Nuclear Physics and Related Areas, Trento, Italy
+DATE: July 3-21, 2017
+
+===== TALENT course 2017 =====
+
+Applications are open for the 2017 TALENT course on 
+_Theory for exploring Nuclear Structure experiments_.  The recently established
+initiative, Nuclear TALENT (Training in Advanced Low Energy Nuclear Theory), 
+see also URL:"http://www.nucleartalent.org", a multi-national network of
+several European and North American institutions, aims to develop a
+broad curriculum that will serve as a platform for cutting-edge theory
+of nuclei and their reactions.
+
+
+This year the Nuclear TALENT initiative organizes a course on 
+"Theory for Exploring Nuclear Structure Experiments" to be held at
+at The European Center for Theoretical Nuclear Physics and Related Areas
+(ECT*), Trento, Italy from July 3 to July 21 2017. 
+
+===== Lecturers =====
+The lecturers are 
+o "Alex Brown":"https://people.nscl.msu.edu/~brown/", "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+o "Alexandra Gade":"https://people.nscl.msu.edu/~gade/"  "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+o "Robert Grzywacz":"http://web.utk.edu/~rgrzywac/"  at "Oak Ridge National Laboratory":"http://www.ornl.gov/", Oak Ridge, TN 37831  and "Department of Physics and Astronomy":"https://www.phys.utk.edu/", "University of Tennessee":"http://www.utk.edu/", Knoxville, TN 37996-1200, USA
+o "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/"  at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA and  Department of Physics, University of Oslo, N-0316 Oslo, Norway
+o "Gustav Jansen":"https://www.ornl.gov/staff-profile/gustav-r-jansen"  at "Oak Ridge National Laboratory":"http://www.ornl.gov/", Oak Ridge, TN 37831, USA
+
+===== How to apply and teaching material =====
+
+_The deadline for applications is April 15, 2017_.  
+For more information on how  to apply see URL:"http://ectstar.eu/node/797",
+see also URL:"http://ectstar.eu/node/2240". A detailed content list can be found at
+URL:"http://nucleartalent.github.io/NuclearStructure/doc/web/course.html".
+
+The target groups are Master of Science and PhD students and
+early post-doctoral researchers, both experimentalists and
+theorists interested in models for nuclear
+structure, phenomenological techniques for interpreting and predicting
+the structure of stable as well as exotic nuclei. More experienced researchers may apply, but will be
+considered only on a fully-self-supported basis if numbers and space
+permit. Local support is available for at most 15-20 participants.
+
+
+
+===== Organizers =====
+
+o "Alex Brown":"https://people.nscl.msu.edu/~brown/", "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
+o "Morten Hjorth-Jensen":"http://mhjgit.github.io/info/doc/web/", "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA and Department of Physics, University of Oslo, N-0316 Oslo, Norway 
+
+Morten Hjorth-Jensen will also function as student advisor and coordinator.
+
+===== Additional information =====
+
+For additional information on each of the courses, please see
+URL:"http://www.nucleartalent.org". Prior to the TALENT course, the ECT* organizes 
+a Doctoral Training program on Microscopic Theories of Nuclear Structure, Dynamics and 
+Electroweak Currents from June 12 to June 30, 2017. 
+The doctoral training program can be combined with the TALENT course.
+Applicants interested in attending the doctoral training program can find more information at
+URL:"http://ectstar.eu/node/2238".
+
+
+
+FIGURE: [Poster.pdf, width=900 frac=1.0]
+
