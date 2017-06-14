@@ -1,0 +1,74 @@
+TITLE: Accepted students for the Talent course July 3-21 2017
+AUTHOR: European center for Theoretical Studies in Nuclear Physics and Related Areas
+DATE:  Today
+
+
+
+===== Accepted with local support (no travel) from the ECT* =====
+
+|----------------------------------------------------------------------------------------------------------|
+| Last name | First Name | Nationality | Institution and country | Year of Birth | Supervisor and Theory/Expt | email      |
+|----------------------------------------------------------------------------------------------------------|
+| Ahn |   Gilho | South Korea |	National University of Athens, Greece|	1990 | Eirene Mavrommatis, Theory|	gilahn@phys.uoa.gr| 
+| Albertsson |  Martin | Sweden | Lund University, Sweden | 1991 |Gillis Carlsson, Theory|	martin.albertsson@matfys.lth.se	 |
+| Djaerv | Tor | Sweden |		Chalmers University of Technology, Sweden| 1991|	Christian Forssen, Theory|	djarv@chalmers.se |
+| Farooq-Smith |	   Gregory James | UK |KU Leuven, Belgium  | 1991| Thomas E. Cocolios, Expt|	gregoryjames.farooqsmith@kuleuven.be |
+| Fasano | Patrick  | USA | University of Notre Dame, US| 1994|	Mark Caprio, Theory |			pfasano@nd.edu	|
+| Forney | Anne   |  USA |		University of Maryland College Park, US| 1986 |	William B Walters, Expt |	annemarieforney@gmail.com |
+| Gavrielov |  Noam |	Israel|		The Hebrew University, Israel | 1984 |	 Amiram Leviatan, Theory |	noam.gavrielov@mail.huji.ac.il |		
+| Good | Erin   | USA | Louisiana State University, US | 1991|	Catherine M. Deibel, Expt |	erin.good@richmond.edu	|			
+| Haverinen |  Tiia |  Finland | University of Jyvaeskylae, Finland | 1992 |	Markus Kortelainen, Theory |	tiia.k.haverinen@student.jyu.fi |	
+| Hood	   | Ashley | 	 USA |		Louisiana State University, US | 1992 |	Jeff Blackmon, Expt |	ashley.a.d.hood@gmail.com |
+| Nițescu  |	  Ovidiu Vasile | Romania | National Institute of Physics and Nuclear Engineering, Romania | 1994 |	Sabin Stoica, Theory |	ovidiu.nitescu@nipne.ro   |
+| Qi	   |  Liqiang | China |	IPN Orsay, France |	1990| Jonathan Wilson, Expt |	qiliqiang@ipno.in2p3.fr	|
+| Tokieda   | Masaaki | Japan |	Tohoku University, Japan | 1993 |Kouichi Hagino, Theory | okieda@nucl.phys.tohoku.ac.jp	 |
+| Vasseur | Oliver | France |		IPN Orsay, France | 1993	|  Marcella Grasso, Theory |	vasseur@ipno.in2p3.fr |
+| Vege	   | Mathias |  Norway | University of Oslo, Norway | 1991 | Morten Hjorth-Jensen, Theory | mathias.vege@gmail.com	 |
+| Wilkins  |	   Shane |  UK |		University of Manchester, UK | 1992 |	Kieran Flanagan, Expt |	shane.wilkins@postgrad.manchester.ac.uk	|
+| Salvioni |  Gianluca  | Italy |		University of Jyvaeskylae, Finland | 1986 |	Jacek Dobaczewski, Theory |	gianlucasalvioni@gmail.com |
+| Beck	  | Tobias     | Germany |		TU Darmstadt, Germany | 1991 |  Norbert Pietralla, Expt |	tbeck@ikp.tu-darmstadt.de |
+| Gerst |Rosa-Belle  |  Germany | Universität zu Köln, Germany | 1991 |   Jan Jolie, Expt |	rgerst@ikp.uni-koeln.de |		
+|----------------------------------------------------------------------------------------------------------|
+
+===== Accepted with no local support (self-supported)  =====
+
+|----------------------------------------------------------------------------------------------------------|
+| Last name | First Name | Nationality | Institution and country | Year of Birth | Supervisor and Theory/Expt | email      |
+|----------------------------------------------------------------------------------------------------------|
+| Andreatta | Paolo |	Italy | University of Trento, Italy |1991 | Winfried Leidemann, Theory |	paolo.andreatta-1@unitn.it |
+| Miller | Sean | Norway | University of Oslo, Norway | 1993 | Morten Hjorth-Jensen, Theory |  seanbsm@online.no |
+| Riz   | Luca | Italy | University of Trento, Italy | 1989 |	Francesco Pederiva, Theory |	luca.riz@unitn.it |
+| Pederiva |  Giovanni | Italy | University of Oslo, Norway | 1994| Morten Hjorth-Jensen, Theory | giovanni.pederiva@fys.uio.no |
+| Berentsen Kullmann | Ina Kristine |  Norway |	University of Oslo, Norway |1992 |	 Ann-Cecilie Larsen, Expt |	i.k.b.kullmann@fys.uio.no |
+| Crespo Campo | Lucia | Spain | University of Oslo, Norway | 1990 |	Ann-Cecilie Larsen, Expt |	luciacrespocampo@gmail.com |
+| Márquez Romero | Antonio |    Spain |		University of York, UK | 1992|	    Jacek Dobaczewski, Theory |	amr560@york.ac.uk |
+| Miur	 |  David  | UK  |University of York, UK	| 1993 |Alessandro Pastore, Theory |	djm574@york.ac.uk |
+| Shelley | Matthew  |     UK | University of York, UK | 1995 |	       Alessandro Pastore, Theory |	mges501@york.ac.uk |
+| Häfner | Guillaume |  Germany | University of Cologne, Germany | 1996 |	Jan Jolie, Expt |	ghaefner@ikp.uni-koeln.de |
+| Gayer | Udo	 | Germany | 		TU Darmstadt, Germany | 1990 |  Norbert Pietralla, Expt |	ugayer@ikp.tu-darmstadt.de |
+| Koszorus |  Agota |  	Hungary |	KU Leuven, Belgium | 1992 | Gerda Neyens, Expt | agi.koszorus@kuleuven.be	|
+|----------------------------------------------------------------------------------------------------------|
+
+
+===== Wait list  =====
+
+|----------------------------------------------------------------------------------------------------------|
+| Last name | First Name | Nationality | Institution and country | Year of Birth | Supervisor and Theory/Expt | email      |
+|----------------------------------------------------------------------------------------------------------|
+| Modi  | Swati  | India | Indian Institute of Technology Roorkee, India | 1985 | Arumugam, Theory  |swatimodi2@gmail.com  |
+| Sharma | Garima   | India | Indian Institute of Technology Roorkee, India | 1995 | Praveen Chandra Srivastava, Theory |     garima.mh07@gmail.com |
+| Zimba  | George Lowani  | Zambia |National Institute for Scientific and Industrial Research, Zambia | 1987 |      John F Sharpey-Schafer, Expt | zimbageo@yahoo.com |
+| Razazi	|   Vahedeh |Iran | Urmia University of Technology, Iran | 1977 |	Sohrab Behnia, Theory |	mahsa.razazi@gmail.com	|
+|Tena Vidal | Julia | Spain  |		University of Barcelona, Spain | 1994 | Javier Tejada, Theory |	jtenavidal@gmail.com |
+| Saravanan  | Sarath Srinivas | India | Indian Institute of Technology Madras, India | 1992 |	Sunethra Ramanan |	saraths@physics.iitm.ac.in | 
+|----------------------------------------------------------------------------------------------------------|
+
+
+
+
+
+
+
+
+
+

@@ -32,25 +32,25 @@ formulas in HTML or ipython notebook files.
 
 ======= Lecture notes  =======
 
-===== Introduction and proposal =====
+===== Introduction and weekly program =====
 
 
 
  * LaTeX PDF:
    * For printing:
-     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-minted.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-beamer-handouts2x3.pdf"
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/program/pdf/program-minted.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/program/pdf/program-beamer-handouts2x3.pdf"
    * For screen viewing:
-     * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/pdf/proposal-beamer.pdf"
+     * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/program/pdf/program-beamer.pdf"
  * HTML:
-   * "Plain html style": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/html/proposal.html"
-   * "Reveal html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/html/proposal-reveal.html"
-   * "Bootstrap html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/html/proposal-bs.html"
+   * "Plain html style": "http://nucleartalent.github.io/NuclearStructure/doc/pub/program/html/program.html"
+   * "Reveal html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/program/html/program-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/program/html/program-bs.html"
  * iPython notebook:
-   * "ipynb file": "http://nucleartalent.github.io/NuclearStructure/doc/pub/proposal/ipynb/proposal.ipynb"
+   * "ipynb file": "http://nucleartalent.github.io/NuclearStructure/doc/pub/program/ipynb/program.ipynb"
 
 
 
-===== Single-particle data, experimental information and simple models =====
+===== Experimental information and simple models =====
 
 
 
@@ -140,7 +140,7 @@ formulas in HTML or ipython notebook files.
 
 
 
-===== Nuclear decays =====
+===== Nuclear decays, experiment and theory =====
 
 
 
@@ -155,6 +155,24 @@ formulas in HTML or ipython notebook files.
    * "Bootstrap html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/html/decays-bs.html"
  * iPython notebook:
    * "ipynb file": "http://nucleartalent.github.io/NuclearStructure/doc/pub/decays/ipynb/decays.ipynb"
+
+
+
+===== Shell-model project and alternative projects for the last two weeks =====
+
+
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/projects/pdf/projects-minted.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/projects/pdf/projects-beamer-handouts2x3.pdf"
+   * For screen viewing:
+     * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/projects/pdf/projects-beamer.pdf"
+ * HTML:
+   * "Plain html style": "http://nucleartalent.github.io/NuclearStructure/doc/pub/projects/html/projects.html"
+   * "Reveal html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/projects/html/projects-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/projects/html/projects-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://nucleartalent.github.io/NuclearStructure/doc/pub/projects/ipynb/projects.ipynb"
 
 
 
