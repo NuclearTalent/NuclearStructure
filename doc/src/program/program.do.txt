@@ -126,25 +126,27 @@ Lectures are approximately 45 min each with a small break between each lecture. 
 | Monday | 9am-930am | Registration at the ECT |                           |
 |        | 930am-10am| Introduction and welcome (BAB, MHJ and GJ) |         |
 |        | 10am-12pm | Survey of data (BAB) |  Intro to NushellX (BAB)     |
-|        | 12pm-3pm  | Lunch +own activities |                             |
-|        | 3pm-6pm   | More survey of data (BAB) | NushellX hands-on and presentation of project |
+|        | 12pm-2pm  | Lunch +own activities |                             |
+|        | 2pm-6pm   | More survey of data (BAB) | NushellX hands-on and presentation of project |
 |--------------------------------------------------------------------------|
-| Tuesday | 9am-12pm | Mean-field and shell-model basics (MHJ)    |   Discussion of second quantization and simple shell-model project |      
-|         | 12pm-3pm | Lunch+ own activities |                     |
-|         | 3pm-6pm  |            | Start work on simple shell-model project with pairing model   |
+| Tuesday | 9am-10pm | Mean-field and shell-model basics (MHJ)    |   Discussion of second quantization and simple shell-model project |      
+|         | 10am-12pm |Single-particle potentials and shell-model basics (BAB)    |  |      
+|         | 12pm-2pm | Lunch+ own activities |                     |
+|         | 2pm-6pm  | Single-particle potentials           | Studies of separation energies, shell gaps etc   |
 |--------------------------------------------------------------------------|
-| Wednesday | 9am-12pm | Shell-model basics (MHJ)    |   Discussion of simple shell-model project |      
-|         | 12pm-3pm | Lunch+ own activities |                     |
-|         | 3pm-6pm  |            | Work on simple shell-model project with pairing model   |
+| Wednesday | 9am-11am | Shell-model basics (MHJ)    |   Discussion of simple shell-model project |      
+|          | 11am-12pm | Shell-model dimensionalities (BAB)    |    |      
+|         | 12pm-2pm | Lunch+ own activities |                     |
+|         | 2pm-6pm  |            | Work on shell-model project and NushellX  |
 |--------------------------------------------------------------------------|
-| Thursday | 9am-10am | Shell-model basics (MHJ)    |   Discussion of simple shell-model project |      
-|          | 10am-12pm  |Effective interactions for shell model (GJ and MHJ)  |    |      
-|         | 12pm-3pm | Lunch+ own activities |                     |
-|         | 3pm-6pm  |            | Work on simple shell-model project with pairing model   |
+| Thursday | 9am-11am | Shell-model basics (MHJ)    |   Discussion of simple shell-model project |      
+|          | 11am-12pm  | Proton-neutron formalism and isospin (BAB)  |    |      
+|         | 12pm-2pm | Lunch+ own activities |                     |
+|         | 2pm-6pm  |            | Work on shell-model project and NushellX  |
 |--------------------------------------------------------------------------|
 | Friday | 9am-12pm | Effective interactions for shell model (GJ)    |    |      
-|         | 12pm-3pm | Lunch+ own activities |                     |
-|         | 3pm-6pm  |            | Finalize  simple shell-model project with pairing model   |
+|         | 12pm-2pm | Lunch+ own activities |                     |
+|         | 2pm-5pm  |            |  Group presentation of work on shell-model project and NushellX  |
 |--------------------------------------------------------------------------|
 
 
@@ -153,49 +155,32 @@ Lectures are approximately 45 min each with a small break between each lecture. 
 |--------------------------------------------------------------------------|
 | Day   |  | Lecture Topics and lecturer |   Projects and exercises        |
 |--------------------------------------------------------------------------|
-| Monday | 9am-12pm |  |                           |
-|        | 12pm-3pm  | Lunch +own activities |                             |
-|        | 3pm-6pm   |  | |
+| Monday | 9am-10am | Masses from experiment  (AG) |                           |
+|        | 10am-12pm | Effective Hamiltonians (BAB and GJ) |                           |
+|        | 12pm-2pm  | Lunch +own activities |                             |
+|        | 2pm-6pm   |  | Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Tuesday | 9am-12pm |  | |
-|         | 12pm-3pm | Lunch+ own activities |                     |
-|         | 3pm-6pm  |            | |
+| Tuesday | 9am-10am | Spectroscopic factors from experiment (AG) | |
+|         | 10am-12pm | Spectroscopic factors from theory (BAB) | |
+|         | 12pm-2pm | Lunch+ own activities |                     |
+|         | 2pm-3pm | Monte Carlo Shell-model seminar by Takaharu Otsuka |                     |
+|         | 3pm-6pm  |            |  Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Wednesday | 9am-12pm |  |  |
-|         | 12pm-3pm | Lunch+ own activities |                     |
-|         | 3pm-6pm  |        |    |
+| Wednesday | 9am-11am | Introduction to $\beta$-decay, experiment (RG)  |  |
+|           | 11am-12pm | $\beta$-decay and sum rules from theory (BAB)  |  |
+|         | 12pm-2pm | Lunch+ own activities |                     |
+|         | 2pm-6pm  |        | Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Thursday | 9am-10am | |  |
-|          | 10am-12pm  | |
-|         | 12pm-3pm | Lunch+ own activities |                     |
-|         | 3pm-6pm  |            | |
+| Thursday | 9am-10am | Electromagnetic decays from experiment (AG) |  |
+|          | 10am-12pm | Shell-model transition probabilities (BAB) |  |
+|         | 12pm-2pm | Lunch+ own activities |                     |
+|         | 2pm-6pm  |            |  Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Friday | 9am-12pm |   | |
-|         | 12pm-3pm | Lunch+ own activities |                     |
-|         | 3pm-6pm  |      | |
+| Friday | 9am-11am | Advanced aspects of  $\beta$-decay, experiment (RG)  |  |
+|         | 11am-12pm | Summary of first two weeks and outlook for final week (MHJ)  |                     |
+|         | 12pm-2pm | Lunch+ own activities |                     |
+|         | 2pm-5pm  |             |  Group presentation of work on shell-model project and NushellX  |
 |--------------------------------------------------------------------------|
-
-
-
-
-|--------------------------------------------------------------------------|
-|    |  Lecture Topics |   Projects and exercises                                    |
-|--------------------------------------------------------------------------|
-| Monday |   Shell-model Hamiltonians and the $sd$-shell as case | Extend shell-model to realistic nuclear structure cases| 
-|       |  Efficient computations of Hamiltonian matrices|                |
-|--------------------------------------------------------------------------|
-| Tuesday|  Effective Hamiltonians and angular momentum algebra | Bit representations of state functions and setup of Hamiltonian matrices |
-|--------------------------------------------------------------------------|
-| Wednesday | Effective Hamiltonians from data    | Continue work on shell-model code|
-|--------------------------------------------------------------------------|
-| Thursday  | One- and two-particle transfer operators |  Computing angular momentum expectation values|
-|           | Spectroscopic factors (SFs), overlap functions and experiments related to SFs  |       |
-|           |   |       |
-|--------------------------------------------------------------------------|
-| Friday    | Electromagnetic decays, theory and experiment |  Finalize shell-model code for spectra|
-|           | Introducing NushellX                          | Demonstrations of NushellX  and comparison with own code|
-|--------------------------------------------------------------------------|
-
 
 
 === Week 3 ===
@@ -204,47 +189,30 @@ Lectures are approximately 45 min each with a small break between each lecture. 
 |--------------------------------------------------------------------------|
 | Day   |  | Lecture Topics and lecturer |   Projects and exercises        |
 |--------------------------------------------------------------------------|
-| Monday | 9am-12pm | $rp$ process (BAB) |                           |
-|        | 12pm-3pm  | Lunch +own activities |                             |
-|        | 3pm-6pm   |  | |
+| Monday | 9am-12pm | Shell-model studies (BAB and MHJ) |        |
+|        | 12pm-2pm  | Lunch +own activities |                             |
+|        | 2pm-6pm   |  | Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Tuesday | 9am-12pm |  | |
+| Tuesday | 9am-12pm |  Shell-model studies (BAB and MHJ) |        |
+|         | 12pm-2pm | Lunch+ own activities |                     |
+|         | 2pm-6pm  |            |  Work on shell-model project and NushellX |
+|--------------------------------------------------------------------------|
+| Wednesday | 9am-12pm | Two-body transition operators and double-beta decay (BAB) | |
+|         | 12pm-2pm | Lunch+ own activities |                     |
+|         | 2pm-6pm  |        |   Work on shell-model project and NushellX |
+|--------------------------------------------------------------------------|
+| Thursday | 9am-12pm | TBA |  |
 |         | 12pm-3pm | Lunch+ own activities |                     |
-|         | 3pm-6pm  |            | |
+|         | 3pm-6pm  |            |  Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Wednesday | 9am-12pm |  |  |
-|         | 12pm-3pm | Lunch+ own activities |                     |
-|         | 3pm-6pm  |        |    |
-|--------------------------------------------------------------------------|
-| Thursday | 9am-10am | |  |
-|          | 10am-12pm  | |
-|         | 12pm-3pm | Lunch+ own activities |                     |
-|         | 3pm-6pm  |            | |
-|--------------------------------------------------------------------------|
-| Friday | 9am-12pm |   | |
-|         | 12pm-3pm | Lunch+ own activities |                     |
-|         | 3pm-6pm  |      | |
+| Friday | 9am-12pm | Summary of course  |   Group presentation of work on shell-model project and NushellX  |
+|         | 12pm-2pm | Lunch+ own activities |                     |
+|         | 2pm-6pm  | Own activities     | |
 |--------------------------------------------------------------------------|
 
 
 
 
-
-|--------------------------------------------------------------------------|
-|    |  Lecture Topics |   Projects and exercises                                    |
-|--------------------------------------------------------------------------|
-| Monday | Electromagnetic decays and NushellX calculations |   Individual projects| 
-|       |  More on onebody operators and transition densities |            |
-|--------------------------------------------------------------------------|
-| Tuesday| Beta-decays and Gamow-Teller transitions, theory and experiments | Individual projects |
-|--------------------------------------------------------------------------|
-| Wednesday | Beta-decays and Gamow-Teller transitions, theory and experiments | Individual projects |
-|           | Using NushellX for studies of beta-decays |    | 
-|--------------------------------------------------------------------------|
-| Thursday  | Two-body transition operators and double-beta decay| Individual projects         |
-|--------------------------------------------------------------------------|
-| Friday    | Double-beta decay and wrap-up of course | Work on final projects|
-|--------------------------------------------------------------------------|
 
 !eblock
 
