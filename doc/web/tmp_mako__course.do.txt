@@ -179,7 +179,7 @@ formulas in HTML or ipython notebook files.
 
 ===== Download NushellX =====
 !bblock
-You can dowwload NushellX from this site URL:"https://people.nscl.msu.edu/~brown/nushellx.zip"
+You can download NushellX from this site URL:"https://people.nscl.msu.edu/~brown/nushellx.zip"
 !eblock
 
 ===== Selected Texts on Nuclear Structure and Many-body theory =====
