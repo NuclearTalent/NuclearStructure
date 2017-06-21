@@ -14,16 +14,16 @@ AUTHOR: Gustav Jansen  at National Center for Computational Sciences and Physics
 
 <%
 pub_url = 'http://nucleartalent.github.io/NuclearStructure/doc/pub'
-published = ['proposal', 'spdata', 'hfock', 'secondquant', 'angmom', 'fci', 'decays',]
+published = ['program', 'spdata', 'hfock', 'secondquant', 'angmom', 'fci', 'decays', 'projects',]
 chapters = {
- 'proposal': 'Introduction and proposal',
- 'spdata': 'Single-particle data, experimental information and simple models',
+ 'program': 'Introduction and weekly program',
+ 'spdata': 'Experimental information and simple models',
  'hfock': 'Mean-field theories',
  'secondquant': 'Second quantization',
  'angmom': 'Angular momentum algebra',
- 'forces': 'Models for nuclear forces',
  'fci': 'The nuclear shell model and full configuration interaction theory',
- 'decays': 'Nuclear decays',
+ 'decays': 'Nuclear decays, experiment and theory',
+ 'projects': 'Shell-model project and alternative projects for the last two weeks',
 }
 %>
 
