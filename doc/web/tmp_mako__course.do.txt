@@ -158,7 +158,7 @@ formulas in HTML or ipython notebook files.
 
 
 
-===== Shell-model project and alternative projects for the last two weeks =====
+===== Shell-model project =====
 
 
 
