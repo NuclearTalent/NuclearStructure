@@ -23,7 +23,7 @@ chapters = {
  'angmom': 'Angular momentum algebra',
  'fci': 'The nuclear shell model and full configuration interaction theory',
  'decays': 'Nuclear decays, experiment and theory',
- 'projects': 'Shell-model project and alternative projects for the last two weeks',
+ 'projects': 'Shell-model project',
 }
 %>
 
