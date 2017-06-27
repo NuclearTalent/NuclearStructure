@@ -1,6 +1,6 @@
 # Strange way of testing for vortex...
 # #ifdef NON_VORTEX
-TITLE: Overview of course material for "Nuclear Talent":"http://www.nucleartalent.org" course on Nuclear Theory for Nuclear Structure Experiments
+TITLE: Overview of course material for "Nuclear Talent":"http://www.nucleartalent.org" course on Nuclear Theory for Nuclear Structure Experiments, ECT*, July 3-21, 2017
 
 TOC: off
 # #else
