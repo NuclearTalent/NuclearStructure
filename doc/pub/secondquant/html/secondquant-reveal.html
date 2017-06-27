@@ -129,9 +129,6 @@ MathJax.Hub.Config({
 <section>
 <!-- ------------------- main content ---------------------- -->
 
-<!-- * TO DO: add material about Wick's theorem and diagrammatic representation -->
-
-<p>
 
 
 <center><h1 style="text-align: center;">Reminder on Second Quantization</h1></center>  <!-- document title -->
@@ -149,12 +146,12 @@ MathJax.Hub.Config({
 <center><b><a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>2016</h4></center> <!-- date -->
+<center><h4>Jun 27, 2017</h4></center> <!-- date -->
 <br>
 <p>
 
 <center style="font-size:80%">
-<!-- copyright --> &copy; 2013-2016, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+<!-- copyright --> &copy; 2013-2017, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
 </center>
 </section>
 
@@ -375,7 +372,7 @@ Eq.&nbsp;<a href="#mjx-eqn-11">(11)</a> as
 $$
 \begin{equation}
 	\langle\alpha_1\alpha_2 \dots \alpha_n|a_\alpha|\alpha_1'\alpha_2' \dots \alpha_m'\rangle = 
-	\langle \alpha_1\alpha_2 \dots \alpha_n|\alpha\alpha_1'\alpha_2' \dots \alpha_m'\rangle \tag{14}
+	\langle \alpha \alpha_1\alpha_2 \dots \alpha_n|\alpha_1'\alpha_2' \dots \alpha_m'\rangle \tag{14}
 \end{equation}
 $$
 <p>&nbsp;<br>
@@ -2066,7 +2063,9 @@ We need to show that \( |\tilde{c}\rangle= |c'\rangle \). We need also to assume
 is not orthogonal to \( |c\rangle \), that is \( \langle c| \tilde{c}\rangle \ne 0 \). From this it follows that 
 <p>&nbsp;<br>
 $$
-\langle c| \tilde{c}\rangle=\langle 0| a_{i_n}\dots a_{i_1}\left(\sum_{p=i_1}^{i_n}f_{i_1p}a_{p}^{\dagger} \right)\left(\sum_{q=i_1}^{i_n}f_{i_2q}a_{q}^{\dagger} \right)\dots \left(\sum_{t=i_1}^{i_n}f_{i_nt}a_{t}^{\dagger} \right)|0\rangle,
+\langle c| \tilde{c}\rangle=\langle 0| a_{i_n}\dots a_{i_1}\left(\sum_{p=i_1}^{i_n}f_{i_1p}a_{p}^{\dagger} \right)
+%\left(\sum_{q=i_1}^{i_n}f_{i_2 q}a_{q}^{\dagger} \right)\dots
+\left(\sum_{t=i_1}^{i_n}f_{i_n t}a_{t}^{\dagger} \right)\vert 0\rangle,
 $$
 <p>&nbsp;<br>
 
@@ -3035,7 +3034,7 @@ We include here a python program which may aid in this direction. It uses bit ma
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">math</span>
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">math</span>
 
 <span style="color: #CD5555">&quot;&quot;&quot;</span>
 <span style="color: #CD5555">A simple Python class for Slater determinant manipulation</span>
@@ -3182,7 +3181,7 @@ our algebraic manipulations using Wick's theorem and operators for second quanti
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> *
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> *
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy.physics.secondquant</span> <span style="color: #8B008B; font-weight: bold">import</span> *
 
 i, j = symbols(<span style="color: #CD5555">&#39;i,j&#39;</span>, below_fermi=<span style="color: #658b00">True</span>)
@@ -3209,7 +3208,7 @@ We can expand the above Python code by defining one-body and two-body operators 
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span style="color: #228B22"># This code sets up a two-body Hamiltonian for fermions</span>
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #228B22"># This code sets up a two-body Hamiltonian for fermions</span>
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> symbols, latex, WildFunction, collect, Rational
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy.physics.secondquant</span> <span style="color: #8B008B; font-weight: bold">import</span> F, Fd, wicks, AntiSymmetricTensor, substitute_dummies, NO
 
@@ -3243,7 +3242,7 @@ We can now use this code to compute the matrix elements between two two-body Sla
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> symbols, latex, WildFunction, collect, Rational, simplify
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> symbols, latex, WildFunction, collect, Rational, simplify
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy.physics.secondquant</span> <span style="color: #8B008B; font-weight: bold">import</span> F, Fd, wicks, AntiSymmetricTensor, substitute_dummies, NO, evaluate_deltas
 <span style="color: #228B22"># setup hamiltonian</span>
 p,q,r,s = symbols(<span style="color: #CD5555">&#39;p q r s&#39;</span>,dummy=<span style="color: #658b00">True</span>)
@@ -3283,7 +3282,7 @@ In our first step we just define the Hamiltonian
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> symbols, latex, WildFunction, collect, Rational, simplify
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> symbols, latex, WildFunction, collect, Rational, simplify
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy.physics.secondquant</span> <span style="color: #8B008B; font-weight: bold">import</span> F, Fd, wicks, AntiSymmetricTensor, substitute_dummies, NO, evaluate_deltas
 <span style="color: #228B22"># setup hamiltonian</span>
 p,q,r,s = symbols(<span style="color: #CD5555">&#39;p q r s&#39;</span>,dummy=<span style="color: #658b00">True</span>)
@@ -3322,7 +3321,7 @@ In our next step we define the reference energy \( E_0 \) and redefine the Hamil
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> symbols, latex, WildFunction, collect, Rational, simplify
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> symbols, latex, WildFunction, collect, Rational, simplify
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy.physics.secondquant</span> <span style="color: #8B008B; font-weight: bold">import</span> F, Fd, wicks, AntiSymmetricTensor, substitute_dummies, NO, evaluate_deltas
 <span style="color: #228B22"># setup hamiltonian</span>
 p,q,r,s = symbols(<span style="color: #CD5555">&#39;p q r s&#39;</span>,dummy=<span style="color: #658b00">True</span>)
@@ -3368,7 +3367,7 @@ We can now go back to exercise 7 and define the Hamiltonian and the second-quant
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> symbols, latex, WildFunction, collect, Rational, simplify
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy</span> <span style="color: #8B008B; font-weight: bold">import</span> symbols, latex, WildFunction, collect, Rational, simplify
 <span style="color: #8B008B; font-weight: bold">from</span> <span style="color: #008b45; text-decoration: underline">sympy.physics.secondquant</span> <span style="color: #8B008B; font-weight: bold">import</span> F, Fd, wicks, AntiSymmetricTensor, substitute_dummies, NO, evaluate_deltas
 <span style="color: #228B22"># setup hamiltonian</span>
 p,q,r,s = symbols(<span style="color: #CD5555">&#39;p q r s&#39;</span>,dummy=<span style="color: #658b00">True</span>)

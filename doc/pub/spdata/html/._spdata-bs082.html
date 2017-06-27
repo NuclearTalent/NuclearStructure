@@ -24,6 +24,15 @@ Automatically generated HTML file from DocOnce source
    max-height: 400px;
    overflow-x: hidden;
 }
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
 </style>
 
 
@@ -368,7 +377,7 @@ MathJax.Hub.Config({
 <p>
 <!-- --- begin exercise --- -->
 
-<h2 id="___sec80">Exercise 1: Masses and binding energies </h2>
+<h2 id="___sec80" class="anchor">Exercise 1: Masses and binding energies </h2>
 
 <p>
 The data on binding energies can be found in the file bedata.dat at the github address of the <a href="https://github.com/NuclearStructure/PHY981/tree/master/doc/pub/spdata/programs" target="_self">course</a>

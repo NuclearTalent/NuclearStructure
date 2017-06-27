@@ -1,7 +1,7 @@
 # Slides for PHY981
 TITLE: Nuclear Shell Model, how to develop a shell-model code
 AUTHOR: Morten Hjorth-Jensen {copyright, 2013-present|CC BY-NC} at "National Superconducting Cyclotron Laboratory":"http://www.nscl.msu.edu/" and "Department of Physics and Astronomy":"https://www.pa.msu.edu/", "Michigan State University":"http://www.msu.edu/", East Lansing, MI 48824, USA
-DATE:  2016
+DATE:  today
 
 
 
@@ -896,7 +896,7 @@ There are 3 states with $M= 0$, 2 with $M = 1$, and so on.
 
 
 !split
-===== Project 2 =====
+===== Shell-model Project  =====
 !bblock
 The basic goal of this project is for you to build your own configuration-interaction  shell-model 
 code. The code will be fairly basic; it will assume that we have 

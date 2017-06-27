@@ -24,6 +24,15 @@ Automatically generated HTML file from DocOnce source
    max-height: 400px;
    overflow-x: hidden;
 }
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
 </style>
 
 
@@ -315,7 +324,7 @@ MathJax.Hub.Config({
 <p>
 <!-- --- begin exercise --- -->
 
-<h2 id="___sec64">Exercise 3: Developing a  Hartree-Fock program </h2>
+<h2 id="___sec64" class="anchor">Exercise 3: Developing a  Hartree-Fock program </h2>
 
 <p>
 Neutron drops are a powerful theoretical laboratory for testing,
@@ -492,7 +501,7 @@ Here we display the Hartree-Fock part only, assuming that single-particle data a
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%">	<span style="color: #BA2121; font-style: italic">&quot;&quot;&quot; Star HF-iterations, preparing variables and density matrix &quot;&quot;&quot;</span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>	<span style="color: #BA2121; font-style: italic">&quot;&quot;&quot; Star HF-iterations, preparing variables and density matrix &quot;&quot;&quot;</span>
 
         <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot; Coefficients for setting up density matrix, assuming only one along the diagonals &quot;&quot;&quot;</span>
 	C <span style="color: #666666">=</span> np<span style="color: #666666">.</span>eye(spOrbitals) <span style="color: #408080; font-style: italic"># HF coefficients</span>

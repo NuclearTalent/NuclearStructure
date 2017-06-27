@@ -24,6 +24,15 @@ Automatically generated HTML file from DocOnce source
    max-height: 400px;
    overflow-x: hidden;
 }
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
 </style>
 
 
@@ -352,9 +361,6 @@ MathJax.Hub.Config({
 <a name="part0000"></a>
 <!-- ------------------- main content ---------------------- -->
 
-<!-- * TO DO: add material about Wick's theorem and diagrammatic representation -->
-
-<p>
 
 
 <div class="jumbotron">
@@ -373,7 +379,7 @@ MathJax.Hub.Config({
 <center><b><a href="http://www.nscl.msu.edu/" target="_self">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_self">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_self">Michigan State University</a>, East Lansing, MI 48824, USA</b></center>
 <br>
 <p>
-<center><h4>2016</h4></center> <!-- date -->
+<center><h4>Jun 27, 2017</h4></center> <!-- date -->
 <br>
 <p>
 
@@ -415,7 +421,7 @@ MathJax.Hub.Config({
 
 
 <center style="font-size:80%">
-<!-- copyright --> &copy; 2013-2016, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
+<!-- copyright --> &copy; 2013-2017, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license
 </center>
 
 
