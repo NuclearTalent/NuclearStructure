@@ -1,4 +1,4 @@
-TITLE: Program for the Nuclear Talent course at the ECT* in 2017: Theory for Exploring Nuclear Structure Experiments
+TITLE: Program for the Nuclear Talent course at the ECT*, July 3-21, 2017: Theory for Exploring Nuclear Structure Experiments
 AUTHOR: "Alex Brown":"https://people.nscl.msu.edu/~brown/" at National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, MI 48824, USA
 AUTHOR: "Alexandra Gade":"https://people.nscl.msu.edu/~gade/" at National Superconducting Cyclotron Laboratory and Department of Physics and Astronomy, Michigan State University, East Lansing, MI 48824, USA
 AUTHOR: "Robert Grzywacz":"http://web.utk.edu/~rgrzywac/" at Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996-1200, USA &  Oak Ridge National Laboratory, Oak Ridge, TN 37831, USA
@@ -133,10 +133,10 @@ The acronyms are
 |        | 930am-10am| Introduction and welcome (BAB, MHJ and GJ) |         |
 |        | 10am-1230pm | Survey of data (BAB) |  Intro to NushellX (BAB)     |
 |        | 1230pm-230pm  | Lunch +own activities |                             |
-|        | 230pm-6pm   | More survey of data (BAB) | NushellX hands-on and presentation of project |
+|        | 230pm-6pm   | More survey of data (BAB) | NushellX hands-on and discussion of project (MHJ) |
 |--------------------------------------------------------------------------|
-| Tuesday 4 | 9am-10pm | Mean-field and shell-model basics (MHJ)    |   Discussion of second quantization and simple shell-model project |      
-|         | 10am-1230pm |Single-particle potentials and shell-model basics (BAB)    |  |      
+| Tuesday 4 | 9am-11pm | Mean-field and shell-model basics (MHJ)    |   Discussion of second quantization and simple shell-model project |      
+|         | 11am-1230pm |Single-particle potentials and shell-model basics (BAB)    |  |      
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  | Single-particle potentials           | Studies of separation energies, shell gaps etc   |
 |--------------------------------------------------------------------------|
@@ -229,7 +229,7 @@ A more detailed program for the last week will be finalized during the second we
 !bblock
 
 The course will be taught as an intensive  course of duration of three weeks, with a
-total time of 45 h of lectures, 45 h of exercises and  a final assignment of 2 weeks of work for those of you wish to receive 7 ECTS credits for the course. 
+total time of 45 h of lectures, 45 h of exercises and  a final assignment of 2 weeks of work for those of you who  wish to receive 7 ECTS credits for the course. 
 The total load, with the additional project to be handed in later,  will be approximately 160-170 hours, corresponding to  _7 ECTS_ in Europe.
 
 

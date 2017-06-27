@@ -24,6 +24,15 @@ Automatically generated HTML file from DocOnce source
    max-height: 400px;
    overflow-x: hidden;
 }
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
 </style>
 
 
@@ -352,7 +361,7 @@ MathJax.Hub.Config({
 <a name="part0063"></a>
 <!-- !split -->
 
-<h2 id="___sec62">Showing that \( |\tilde{c}\rangle= |c'\rangle \)  </h2>
+<h2 id="___sec62" class="anchor">Showing that \( |\tilde{c}\rangle= |c'\rangle \)  </h2>
 <div class="panel panel-default">
 <div class="panel-body">
 <p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
@@ -361,7 +370,9 @@ MathJax.Hub.Config({
 We need to show that \( |\tilde{c}\rangle= |c'\rangle \). We need also to assume that the new state
 is not orthogonal to \( |c\rangle \), that is \( \langle c| \tilde{c}\rangle \ne 0 \). From this it follows that 
 $$
-\langle c| \tilde{c}\rangle=\langle 0| a_{i_n}\dots a_{i_1}\left(\sum_{p=i_1}^{i_n}f_{i_1p}a_{p}^{\dagger} \right)\left(\sum_{q=i_1}^{i_n}f_{i_2q}a_{q}^{\dagger} \right)\dots \left(\sum_{t=i_1}^{i_n}f_{i_nt}a_{t}^{\dagger} \right)|0\rangle,
+\langle c| \tilde{c}\rangle=\langle 0| a_{i_n}\dots a_{i_1}\left(\sum_{p=i_1}^{i_n}f_{i_1p}a_{p}^{\dagger} \right)
+%\left(\sum_{q=i_1}^{i_n}f_{i_2 q}a_{q}^{\dagger} \right)\dots
+\left(\sum_{t=i_1}^{i_n}f_{i_n t}a_{t}^{\dagger} \right)\vert 0\rangle,
 $$
 
 which is nothing but the determinant \( det(f_{ip}) \) which we can, using the intermediate normalization condition, 

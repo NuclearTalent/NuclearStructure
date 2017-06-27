@@ -24,6 +24,15 @@ Automatically generated HTML file from DocOnce source
    max-height: 400px;
    overflow-x: hidden;
 }
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
 </style>
 
 
@@ -352,7 +361,7 @@ MathJax.Hub.Config({
 <a name="part0090"></a>
 <!-- !split -->
 
-<h2 id="___sec89">Exercises: Using sympy to compute matrix elements  </h2>
+<h2 id="___sec89" class="anchor">Exercises: Using sympy to compute matrix elements  </h2>
 <div class="panel panel-default">
 <div class="panel-body">
 <p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
@@ -363,7 +372,7 @@ our algebraic manipulations using Wick's theorem and operators for second quanti
 <p>
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sympy</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sympy</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sympy.physics.secondquant</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #666666">*</span>
 
 i, j <span style="color: #666666">=</span> symbols(<span style="color: #BA2121">&#39;i,j&#39;</span>, below_fermi<span style="color: #666666">=</span><span style="color: #008000">True</span>)

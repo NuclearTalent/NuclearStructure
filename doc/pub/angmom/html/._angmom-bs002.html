@@ -24,6 +24,15 @@ Automatically generated HTML file from DocOnce source
    max-height: 400px;
    overflow-x: hidden;
 }
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
 </style>
 
 
@@ -502,7 +511,7 @@ MathJax.Hub.Config({
 <a name="part0002"></a>
 <!-- !split -->
 
-<h2 id="___sec1">Motivation </h2>
+<h2 id="___sec1" class="anchor">Motivation </h2>
 When solving the Hartree-Fock project using a nucleon-nucleon interaction in an uncoupled basis (m-scheme), we found a high level of degeneracy. One sees clear from the table here that we have a  degeneracy in the angular momentum \( j \), resulting in \( 2j+1 \) states with the same energy. This reflects the rotational symmetry and spin symmetry of the nuclear forces.
 
 <p>

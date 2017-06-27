@@ -24,6 +24,15 @@ Automatically generated HTML file from DocOnce source
    max-height: 400px;
    overflow-x: hidden;
 }
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
 </style>
 
 
@@ -368,7 +377,7 @@ MathJax.Hub.Config({
 <p>
 <!-- --- begin exercise --- -->
 
-<h2 id="___sec83">Exercise 4: First simple shell-model calculation </h2>
+<h2 id="___sec83" class="anchor">Exercise 4: First simple shell-model calculation </h2>
 
 <p>
 We will now consider a simple three-level problem, depicted in the figure below. This is our first and very simple model of a possible many-nucleon (or just fermion) problem and the shell-model.

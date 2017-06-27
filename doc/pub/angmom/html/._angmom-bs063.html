@@ -24,6 +24,15 @@ Automatically generated HTML file from DocOnce source
    max-height: 400px;
    overflow-x: hidden;
 }
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
 </style>
 
 
@@ -502,7 +511,7 @@ MathJax.Hub.Config({
 <a name="part0063"></a>
 <!-- !split -->
 
-<h2 id="___sec62">Angular momentum algebra, Wigner-Eckart theorem </h2>
+<h2 id="___sec62" class="anchor">Angular momentum algebra, Wigner-Eckart theorem </h2>
 However, when we deal the same state in an angular momentum coupled basis, we need to be a little bit more careful. We can namely couple the states
 as follows
 $$
