@@ -169,8 +169,8 @@ The acronyms are
 | Tuesday 11 | 9am-10am | Spectroscopic factors from experiment (AG) | |
 |         | 10am-1230pm | Spectroscopic factors from theory (BAB) | |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
-|         | 230pm-3pm | Monte Carlo Shell-model seminar by Takaharu Otsuka |                     |
-|         | 3pm-6pm  |            |  Work on shell-model project and NushellX |
+|         | 230pm-330pm | Monte Carlo Shell-model seminar by Takaharu Otsuka |                     |
+|         | 330pm-6pm  |            |  Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
 | Wednesday 12 | 9am-11am | Introduction to $\beta$-decay, experiment (RG)  |  |
 |           | 11am-1230pm | $\beta$-decay and sum rules from theory (BAB)  |  |
