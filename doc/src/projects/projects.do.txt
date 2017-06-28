@@ -34,7 +34,7 @@ label{eq:hamiltonian}
 where $a_{p}^{\dagger}$ and $a_{q}$ etc. are standard fermion creation and annihilation operators, respectively,
 and $pqrs$ represent all possible single-particle quantum numbers. 
 The full single-particle space is defined by the completeness relation
-$\hat{_1_} = \sum_{p =1}^{\infty}|p \rangle \langle p|$.
+$\hat{1} = \sum_{p =1}^{\infty}|p \rangle \langle p|$.
 In our calculations  we will let  the single-particle states $|p\rangle$
 be eigenfunctions of  the one-particle operator $\hat{h}_0$. 
 
