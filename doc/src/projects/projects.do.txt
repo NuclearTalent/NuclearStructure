@@ -1,10 +1,10 @@
 TITLE: Shell-model project for Nuclear Talent course
 AUTHOR: European Center for Theoretical Studies in Nuclear Physics and Related Areas, Trento, Italy, 3-21 July, 2017
-DATE: Today
+DATE: This text will be updated with more material
 
 ===== Introduction =====
 
-The project is split in three main parts. The first part deals with a simple pairing model and the development of a shell-model program related to this model. This program can then be developed into a more general shell-model program that allows you to study general nuclear structure problems. That is the second part of the project. In parallel, we will also use NushellX in order to perform more advanced shell-model studies and 
+The project is divided in three main parts. The first part deals with a simple pairing model and the development of a shell-model program related to this model. This program can then be developed into a more general shell-model program that allows you to study general nuclear structure problems. That is the second part of the project. In parallel, we will also use NushellX in order to perform more advanced shell-model studies and compare the results obtained with your own shell-model code to those of NushellX.  We expect you to form working groups consisting of typically three (or more) participants. Every group should establish its own Github or Gitlab repository for the project.
 
 ===== Part 1, pairing problem =====
 
@@ -15,7 +15,7 @@ Pairing plays a central role in nuclear physics, in particular, for identical pa
 
 
 We define first the Hamiltonian, with a definition of the model space and
-the single-particle basis. Thereafter, we present the various exercises.
+the single-particle basis. Thereafter, we present the various steps which are needed to develop a shell-model program for studying the pairing problem.
 
 The Hamiltonian acting in the complete Hilbert space (usually infinite
 dimensional) consists of an unperturbed one-body part, $\hat{H}_0$,
@@ -30,7 +30,7 @@ then represented by the following operators
 label{eq:hamiltonian}
 \end{equation}
 !et
-where $a_{p}^{\dagger}$ and $a_{q}$ etc. are standard fermion creation and annihilation operators, respectively,
+where $a_{p}^{\dagger}$ and $a_{q}$ etc are standard fermion creation and annihilation operators, respectively,
 and $pqrs$ represent all possible single-particle quantum numbers. 
 The full single-particle space is defined by the completeness relation
 $\hat{1} = \sum_{p =1}^{\infty}|p \rangle \langle p|$.
@@ -78,7 +78,7 @@ where $g$ is a constant. The above labeling means that for a  general matrix ele
 $\langle pq| V|rs\rangle$ we require that the states $p$ and $q$ (and $r$ and $s$) have the same number 
 quantum number $q$ but opposite spins. The two spins values are
 $\sigma = \pm 1$.  
-_Note: you need to figure out how to make the two-body interaction antisymmetric._
+When setting up the Hamiltonian matrix you need to figure out how to make the two-body interaction antisymmetric.
 The variables $\sigma=\pm$ represent the two possible spin values. The 
 interaction can only couple pairs and excites therefore only two
 particles at the time.
@@ -89,7 +89,7 @@ In a realistic system like the atomic  nucleus this is not the case.
 
 
 
-The   unperturbed Hamiltonian  $\hat{H}_0$ and $\hat{V}$ both commute
+The   unperturbed Hamiltonian  $\hat{H}_0$ and $\hat{V}$  commute
 with  the spin projection $\hat{S}_z$ and the total spin
 $\hat{S}^2$.
 This is an important feature of our system that allows us to block-diagonalize
@@ -176,9 +176,9 @@ We  refer to this as the exact results. Comment the behavior of the ground state
 Our next step is to develop a code which sets up the above Hamiltonian matrices for two and four particles in 2 and 4 single-particles states (the same as what you did in exercises b) and c) and obtain the eigenvalues.
 To achieve this you should
 
-* Decide whether you want to read from file the single-particle data and the matrix elements in $m$-scheme, or set them up internally in your code. The latter is the simplest possibility for the pairing model, whereas the first option gives you a more general code which can be extended to more realistic cases. The final oral project could thus be an extension of this program.
+* Decide whether you want to read from file the single-particle data and the matrix elements in $m$-scheme, or set them up internally in your code. The latter is the simplest possibility for the pairing model, whereas the first option gives you a more general code which can be extended to the more realistic cases discussed in the second part. 
 
-* Based on the single-particle basis, write a function which sets up all possible Slater determinants which have total $M=0$.  Test that this function  reproduces the cases in b) and c). If you make this function more general, it can then be reused for say a shell-model calculation of $sd$-shell nuclei.
+* Based on the single-particle basis, write a function which sets up all possible Slater determinants which have total $M=0$.  Test that this function  reproduces the cases in b) and c). If you make this function more general, it can then be reused for say a shell-model calculation of $sd$-shell nuclei in the second part.
 
 * Use the Slater determinant basis from the previous step to set up the Hamiltonian matrix.
 
@@ -191,7 +191,7 @@ on how to construct a Slater determinant basis and how to set up the Hamiltonian
 === Part 1e: Further benchmarks ===
 In developing the code it also useful to test against cases which have closed-form solutions. One obvious case is that of removing the 
 two-body interaction. Then we have only the single-particle energies.
-For the case of degenerete single-particle orbits, that is one value of total single-particle angular momentum only $j$, with degeneracy $\Omega=2j+1$, one can show that the ground state energy $E_0$ is with $n$ particles
+For the case of degenerate single-particle orbits, that is one value of total single-particle angular momentum only $j$, with degeneracy $\Omega=2j+1$, one can show that the ground state energy $E_0$ is with $n$ particles
 
 !bt
 \begin{equation*}
@@ -206,21 +206,22 @@ against the exact result for the ground state. Introduce thereafter a finite sin
 
 ===== Part 2, buidling your own shell-model program =====
 
-The way we will set up the Slater determinants here follows a simple odometric recipe. The way it is done in more professional codes, is to use bitwise manipulations. 
+The way we will set up the Slater determinants here follows a simple odometric recipe. The way it is done in more professional codes, is to use bitwise manipulations. The latter is a possible extension/challenge for those interested.
 
-Part two of our project consists of at least two possible paths. The first three points below aim at performing shell-model studies of the oxygen isotopes using standard
-effective interactions (provided by us) using the $1s0d$ shell as the model space.  If on the other hand you wish to continue with the pairing model from the project, the last two points may allow for that.
-The aim of this project is mainly to extend the code you developed under part 1 in order to be able to study more realistic problems or continue your studies of the simple pairing model. In both cases you can quickly come into situations where the matrix is too large to store.  You will also need to consider a bit representation and manipulation of Slater determinants and to implement 
-the Lanczos algorithm. 
+Part two of our project consists of at developing your own shell-model code that can perform shell-model studies of the oxygen isotopes using standard
+effective interactions (provided by us) using as example the $1s0d$ shell as model space.  
+You may also need to consider a bit representation and manipulation of Slater determinants and to implement 
+the Lanczos algorithm. These details will be discussed during our lectures.
 
 
 
-  * For the shell-model part you need now to read in your data from file, both the single-particle states and the effective interaction. At the end of this file, you will find the USDB ($1s0d$-shell effective interaction, see refeence 1 for more background literature).  If you have not done so, rewrite your code from the project so that you can read in this interaction.
+  * For the shell-model part you need now to read in your data from file, both the single-particle states and the effective interaction. We will provide you with the "USDB":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.74.034315" ($1s0d$-shell effective interaction).  If you have not done so, rewrite your code from the project so that you can read in this interaction.
 
   * For the oxygen isotopes you can actually use your previous program and perform shell-model calculations of the oxygen isotopes using the $1s0d$ shell. Your results should agree with those obtained using Alex Brown's code Nushellx. Compute the spectra of the 3-4 lowest lying states of the oxygen isotopes from $^{18}$O to $^{28}$O and compare with data and the Alex Brown's results.
 
-  * The code we wrote in the project  was however not very efficient, unless you already implemented the bit representation. As an optional challenge, you may now wish to consider the inclusion of a bit representation along the lines discussed in the lecture slides, and inserted below here as well.  Reference 2, included in the project material may be useful as well. Note that this part may quickly become time consuming.
+  * The code we wrote in the project  was however not very efficient, unless you already implemented the bit representation. As an optional challenge, you may now wish to consider the inclusion of a bit representation along the lines discussed in the lecture slides, and inserted below in the appendix here as well.  Note that this part may quickly become time consuming. You may also consider implementing the Lanczos' algorithm as discussed by "Whitehead et al.":"https://link.springer.com/chapter/10.1007%2F978-1-4615-8234-2_2" 
 
+  * We will also provide you with effective $1s0d$-shell interactions derived using Coupled cluster theory and the aim is to reproduce the published results of "Jansen et al":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.94.011301", see also "their Physical Review Letters article as well":"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.113.142502". The derivation of these interactions, with pertaining codes will be discussed by Gustav in his lectures at this course. 
 
 
 ===== Part 3 =====
@@ -230,12 +231,12 @@ The aim of this project is to study the structure of selected
 low-lying states of the oxygen and fluorine isotopes towards their
 respective dripline. We will focus mainly on spectra using Alex
 Brown's Nushellx code.  These chains of isotopes have been studied
-extensively during the last years (see the reference list), with many
+extensively during the last years, with many
 efforts toward the understanding of their dripline properties,
 involving studies of low-lying excited states and electromagnetic
 transitions. For the oxygen isotopes, $^{24}$O is the last
 particle-stable nucleus, and for the fluorine isotopes $^{31}$F is
-assumed to the last stable one.
+assumed to the last stable one.  This part can also be used to benchmark your shell-model program from the second part.
 
 The task here is to study these isotopic chains, extract excitation
 energies and compare with available data. To achieve this you will
@@ -253,18 +254,10 @@ to consider only the single-particle states $0f_{7/2}$ and $1p_{3/2}$.
 
 
 * Test your effective interaction and setup of single-particle energies by computing the spectra of $^{18}$O and $^{18}$F in order to see that your $1s0d$-shell calculations where set up correctly.  Compare the spectra with available data.
-Use the USDA and USDB interactions in the Nushellx directory over interactions, see Reference 1 below.
+Use the "USDA and USDB interactions":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.74.034315" in the NushellX directory over interactions.
 * Perform shell-model studies using Nushellx for all oxygen isotopes from $^{18}$O to $^{28}$O, plot the lowest-lying 3-4 states and compare with data where available. Comment your results. 
 * Perform also shell-model studies using Nushellx for all oxygen isotopes from $^{18}$F to $^{29}$F, plot the lowest-lying 3-4 states and compare with data where available. Comment your results. Try also to compute $^{30}$F and $^{31}$F. Here you need to include the $0f_{7/2}$ and $1p_{3/2}$ single-particle states. 
 * See also if you can find  excited states in $^{25}$O and $^{25}$F  with negative parity.
-
-
-o B. A. Brown and W. A. Richter, Phys. Rev. C _74_,  034315 (2006).
-
-o R. R. .Whitehead *et al.*, Adv. Nucl. Phys. _9_, 123 (1977).
-
-o J. Dukelsky and S. Pittel, preprint arxiv 1204.2950
-
 
 
 
