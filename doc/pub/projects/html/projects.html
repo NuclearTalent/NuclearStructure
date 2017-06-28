@@ -1,0 +1,582 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="Shell-model project for Nuclear Talent course">
+
+<title>Shell-model project for Nuclear Talent course</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('Introduction', 2, None, '___sec0'),
+              ('Paper and pencil gym while the wait for more serious stuff',
+               3,
+               None,
+               '___sec1'),
+              ('Simpler case', 3, None, '___sec2'),
+              ('Setting up the Hamiltonian matrix', 3, None, '___sec3'),
+              ('Diagonalizing the Hamiltonian matrix', 3, None, '___sec4'),
+              ('Further benchmarks', 3, None, '___sec5'),
+              ('Bit representation', 1, None, '___sec6')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>Shell-model project for Nuclear Talent course</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): European Center for Theoretical Studies in Nuclear Physics and Related Areas, Trento, Italy, 3-21 July, 2017 -->
+
+<center>
+<b>European Center for Theoretical Studies in Nuclear Physics and Related Areas, Trento, Italy, 3-21 July, 2017</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Jun 28, 2017</h4></center> <!-- date -->
+<br>
+
+<h2 id="___sec0">Introduction </h2>
+
+<p>
+The aim of this project is to study a simple pairing model and thereafter construct a shell-model program which finds the eigenvalues.
+The model is simple enough that closed-form solutions can be found, allowing thereby for useful tests of shell-model codes or other
+numerical approaches to Schroedinger's equation.
+
+<p>
+In this project we will thus work with a simplified Hamiltonian consisting of a one-body operator and a so-called 
+ pairing interaction term. It is a model which to a large extent mimicks some central features of
+atomic nuclei, certain atoms and systems which exhibit superfluiditity or superconductivity.  
+Pairing plays a central role in nuclear physics, in particular, for identical particles it makes up large fractions of the correlations among particles. The partial wave \( ^{1}S_0 \) of the nucleon-nucleon force plays a central role in setting up pairing correlations in nuclei. Without this particular partial wave, the \( J=0 \) ground state spin assignment for many nuclei with even numbers of particles would not be possible.
+
+<p>
+We define first the Hamiltonian, with a definition of the model space and
+the single-particle basis. Thereafter, we present the various exercises.
+
+<p>
+The Hamiltonian acting in the complete Hilbert space (usually infinite
+dimensional) consists of an unperturbed one-body part, \( \hat{H}_0 \),
+and a perturbation \( \hat{H}_I \).
+
+<p>
+We limit ourselves to at most two-body interactions, our Hamiltonian  is 
+then represented by the following operators
+
+$$
+\begin{equation}
+\hat{H} = \hat{H}_0 +\hat{H}_I=\sum_{pq}\langle p |h_0|q\rangle a_{p}^{\dagger}a_{q} +\frac{1}{4}\sum_{pqrs}\langle pq| V|rs\rangle a_{p}^{\dagger}a_{q}^{\dagger}a_{s}a_{r},
+\label{eq:hamiltonian}
+\end{equation}
+$$
+
+where \( a_{p}^{\dagger} \) and \( a_{q} \) etc. are standard fermion creation and annihilation operators, respectively,
+and \( pqrs \) represent all possible single-particle quantum numbers. 
+The full single-particle space is defined by the completeness relation
+\( \hat{ < b>1 < /b>} = \sum_{p =1}^{\infty}|p \rangle \langle p| \).
+In our calculations  we will let  the single-particle states \( |p\rangle \)
+be eigenfunctions of  the one-particle operator \( \hat{h}_0 \).
+
+<p>
+The above Hamiltonian 
+acts in turn on various many-body Slater determinants constructed from the single-basis defined by the one-body
+operator \( \hat{h}_0 \).
+
+<p>
+Our specific model consists of only \( 2 \) doubly-degenerate and equally spaced
+single-particle levels labeled by \( p=1,2,\dots \) and spin \( \sigma=\pm
+1 \).  
+In Eq. \eqref{eq:hamiltonian} the labels \( pqrs \) could also include spin \( \sigma \). From now and for the rest of this project, labels like \( pqrs \) represent the states without spin. The spin quantum numbers need to be accounted for explicitely.
+
+<p>
+We write
+the Hamiltonian as
+
+$$
+\begin{equation*} \hat{H} = \hat{H}_0 +\hat{H}_I=\hat{H}_0 + \hat{V} , \end{equation*}
+$$
+
+where
+
+$$
+\begin{equation*}
+\hat{H}_0=\xi\sum_{p\sigma}(p-1)a_{p\sigma}^{\dagger}a_{p\sigma}.
+\end{equation*}
+$$
+
+Here, \( H_0 \) is the unperturbed Hamiltonian with a spacing between
+successive single-particle states given by \( \xi \), which we will set to
+a constant value \( \xi=1 \) without loss of generality.
+
+<p>
+The two-body
+operator \( \hat{V} \) has one term only. It represents the
+pairing contribution and carries a constant strength \( g \)
+and is  given by
+
+$$
+\begin{equation*}
+\langle q+q-| V|s+s-\rangle  = -g  
+\end{equation*}
+$$
+
+where \( g \) is a constant. The above labeling means that for a  general matrix elements
+\( \langle pq| V|rs\rangle \) we require that the states \( p \) and \( q \) (and \( r \) and \( s \)) have the same number 
+quantum number \( q \) but opposite spins. The two spins values are
+\( \sigma = \pm 1 \).  
+<b>Note: you need to figure out how to make the two-body interaction antisymmetric.</b>
+The variables \( \sigma=\pm \) represent the two possible spin values. The 
+interaction can only couple pairs and excites therefore only two
+particles at the time.
+
+<p>
+In our model we have kept both the interaction strength and the single-particle level as constants.
+In a realistic system like the atomic  nucleus this is not the case.
+
+<p>
+The   unperturbed Hamiltonian  \( \hat{H}_0 \) and \( \hat{V} \) both commute
+with  the spin projection \( \hat{S}_z \) and the total spin
+\( \hat{S}^2 \).
+This is an important feature of our system that allows us to block-diagonalize
+the full Hamiltonian. In this project we will focus only on total spin \( S=0 \), this case is normally called the no-broken pair case.
+
+<h3 id="___sec1">Paper and pencil gym while the wait for more serious stuff </h3>
+
+Show that the
+unperturbed Hamiltonian  \( \hat{H}_0 \) and \( \hat{V} \) commute
+with both the spin projection \( \hat{S}_z \) and the total spin
+\( \hat{S}^2 \), given by
+
+$$
+\begin{equation*}
+  \hat{S}_z := \frac{1}{2}\sum_{p\sigma} \sigma a^\dag_{p\sigma}a_{p\sigma}
+\end{equation*}
+$$
+
+and
+
+$$
+\begin{equation*}
+  \hat{S}^2 := \hat{S}_z^2 + \frac{1}{2}(\hat{S}_+\hat{S}_- +
+  \hat{S}_-\hat{S}_+),
+\end{equation*}
+$$
+
+where
+
+$$
+\begin{equation*}
+  \hat{S}_\pm := \sum_{p} a^\dag_{p\pm} a_{p\mp}.
+\end{equation*}
+$$
+
+<p>
+This is an important feature of our system that allows us to block-diagonalize
+the full Hamiltonian. We will focus on total spin \( S=0 \).
+In this case, it is convenient to define the so-called pair creation and pair
+annihilation operators
+
+$$
+\begin{equation*}
+\hat{P}^{+}_p = a^\dag_{p+}a^\dag_{p-},
+\end{equation*}
+$$
+
+and
+
+$$
+\begin{equation*}
+\hat{P}^{-}_p = a_{p-}a_{p+},
+\end{equation*}
+$$
+
+respectively.
+
+<p>
+The Hamiltonian (with \( \xi=1 \)) we will use can be written as
+
+$$
+\begin{equation*}
+\hat{H}=\sum_{p\sigma}(p-1)a_{p\sigma}^{\dagger}a_{p\sigma}
+-g\sum_{pq}\hat{P}^{+}_p\hat{P}^{-}_q.
+\end{equation*}
+$$
+
+Show  that Hamiltonian commutes with the product of the pair creation and annihilation operators.
+This model corresponds to a system with no broken pairs. This means that the Hamiltonian can only link two-particle states in so-called spin-reversed states.
+
+<h3 id="___sec2">Simpler case </h3>
+
+Assume now that the effective Hilbert space consists only of the two lowest single-particle states and that we have two particles only.
+Set up the possible two-particle configurations when we have only two single-particle states, that is \( p=1 \) and \( p=2 \). 
+Construct thereafter the Hamiltonian matrix using second quantization and for example Wick's theorem 
+for a system with no broken pairs and spin \( S=0 \) (with projection \( S_z=0 \)) for the case of the two lowest single-particle levels  and two particles only.  This gives you a
+ \( 2\times 2 \) matrix to be diagonalized.
+
+<p>
+Find the eigenvalues by diagonalizing the Hamiltonian matrix.
+Vary your results for selected values of \( g\in [-1,1] \) and comment your results.
+
+<h3 id="___sec3">Setting up the Hamiltonian matrix </h3>
+
+Construct thereafter the Hamiltonian matrix for a system with no broken pairs and spin \( S=0 \) for the case of the four lowest single-particle levels. Our system consists of four particles only.
+Our single-particle space consists of only the four lowest levels 
+\( p=1,2,3,4 \).  You need to set up all possible Slater determinants and the Hamiltonian matrix using second quantization and
+find all eigenvalues by diagonalizing the Hamiltonian matrix.
+Vary your results for values of \( g\in [-1,1] \).  Your Hamiltonian matrix is a \( 6\times 6 \) matrix. 
+These results will serve as a benchmark for the construction  of our shell-model program. 
+We  refer to this as the exact results. Comment the behavior of the ground state as function of \( g \).
+
+<h3 id="___sec4">Diagonalizing the Hamiltonian matrix </h3>
+
+Our next step is to develop a code which sets up the above Hamiltonian matrices for two and four particles in 2 and 4 single-particles states (the same as what you did in exercises b) and c) and obtain the eigenvalues.
+To achieve this you should
+
+<ul>
+<li> Decide whether you want to read from file the single-particle data and the matrix elements in \( m \)-scheme, or set them up internally in your code. The latter is the simplest possibility for the pairing model, whereas the first option gives you a more general code which can be extended to more realistic cases. The final oral project could thus be an extension of this program.</li>
+<li> Based on the single-particle basis, write a function which sets up all possible Slater determinants which have total \( M=0 \).  Test that this function  reproduces the cases in b) and c). If you make this function more general, it can then be reused for say a shell-model calculation of \( sd \)-shell nuclei.</li>
+<li> Use the Slater determinant basis from the previous step to set up the Hamiltonian matrix.</li>
+<li> With the Hamiltonian matrix, you can finally diagonalize the matrix and obtain the final eigenvalues and test against the results of b) and c).</li>
+</ul>
+
+Codes to diagonalize in C++ or Fortran can be provided. For Python, numpy contains eigenvalue solvers based on for example Householder's and Givens' algorithms.   These are topics which can we discuss separately. The lecture slides contain a rather detailed recipe
+on how to construct a Slater determinant basis and how to set up the Hamiltonian matrix to diagonalize.
+
+<h3 id="___sec5">Further benchmarks </h3>
+
+In developing the code it also useful to test against cases which have closed-form solutions. One obvious case is that of removing the 
+two-body interaction. Then we have only the single-particle energies.
+For the case of degenerete single-particle orbits, that is one value of total single-particle angular momentum only \( j \), with degeneracy \( \Omega=2j+1 \), one can show that the ground state energy \( E_0 \) is with \( n \) particles
+
+$$
+\begin{equation*}
+E_0= -\frac{g}{4}n\left(\Omega-n+2\right).
+\end{equation*}
+$$
+
+<p>
+Enlarge now your system to six and eight fermions and to \( p=6 \) and \( p=8 \) single-particle states, respectively. Run your program for a degenerate single-particle state with degeneracy \( \Omega \) and test
+against the exact result for the ground state. Introduce thereafter a finite single-particle spacing and study the results as you vary \( g \),  as done in b) and c). Comment your results.
+
+<p>
+The way we will set up the Slater determinants here follows a simple odometric recipe. The way it is done in more professional codes, is to use bitwise manipulations. If this is of interest, this project could form the basis for the development of a more advanced code
+to be presented at the final oral exam. Another alternative is to study algorithms for exact solutions of the pairing model with many fermions. This could also form the basis for the final oral presentation.
+
+<p>
+This project consists of at least two possible paths. The first three points below aim at performing shell-model studies of the oxygen isotopes using standard
+effective interactions (provided by us) using the \( 1s0d \) shell as the model space.  If on the other hand you wish to continue with the pairing model from the project, the last two points may allow for that.
+The aim of this project is mainly to extend the code you developed under the project in order to be able to study more realistic problems or continue your studies of the simple pairing model. In both cases you can quickly come into situations where the matrix is too large to store.  You will also need to consider a bit representation and manipulation of Slater determinants and to implement 
+the Lanczos algorithm. 
+
+<ul>
+  <li> For the shell-model part you need now to read in your data from file, both the single-particle states and the effective interaction. At the end of this file, you will find the USDB (\( 1s0d \)-shell effective interaction, see refeence 1 for more background literature).  If you have not done so, rewrite your code from the project so that you can read in this interaction.</li>
+  <li> For the oxygen isotopes you can actually use your previous program and perform shell-model calculations of the oxygen isotopes using the \( 1s0d \) shell. Your results should agree with those obtained using Alex Brown's code Nushellx. Compute the spectra of the 3-4 lowest lying states of the oxygen isotopes from $^{18}$O to $^{28}$O and compare with data and the Alex Brown's results.</li>
+  <li> The code we wrote in the project  was however not very efficient, unless you already implemented the bit representation. As an optional challenge, you may now wish to consider the inclusion of a bit representation along the lines discussed in the lecture slides, and inserted below here as well.  Reference 2, included in the project material may be useful as well. Note that this part may quickly become time consuming.</li>
+  <li> As an alternative to all of the above, you may wish to continue your studies of the pairing model. You should then extend the program from the project  in order to be able to deal with broken pairs as well. Since you found that your Hamiltonian commutes with the pair creation operators and the spin operators, you can block-diagonalize your matrix in blocks with zero broken pairs (so-called seniority zero), one broken pair (seniority two), two broken pairs etc.  Perform now shell-model calculations for the pairing model by including also one and two broken pairs. How does the ground state evolve (no broken pairs) compared with the lowest-lying state with one broken pair? How would you define the pairing gap?</li>
+  <li> As an extension to the last point, you may consider relating the results from the previous point to ongoing literature on so-called exact pairing, see for example the third reference below.</li>
+</ul>
+
+<h1 id="___sec6">Bit representation </h1>
+
+<p>
+In the build-up of a shell model code that is meant to tackle large dimensionalities
+is the action of the Hamiltonian \( \hat{H} \) on a 
+Slater determinant represented in second quantization as
+
+$$
+\begin{equation*}
+\vert \alpha_1\dots \alpha_n\rangle = a_{\alpha_1}^\dagger a_{\alpha_2}^\dagger \dots a_{\alpha_n}^\dagger \vert 0\rangle.
+\end{equation*}
+$$
+
+The time consuming part stems from the action of the Hamiltonian
+on the above determinant,
+
+$$
+\begin{equation*}
+\left(\sum_{\alpha\beta} \langle \alpha\vert \hat{t}+\hat{u}\vert \beta\rangle a_\alpha^\dagger a_\beta + \frac{1}{4} \sum_{\alpha\beta\gamma\delta}
+\langle\alpha \beta\vert \hat{V}\vert \gamma \delta\rangle a_\alpha^\dagger a_\beta^\dagger a_\delta a_\gamma\right)a_{\alpha_1}^\dagger a_{\alpha_2}^\dagger \dots a_{\alpha_n}^\dagger \vert 0\rangle.
+\end{equation*}
+$$
+
+A practically useful way to implement this action is to encode a Slater determinant as a bit pattern. 
+Assume that we have at our disposal \( n \) different single-particle orbits
+\( \alpha_0,\alpha_2,\dots,\alpha_{n-1} \) and that we can distribute  among these orbits \( N\le n \) particles.
+
+<p>
+A Slater  determinant can then be coded as an integer of \( n \) bits. As an example, if we have \( n=16 \) single-particle states
+\( \alpha_0,\alpha_1,\dots,\alpha_{15} \) and \( N=4 \) fermions occupying the states \( \alpha_3 \), \( \alpha_6 \), \( \alpha_{10} \) and \( \alpha_{13} \)
+we could write this Slater determinant as
+
+$$
+\begin{equation*}
+\Phi_{\Lambda} = a_{\alpha_3}^\dagger a_{\alpha_6}^\dagger a_{\alpha_{10}}^\dagger a_{\alpha_{13}}^\dagger \vert 0 \rangle .
+\end{equation*}
+$$
+
+The unoccupied single-particle states have bit value \( 0 \) while the occupied ones are represented by bit state \( 1 \). 
+In the binary notation we would write this   16 bits long integer as
+
+$$
+\begin{equation*}
+\begin{array}{cccccccccccccccc}
+{\alpha_0}&{\alpha_1}&{\alpha_2}&{\alpha_3}&{\alpha_4}&{\alpha_5}&{\alpha_6}&{\alpha_7} & {\alpha_8} &{\alpha_9} & {\alpha_{10}} &{\alpha_{11}} &{\alpha_{12}} &{\alpha_{13}} &{\alpha_{14}} & {\alpha_{15}} \\
+{0} & {0} &{0} &{1} &{0} &{0} &{1} &{0} &{0} &{0} &{1} &{0} &{0} &{1} &{0} & {0} \\
+\end{array}
+\end{equation*}
+$$
+
+which translates into the decimal number
+
+$$
+\begin{equation*}
+2^3+2^6+2^{10}+2^{13}=9288.
+\end{equation*}
+$$
+
+We can thus encode a Slater determinant as a bit pattern.
+With \( N \) particles that can be distributed over \( n \) single-particle states, the total number of Slater determinats (and defining thereby the dimensionality of the system) is
+
+$$
+\begin{equation*}
+\mathrm{dim}(\mathcal{H}) = \left(\begin{array}{c} n \\N\end{array}\right).
+\end{equation*}
+$$
+
+The total number of bit patterns is \( 2^n \). 
+We assume again that we have at our disposal \( n \) different single-particle orbits
+\( \alpha_0,\alpha_2,\dots,\alpha_{n-1} \) and that we can distribute  among these orbits \( N\le n \) particles.
+The ordering among these states is important as it defines the order of the creation operators.
+We will write the determinant
+
+$$
+\begin{equation*}
+\Phi_{\Lambda} = a_{\alpha_3}^\dagger a_{\alpha_6}^\dagger a_{\alpha_{10}}^\dagger a_{\alpha_{13}}^\dagger \vert 0 \rangle ,
+\end{equation*}
+$$
+
+in a more compact way as
+
+$$
+\begin{equation*}
+\Phi_{3,6,10,13} = |0001001000100100\rangle.
+\end{equation*}
+$$
+
+The action of a creation operator is thus
+
+$$
+\begin{equation*}
+a^\dagger_{\alpha_4}\Phi_{3,6,10,13} = a^\dagger_{\alpha_4}|0001001000100100\rangle=a^\dagger_{\alpha_4}a_{\alpha_3}^\dagger a_{\alpha_6}^\dagger a_{\alpha_{10}}^\dagger a_{\alpha_{13}}^\dagger \vert 0 \rangle ,
+\end{equation*}
+$$
+
+which becomes
+
+$$
+\begin{equation*}
+-a_{\alpha_3}^\dagger a^\dagger_{\alpha_4} a_{\alpha_6}^\dagger a_{\alpha_{10}}^\dagger a_{\alpha_{13}}^\dagger \vert 0 \rangle =-|0001101000100100\rangle.
+\end{equation*}
+$$
+
+Similarly
+
+$$
+\begin{equation*}
+a^\dagger_{\alpha_6}\Phi_{3,6,10,13} = a^\dagger_{\alpha_6}|0001001000100100\rangle=a^\dagger_{\alpha_6}a_{\alpha_3}^\dagger a_{\alpha_6}^\dagger a_{\alpha_{10}}^\dagger a_{\alpha_{13}}^\dagger \vert 0 \rangle ,
+\end{equation*}
+$$
+
+which becomes
+
+$$
+\begin{equation*}
+-a^\dagger_{\alpha_4} (a_{\alpha_6}^\dagger)^ 2 a_{\alpha_{10}}^\dagger a_{\alpha_{13}}^\dagger \vert 0 \rangle =0!
+\end{equation*}
+$$
+
+This gives a simple recipe:  
+
+<ul>
+  <li> If one of the bits \( b_j \) is \( 1 \) and we act with a creation operator on this bit, we return a null vector</li>
+  <li> If \( b_j=0 \), we set it to \( 1 \) and return a sign factor \( (-1)^l \), where \( l \) is the number of bits set before bit \( j \).</li>
+</ul>
+
+Consider the action of \( a^\dagger_{\alpha_2} \) on various slater determinants:
+
+$$
+\begin{equation*}
+\begin{array}{ccc}
+a^\dagger_{\alpha_2}\Phi_{00111}& = a^\dagger_{\alpha_2}|00111\rangle&=0\times |00111\rangle\\
+a^\dagger_{\alpha_2}\Phi_{01011}& = a^\dagger_{\alpha_2}|01011\rangle&=(-1)\times |01111\rangle\\
+a^\dagger_{\alpha_2}\Phi_{01101}& = a^\dagger_{\alpha_2}|01101\rangle&=0\times |01101\rangle\\
+a^\dagger_{\alpha_2}\Phi_{01110}& = a^\dagger_{\alpha_2}|01110\rangle&=0\times |01110\rangle\\
+a^\dagger_{\alpha_2}\Phi_{10011}& = a^\dagger_{\alpha_2}|10011\rangle&=(-1)\times |10111\rangle\\
+a^\dagger_{\alpha_2}\Phi_{10101}& = a^\dagger_{\alpha_2}|10101\rangle&=0\times |10101\rangle\\
+a^\dagger_{\alpha_2}\Phi_{10110}& = a^\dagger_{\alpha_2}|10110\rangle&=0\times |10110\rangle\\
+a^\dagger_{\alpha_2}\Phi_{11001}& = a^\dagger_{\alpha_2}|11001\rangle&=(+1)\times |11101\rangle\\
+a^\dagger_{\alpha_2}\Phi_{11010}& = a^\dagger_{\alpha_2}|11010\rangle&=(+1)\times |11110\rangle\\
+\end{array}
+\end{equation*}
+$$
+
+What is the simplest way to obtain the phase when we act with one annihilation(creation) operator
+on the given Slater determinant representation?
+We have an SD representation
+
+$$
+\begin{equation*}
+\Phi_{\Lambda} = a_{\alpha_0}^\dagger a_{\alpha_3}^\dagger a_{\alpha_6}^\dagger a_{\alpha_{10}}^\dagger a_{\alpha_{13}}^\dagger \vert 0 \rangle ,
+\end{equation*}
+$$
+
+in a more compact way as
+
+$$
+\begin{equation*}
+\Phi_{0,3,6,10,13} = |1001001000100100\rangle.
+\end{equation*}
+$$
+
+The action of
+
+$$
+\begin{equation*}
+a^\dagger_{\alpha_4}a_{\alpha_0}\Phi_{0,3,6,10,13} = a^\dagger_{\alpha_4}|0001001000100100\rangle=a^\dagger_{\alpha_4}a_{\alpha_3}^\dagger a_{\alpha_6}^\dagger a_{\alpha_{10}}^\dagger a_{\alpha_{13}}^\dagger \vert 0 \rangle ,
+\end{equation*}
+$$
+
+which becomes
+
+$$
+\begin{equation*}
+-a_{\alpha_3}^\dagger a^\dagger_{\alpha_4} a_{\alpha_6}^\dagger a_{\alpha_{10}}^\dagger a_{\alpha_{13}}^\dagger \vert 0 \rangle =-|0001101000100100\rangle.
+\end{equation*}
+$$
+
+The action
+
+$$
+\begin{equation*}
+a_{\alpha_0}\Phi_{0,3,6,10,13} = |0001001000100100\rangle,
+\end{equation*}
+$$
+
+can be obtained by subtracting the logical sum (AND operation) of \( \Phi_{0,3,6,10,13} \) and 
+a word which represents only \( \alpha_0 \), that is
+
+$$
+\begin{equation*}
+|1000000000000000\rangle,
+\end{equation*}
+$$
+
+<p>
+from \( \Phi_{0,3,6,10,13}= |1001001000100100\rangle \).
+
+<p>
+This operation gives \( |0001001000100100\rangle \).
+
+<p>
+Similarly, we can form \( a^\dagger_{\alpha_4}a_{\alpha_0}\Phi_{0,3,6,10,13} \), say, by adding 
+\( |0000100000000000\rangle \) to \( a_{\alpha_0}\Phi_{0,3,6,10,13} \), first checking that their logical sum
+is zero in order to make sure that orbital \( \alpha_4 \) is not already occupied. 
+It is trickier however to get the phase \( (-1)^l \). 
+One possibility is as follows
+
+<ul>
+  <li> Let \( S_1 \) be a word that represents the $1-$bit to be removed and all others set to zero. In the previous example \( S_1=|1000000000000000\rangle \)</li>
+  <li> Define \( S_2 \) as the similar word that represents the bit to be added, that is in our case \( S_2=|0000100000000000\rangle \).</li>
+  <li> Compute then \( S=S_1-S_2 \), which here becomes</li>
+</ul>
+
+$$
+\begin{equation*}
+S=|0111000000000000\rangle
+\end{equation*}
+$$
+
+
+<ul>
+  <li> Perform then the logical AND operation of \( S \) with the word containing</li>
+</ul>
+
+$$
+\begin{equation*} 
+\Phi_{0,3,6,10,13} = |1001001000100100\rangle,
+\end{equation*}
+$$
+
+which results in \( |0001000000000000\rangle \). Counting the number of $1-$bits gives the phase.  Here you need however an algorithm for bitcounting. Several efficient ones available.
+
+<p>
+This algorithm is described in reference 2 below. 
+
+<ol>
+<li> B. A. Brown and W. A. Richter, Phys. Rev. C <b>74</b>,  034315 (2006).</li>
+<li> R. R. .Whitehead <em>et al.</em>, Adv. Nucl. Phys. <b>9</b>, 123 (1977).</li>
+<li> J. Dukelsky and S. Pittel, preprint arxiv 1204.2950</li>
+</ol>
+
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+
