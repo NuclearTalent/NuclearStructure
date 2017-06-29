@@ -258,6 +258,7 @@ Use the "USDA and USDB interactions":"https://journals.aps.org/prc/abstract/10.1
 * Perform shell-model studies using Nushellx for all oxygen isotopes from $^{18}$O to $^{28}$O, plot the lowest-lying 3-4 states and compare with data where available. Comment your results. 
 * Perform also shell-model studies using Nushellx for all oxygen isotopes from $^{18}$F to $^{29}$F, plot the lowest-lying 3-4 states and compare with data where available. Comment your results. Try also to compute $^{30}$F and $^{31}$F. Here you need to include the $0f_{7/2}$ and $1p_{3/2}$ single-particle states. 
 * See also if you can find  excited states in $^{25}$O and $^{25}$F  with negative parity.
+* We will also need to compute neutron decay widths, spectroscopic factors for knockout reactions and gamma decays. These will be discussed during the course.
 
 
 
