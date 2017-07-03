@@ -13,10 +13,10 @@ Group 5: Liqiang, Paolo, Erin
 
 Group 6: Tiia, Shane, Martin
 
-Group 7: Udo, Masaaki, Guillame
+Group 7: Udo, Masaaki, Guillaume
 
 Group 8: Mahza, Tobias, Giovanni
 
 Group 9: Antonio, Agi, Mathias
 
-Group 10: Matthew, Gihlo, Gianluca and Ina
+Group 10: Matthew, Gilho, Gianluca and Ina
