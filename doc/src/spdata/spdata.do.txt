@@ -1442,7 +1442,7 @@ and simplest many-body theory, Hartree-Fock theory.
 !split
 =====   Single-particle Hamiltonians and spin-orbit force  =====
 !bblock
-The Woods-Saxon potential does allow for closed-form or analytical solutions of the eigenvalue problem
+The Woods-Saxon potential does not give us  closed-form or analytical solutions of the eigenvalue problem
 !bt 
 \[
   \hat{h}_0(x_i)\psi_{\alpha}(x_i)=\varepsilon_{\alpha}\psi_{\alpha}(x_i).  
