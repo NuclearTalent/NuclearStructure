@@ -135,22 +135,22 @@ The acronyms are
 |        | 1230pm-230pm  | Lunch +own activities |                             |
 |        | 230pm-6pm   | More survey of data (BAB) | NushellX hands-on and discussion of project (MHJ) |
 |--------------------------------------------------------------------------|
-| Tuesday 4 | 9am-11pm | Mean-field and shell-model basics (MHJ)    |   Discussion of second quantization and simple shell-model project |      
-|         | 11am-1230pm |Single-particle potentials and shell-model basics (BAB)    |  |      
+| Tuesday 4 | 930am1130pm | Mean-field and shell-model basics (MHJ)    |   Discussion of second quantization and simple shell-model project |      
+|         | 1130am-1230pm |Single-particle potentials and shell-model basics (BAB)    |  |      
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  | Single-particle potentials           | Studies of separation energies, shell gaps etc   |
 |--------------------------------------------------------------------------|
-| Wednesday 5 | 9am-11am | Welcome by ECT director Jochen Wambach and Shell-model basics (MHJ)    |   Discussion of simple shell-model project |      
-|          | 11am-1230pm | Shell-model dimensionalities (BAB)    |    |      
+| Wednesday 5 | 930am1130am | Welcome by ECT director Jochen Wambach and Shell-model basics (MHJ)    |   Discussion of simple shell-model project |      
+|          | 1130am-1230pm | Shell-model dimensionalities (BAB)    |    |      
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  |            | Work on shell-model project and NushellX  |
 |--------------------------------------------------------------------------|
-| Thursday 6 | 9am-11am | Shell-model basics (MHJ)    |   Discussion of simple shell-model project |      
-|          | 11am-1230pm  | Proton-neutron formalism and isospin (BAB)  |    |      
+| Thursday 6 | 930am1130am | Shell-model basics (MHJ)    |   Discussion of simple shell-model project |      
+|          | 1130am-1230pm  | Proton-neutron formalism and isospin (BAB)  |    |      
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  |            | Work on shell-model project and NushellX  |
 |--------------------------------------------------------------------------|
-| Friday 7 | 9am-1230pm | Effective interactions for shell model (GJ)    |    |      
+| Friday 7 | 930am1230pm | Effective interactions for shell model (GJ)    |    |      
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-5pm  |            |  Group presentation of work on shell-model project and NushellX  |
 |--------------------------------------------------------------------------|
@@ -161,28 +161,28 @@ The acronyms are
 |--------------------------------------------------------------------------|
 | Day   |  | Lecture Topics and lecturer |   Projects and exercises        |
 |--------------------------------------------------------------------------|
-| Monday 10 | 9am-10am | Masses from experiment  (AG) |                           |
-|        | 10am-1230pm | Effective Hamiltonians (BAB and GJ) |                           |
+| Monday 10 | 930am1030am | Masses from experiment  (AG) |                           |
+|        | 1030am-1230pm | Effective Hamiltonians (BAB and GJ) |                           |
 |        | 1230pm-230pm  | Lunch +own activities |                             |
 |        | 230pm-6pm   |  | Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Tuesday 11 | 9am-10am | Spectroscopic factors from experiment (AG) | |
-|         | 10am-1230pm | Spectroscopic factors from theory (BAB) | |
+| Tuesday 11 | 930am1030am | Spectroscopic factors from experiment (AG) | |
+|         | 1030am-1230pm | Spectroscopic factors from theory (BAB) | |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-330pm | Monte Carlo Shell-model seminar by Takaharu Otsuka |                     |
 |         | 330pm-6pm  |            |  Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Wednesday 12 | 9am-11am | Introduction to $\beta$-decay, experiment (RG)  |  |
-|           | 11am-1230pm | $\beta$-decay and sum rules from theory (BAB)  |  |
+| Wednesday 12 | 930am1130am | Introduction to $\beta$-decay, experiment (RG)  |  |
+|           | 1130am-1230pm | $\beta$-decay and sum rules from theory (BAB)  |  |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  |        | Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Thursday 13 | 9am-10am | Electromagnetic decays from experiment (AG) |  |
-|          | 10am-1230pm | Shell-model transition probabilities (BAB) |  |
+| Thursday 13 | 930am1030am | Electromagnetic decays from experiment (AG) |  |
+|          | 1030am-1230pm | Shell-model transition probabilities (BAB) |  |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  |            |  Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Friday 14 | 9am-11am | Advanced aspects of  $\beta$-decay, experiment (RG)  |  |
+| Friday 14 | 930am11am | Advanced aspects of  $\beta$-decay, experiment (RG)  |  |
 |         | 11am-1230pm | Summary of first two weeks and outlook for final week (MHJ)  |                     |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-5pm  |             |  Group presentation of work on shell-model project and NushellX  |
@@ -196,23 +196,23 @@ A more detailed program for the last week will be finalized during the second we
 |--------------------------------------------------------------------------|
 | Day   |  | Lecture Topics and lecturer |   Projects and exercises        |
 |--------------------------------------------------------------------------|
-| Monday 17 | 9am-1230pm | Shell-model studies (BAB and MHJ) |        |
+| Monday 17 | 930am1230pm | Shell-model studies (BAB and MHJ) |        |
 |        | 1230pm-230pm  | Lunch +own activities |                             |
 |        | 230pm-6pm   |  | Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Tuesday 18 | 9am-1230pm |  Shell-model studies (BAB and MHJ) |        |
+| Tuesday 18 | 930am1230pm |  Shell-model studies (BAB and MHJ) |        |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  |            |  Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Wednesday 19 | 9am-1230pm | Two-body transition operators and double-beta decay (BAB) | |
+| Wednesday 19 | 930am1230pm | Two-body transition operators and double-beta decay (BAB) | |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  |        |   Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Thursday 20 | 9am-1230pm | Advanced shell-model topics and interpretations of data (MHJ) |  |
+| Thursday 20 | 930am1230pm | Advanced shell-model topics and interpretations of data (MHJ) |  |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  |            |  Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Friday 21 | 9am-1230pm | Summary of course  |   Group presentation of work on shell-model project and NushellX  |
+| Friday 21 | 930am1230pm | Summary of course  |   Group presentation of work on shell-model project and NushellX  |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  | Own activities     | |
 |--------------------------------------------------------------------------|
@@ -243,7 +243,7 @@ The organization of a typical course day is as follows:
 |------------------------------------------------------------------------|
 |  Time  |  Activity                                                     |
 |------------------------------------------------------------------------|
-| 9am-1230pm| Lectures, project relevant information and directed exercises|
+| 930am1230pm| Lectures, project relevant information and directed exercises|
 | 1230pm-230pm| Lunch                                       |
 | 230pm-6pm |  Computational projects, exercises  and hands-on sessions    |
 | 6pm-7pm |  Wrap-up of the day and eventual student presentations       |
