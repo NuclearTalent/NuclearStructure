@@ -408,7 +408,7 @@ For a model space which comprises the first for major shells only $0s$, $0p$, $1
 \left (\begin{array}{c} 40 \\ 8\end{array} \right) =\frac{40!}{(32)!8!}\sim 10^{9}, 
 \]
 !et
-and multiplying this with the number of proton Slater determinants we end up with approximately witha dimensionality $d$ of $d\sim 10^{18}$.
+and multiplying this with the number of proton Slater determinants we end up with approximately with a dimensionality $d$ of $d\sim 10^{18}$.
 !eblock
 
 
@@ -1057,14 +1057,14 @@ done with a simple logical flag).
 |---------------------------------|
 
 For two particles, there are a total of 15 states, which we list here with the total $M$:
-* $| 1,2 \rangle$, $M= -4$,  $| 1,3 \rangle$, $M= -3$
-* $| 1,4 \rangle$, $M= -2$, $| 1,5 \rangle$, $M= -1$
-* $| 1,5 \rangle$, $M= 0$, $| 2,3 \rangle$, $M= -2$
-* $| 2,4 \rangle$, $M= -1$, $| 2,5 \rangle$, $M= 0$
-* $| 2,6 \rangle$, $M= 1$, $| 3,4 \rangle$, $M= 0$
-* $| 3,5 \rangle$, $M= 1$, $| 3,6 \rangle$, $M= 2$
-* $| 4,5 \rangle$, $M= 2$, $ | 4,6 \rangle$, $M= 3$
-* $| 5,6 \rangle$, $M= 4$
+* $\vert 1,2 \rangle$, $M= -4$,  $\vert 1,3 \rangle$, $M= -3$
+* $\vert  1,4 \rangle$, $M= -2$, $\vert 1,5 \rangle$, $M= -1$
+* $\vert 1,5 \rangle$, $M= 0$, $vert 2,3 \rangle$, $M= -2$
+* $\vert 2,4 \rangle$, $M= -1$, $\vert 2,5 \rangle$, $M= 0$
+* $\vert 2,6 \rangle$, $M= 1$, $\vert 3,4 \rangle$, $M= 0$
+* $\vert 3,5 \rangle$, $M= 1$, $\vert 3,6 \rangle$, $M= 2$
+* $\vert 4,5 \rangle$, $M= 2$, $\vert 4,6 \rangle$, $M= 3$
+* $\vert 5,6 \rangle$, $M= 4$
 
 Of these, there are only 3 states with $M=0$. 
 !eblock
@@ -1266,7 +1266,7 @@ Finally you can show
 !et
 This means the operators $\hat{P}_\pm, \hat{P}_z$ form a so-called  $SU(2)$ algebra, and we can 
 use all our insights about angular momentum, even though there is no actual 
-angular momentum involved (this is similar to project 1).
+angular momentum involved.
 
 So we rewrite the Hamiltonian to make this explicit:
 !bt
