@@ -217,7 +217,7 @@ the Lanczos algorithm. These details will be discussed during our lectures.
 
   * For the shell-model part you need now to read in your data from file, both the single-particle states and the effective interaction. We will provide you with the "USDB":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.74.034315" ($1s0d$-shell effective interaction).  If you have not done so, rewrite your code from the project so that you can read in this interaction.
 
-  * For the oxygen isotopes you can actually use your previous program and perform shell-model calculations of the oxygen isotopes using the $1s0d$ shell. Your results should agree with those obtained using Alex Brown's code Nushellx. Compute the spectra of the 3-4 lowest lying states of the oxygen isotopes from $^{18}$O to $^{28}$O and compare with data and the Alex Brown's results.
+  * For the oxygen isotopes you can actually use your previous program and perform shell-model calculations of the oxygen isotopes using the $1s0d$ shell. Your results should agree with those obtained using Alex Brown's code Nushellx. Compute the spectra of the 3-4 lowest lying states of the oxygen isotopes from ${}^{18}\mbox{O}$ to ${}^{28}\mbox{O}$ and compare with data and the Alex Brown's results.
 
   * The code we wrote in the project  was however not very efficient, unless you already implemented the bit representation. As an optional challenge, you may now wish to consider the inclusion of a bit representation along the lines discussed in the lecture slides, and inserted below in the appendix here as well.  Note that this part may quickly become time consuming. You may also consider implementing the Lanczos' algorithm as discussed by "Whitehead et al.":"https://link.springer.com/chapter/10.1007%2F978-1-4615-8234-2_2" 
 
@@ -234,8 +234,8 @@ Brown's Nushellx code.  These chains of isotopes have been studied
 extensively during the last years, with many
 efforts toward the understanding of their dripline properties,
 involving studies of low-lying excited states and electromagnetic
-transitions. For the oxygen isotopes, $^{24}$O is the last
-particle-stable nucleus, and for the fluorine isotopes $^{31}$F is
+transitions. For the oxygen isotopes, ${}^{24}\mbox{O}$ is the last
+particle-stable nucleus, and for the fluorine isotopes ${}^{31}\mbox{F}$ is
 assumed to the last stable one.  This part can also be used to benchmark your shell-model program from the second part.
 
 The task here is to study these isotopic chains, extract excitation
@@ -253,10 +253,10 @@ to consider only the single-particle states $0f_{7/2}$ and $1p_{3/2}$.
 
 
 
-* Test your effective interaction and setup of single-particle energies by computing the spectra of $^{18}$O and $^{18}$F in order to see that your $1s0d$-shell calculations where set up correctly.  Compare the spectra with available data.
+* Test your effective interaction and setup of single-particle energies by computing the spectra of ${}^{18}\mbox{O}$ and ${}^{18}\mbox{F}$ in order to see that your $1s0d$-shell calculations where set up correctly.  Compare the spectra with available data.
 Use the "USDA and USDB interactions":"https://journals.aps.org/prc/abstract/10.1103/PhysRevC.74.034315" in the NushellX directory over interactions.
-* Perform shell-model studies using Nushellx for all oxygen isotopes from $^{18}$O to $^{28}$O, plot the lowest-lying 3-4 states and compare with data where available. Comment your results. 
-* Perform also shell-model studies using Nushellx for all oxygen isotopes from $^{18}$F to $^{29}$F, plot the lowest-lying 3-4 states and compare with data where available. Comment your results. Try also to compute $^{30}$F and $^{31}$F. Here you need to include the $0f_{7/2}$ and $1p_{3/2}$ single-particle states. 
+* Perform shell-model studies using Nushellx for all oxygen isotopes from ${}^{18}\mbox{O}$ to ${}^{28}\mbox{O}$, plot the lowest-lying 3-4 states and compare with data where available. Comment your results. 
+* Perform also shell-model studies using Nushellx for all oxygen isotopes from ${}^{18}\mbox{F}$ to ${}^{29}\mbox{F}$, plot the lowest-lying 3-4 states and compare with data where available. Comment your results. Try also to compute ${}^{30}\mbox{F}$ and ${}^{31}\mbox{F}$. Here you need to include the $0f_{7/2}$ and $1p_{3/2}$ single-particle states. 
 * See also if you can find  excited states in $^{25}$O and $^{25}$F  with negative parity.
 * We will also need to compute neutron decay widths, spectroscopic factors for knockout reactions and gamma decays. These will be discussed during the course.
 
@@ -464,4 +464,6 @@ S=|0111000000000000\rangle
 \end{equation*}
 !et
 which results in $|0001000000000000\rangle$. Counting the number of $1-$bits gives the phase.  Here you need however an algorithm for bitcounting. Several efficient ones available. 
+
+
 
