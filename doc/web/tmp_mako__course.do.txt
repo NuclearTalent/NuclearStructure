@@ -158,6 +158,24 @@ formulas in HTML or ipython notebook files.
 
 
 
+===== Effective interactions =====
+
+
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/Effint/pdf/Effint-minted.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/Effint/pdf/Effint-beamer-handouts2x3.pdf"
+   * For screen viewing:
+     * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/Effint/pdf/Effint-beamer.pdf"
+ * HTML:
+   * "Plain html style": "http://nucleartalent.github.io/NuclearStructure/doc/pub/Effint/html/Effint.html"
+   * "Reveal html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/Effint/html/Effint-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/Effint/html/Effint-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://nucleartalent.github.io/NuclearStructure/doc/pub/Effint/ipynb/Effint.ipynb"
+
+
+
 ===== Shell-model project =====
 
 
