@@ -773,7 +773,7 @@ int main()
 } 
 !ec
 For Fortran users, the link at URL: "http://sourceforge.net/projects/fortranxunit/" contains a similar
-software for unit testing. 
+software for unit testing. For Python go to URL:"https://docs.python.org/2/library/unittest.html".
 !eblock
 
 
@@ -1434,9 +1434,9 @@ six states:
 
 
 * Write small modules (routines/functions) ; avoid big functions  that do everything. (But not too small.)
-* Write lots of error traps, even for things that are `obvious.'
-* Document as you go along.  For each function write a header that includes: 
- o Main purpose of function
+* Use Unit tests! Write lots of error traps, even for things that are `obvious.'
+* Document as you go along. The Unit tests serve as documentation. For each function write a header that includes: 
+ o Main purpose of function and/or unit test
  o names and  brief explanation of input variables, if any 
  o names and brief explanation of output variables, if any
  o functions called by this function
@@ -1450,9 +1450,9 @@ six states:
 
 Hints for coding
 
-* When debugging, print out intermediate values. It's almost impossible to debug a  code by looking at it--the code will almost always win a `staring contest.'
+* Unit tests will save time. Use also IDEs for debugging. If you insist on brute force debugging, print out intermediate values. It's almost impossible to debug a  code by looking at it--the code will almost always win a `staring contest.'
 
-* Validate code with SIMPLE CASES. Validate early and often.   
+* Validate code with SIMPLE CASES. Validate early and often.  Unit tests!! 
 
 
 The number one mistake is using a too complex a system to test. For example ,

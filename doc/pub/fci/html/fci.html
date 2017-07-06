@@ -1181,7 +1181,7 @@ TEST(MyMath) {
 </pre></div>
 <p>
 For Fortran users, the link at <a href="http://sourceforge.net/projects/fortranxunit/" target="_blank"><tt>http://sourceforge.net/projects/fortranxunit/</tt></a> contains a similar
-software for unit testing.
+software for unit testing. For Python go to <a href="https://docs.python.org/2/library/unittest.html" target="_blank"><tt>https://docs.python.org/2/library/unittest.html</tt></a>.
 </div>
 
 
@@ -2055,11 +2055,11 @@ six states:
 
 <ul>
 <li> Write small modules (routines/functions) ; avoid big functions  that do everything. (But not too small.)</li>
-<li> Write lots of error traps, even for things that are `obvious.'</li>
-<li> Document as you go along.  For each function write a header that includes: 
+<li> Use Unit tests! Write lots of error traps, even for things that are `obvious.'</li>
+<li> Document as you go along. The Unit tests serve as documentation. For each function write a header that includes: 
 
 <ol type="a"></li>
-<li> Main purpose of function</li>
+<li> Main purpose of function and/or unit test</li>
 <li> names and  brief explanation of input variables, if any</li> 
 <li> names and brief explanation of output variables, if any</li>
 <li> functions called by this function</li>
@@ -2082,8 +2082,8 @@ six states:
 Hints for coding
 
 <ul>
-<li> When debugging, print out intermediate values. It's almost impossible to debug a  code by looking at it&ndash;the code will almost always win a `staring contest.'</li>
-<li> Validate code with SIMPLE CASES. Validate early and often.</li>   
+<li> Unit tests will save time. Use also IDEs for debugging. If you insist on brute force debugging, print out intermediate values. It's almost impossible to debug a  code by looking at it&ndash;the code will almost always win a `staring contest.'</li>
+<li> Validate code with SIMPLE CASES. Validate early and often.  Unit tests!!</li> 
 </ul>
 
 The number one mistake is using a too complex a system to test. For example ,
