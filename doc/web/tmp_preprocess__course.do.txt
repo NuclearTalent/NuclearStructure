@@ -8,7 +8,7 @@ AUTHOR: Gustav Jansen  at National Center for Computational Sciences and Physics
 
 <%
 pub_url = 'http://nucleartalent.github.io/NuclearStructure/doc/pub'
-published = ['program', 'spdata', 'hfock', 'secondquant', 'angmom', 'fci', 'decays', 'projects',]
+published = ['program', 'spdata', 'hfock', 'secondquant', 'angmom', 'fci', 'decays', 'Effint', 'projects',]
 chapters = {
  'program': 'Introduction and weekly program',
  'spdata': 'Experimental information and simple models',
@@ -17,6 +17,7 @@ chapters = {
  'angmom': 'Angular momentum algebra',
  'fci': 'The nuclear shell model and full configuration interaction theory',
  'decays': 'Nuclear decays, experiment and theory',
+ 'Effint': 'Effective interactions',
  'projects': 'Shell-model project',
 }
 %>
