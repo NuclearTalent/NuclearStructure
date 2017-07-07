@@ -1,0 +1,391 @@
+\documentclass[a4paper,11pt,twoside]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsfonts, amssymb, amsmath}
+\usepackage{verbatim}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{a4wide}
+\usepackage{pstricks}
+\usepackage[font={it,small},textfont=small,labelfont=bf]{caption}
+\usepackage{bbm}
+
+\newcommand{\md}{\mathrm{d}}
+\newcommand{\e}[1]{\times 10^{#1}}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\gvec}[1]{\boldsymbol{#1}}
+\newcommand{\dr}{\, \mathrm d^3 \vec r}
+\newcommand{\dk}{\, \mathrm d^3 \vec k}
+
+\setcounter{secnumdepth}{0}
+
+\title{The beloved commutator gym}
+\author{Morten's brute force approach}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+We have defined the following unperturbed Hamiltonian
+\begin{equation}
+\hat H_0 = \xi \sum_{p,\sigma} (p-1) \hat a_{p\sigma}^\dagger \hat a_{p\sigma},
+\label{eq:H_0}
+\end{equation}
+%
+and interacting part as
+\begin{equation}
+\hat V = -\frac{1}{2} g \sum_{p,q} \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} ,\label{eq:V}
+\end{equation}
+with the full Hamiltonian being given by $\hat H = \hat H_0 + \hat V$. The spin operator is defined as 
+\begin{align}
+\hat S_z &= \frac{1}{2} \sum_{p,\sigma} \sigma \hat a_{p\sigma}^\dagger \hat a_{p\sigma}
+\label{eq:S_z} \\
+%
+\hat S^2 &= \hat S_z^2 + \frac{1}{2} \left( \hat S_+ \hat S_- + \hat S_- \hat S_+ \right)
+\label{eq:S^2} \\
+%
+\hat S_\pm &= \sum_p \hat a_{p\pm}^\dagger \hat a_{p\mp}
+\label{eq:S_pm}.
+\end{align}
+%
+We define the pair creation and annihilation operators $\hat P_p^+$ and $\hat P_p^-$ as
+\begin{equation}
+\hat P_p^+ = \hat a_{p+}^\dagger \hat a_{p-}^\dagger, \qquad
+\hat P_p^- = \hat a_{p-} \hat a_{p+} .
+\label{eq:P}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Yes, I did code all this Latex stuff, don't ask me why}
+We compute first the commutator between $\hat H_0$ and $\hat S_z$ using \eqref{eq:H_0} and~\eqref{eq:S_z}:
+\begin{align*}
+\left[ \hat H_0 , \hat S_z \right]
+%
+&= \left[ \xi \sum_{p,\sigma} (p-1) \hat a_{p\sigma}^\dagger \hat a_{p\sigma} , \frac{1}{2} \sum_{p,\sigma} \sigma \hat a_{p\sigma}^\dagger \hat a_{p\sigma} \right] \\
+%
+&= \frac{\xi}{2} \sum_{p,\sigma} \sum_{p',\sigma'} (p-1) \sigma' \left[ a_{p\sigma}^\dagger \hat a_{p\sigma}, \hat a_{p'\sigma'}^\dagger \hat a_{p'\sigma'} \right].
+\end{align*}
+%
+We continue
+\begin{align*}
+\left[ a_{p\sigma}^\dagger \hat a_{p\sigma}, a_{p'\sigma'}^\dagger \hat a_{p'\sigma'} \right]
+%
+&= a_{p\sigma}^\dagger \hat a_{p\sigma} \hat a_{p'\sigma'}^\dagger \hat a_{p'\sigma'} -
+a_{p'\sigma'}^\dagger \hat a_{p'\sigma'} \hat a_{p\sigma}^\dagger \hat a_{p\sigma} \\
+%
+&= a_{p\sigma}^\dagger \hat a_{p\sigma} \hat a_{p'\sigma'}^\dagger \hat a_{p'\sigma'} -
+a_{p'\sigma'}^\dagger \left( \delta_{pp'} \delta_{\sigma \sigma'} - \hat a_{p\sigma}^\dagger  \hat a_{p'\sigma'} \right) \hat a_{p\sigma} \\
+%
+&= a_{p\sigma}^\dagger \hat a_{p\sigma} \hat a_{p'\sigma'}^\dagger \hat a_{p'\sigma'} -
+a_{p'\sigma'}^\dagger \hat a_{p\sigma} \delta_{pp'} \delta_{\sigma \sigma'} +
+\hat a_{p\sigma}^\dagger a_{p'\sigma'}^\dagger \hat a_{p\sigma} \hat a_{p'\sigma'} \\
+%
+&= a_{p\sigma}^\dagger \hat a_{p\sigma} \hat a_{p'\sigma'}^\dagger \hat a_{p'\sigma'} -
+a_{p'\sigma'}^\dagger \hat a_{p\sigma} \delta_{pp'} \delta_{\sigma \sigma'} +
+\hat a_{p\sigma}^\dagger \left( \delta_{pp'} \delta_{\sigma\sigma'} - \hat a_{p\sigma} a_{p'\sigma'}^\dagger \right) \hat a_{p'\sigma'} \\
+%
+&= a_{p'\sigma'}^\dagger \hat a_{p\sigma} \delta_{pp'} \delta_{\sigma \sigma'} -
+a_{p\sigma}^\dagger \hat a_{p'\sigma'} \delta_{pp'} \delta_{\sigma \sigma'} .
+\end{align*}
+%
+This gives
+\begin{align*}
+\left[ \hat H_0 , \hat S_z \right]
+%
+&= \frac{\xi}{2} \sum_{p,\sigma} \sum_{p',\sigma'} (p-1) \sigma' \left(
+a_{p'\sigma'}^\dagger \hat a_{p\sigma} \delta_{pp'} \delta_{\sigma \sigma'} -
+a_{p\sigma}^\dagger \hat a_{p'\sigma'} \delta_{pp'} \delta_{\sigma \sigma'} \right) \\
+%
+&= \frac{\xi}{2} \sum_{p,\sigma} (p-1) \sigma \left(
+a_{p\sigma}^\dagger \hat a_{p\sigma} -
+a_{p\sigma}^\dagger \hat a_{p\sigma} \right) \\
+%
+&= 0 .
+\end{align*}
+%
+Then we compute the commutator between
+$\hat V$ and $\hat S_z$, using $\hat V$ from Eq.~\eqref{eq:V}:
+\begin{align*}
+\left[ \hat V , \hat S_z \right]
+%
+&= \left[ -\frac{1}{2} g \sum_{p,q} \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} , \frac{1}{2} \sum_{p,\sigma} \sigma \hat a_{p\sigma}^\dagger \hat a_{p\sigma} \right] \\
+%
+&= -\frac{1}{4} g \sum_{p,q} \sum_{p',\sigma} \sigma \left[ \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+}, \hat a_{p'\sigma}^\dagger \hat a_{p'\sigma} \right] .
+\end{align*}
+%
+Using the commutation relation between the creation and annihilation operators we obtain
+\begin{align*}
+\left[ \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+}, \hat a_{p'\sigma}^\dagger \hat a_{p'\sigma} \right]
+%
+&= \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \hat a_{p'\sigma}^\dagger \hat a_{p'\sigma} -
+\hat a_{p'\sigma}^\dagger \hat a_{p'\sigma} \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \\
+%
+&= \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \hat a_{p'\sigma}^\dagger \hat a_{p'\sigma} -
+\hat a_{p'\sigma}^\dagger \left( \delta_{pp'} \delta_{\sigma+} - \hat a_{p+}^\dagger \hat a_{p'\sigma} \right) \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \\
+%
+&= \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \hat a_{p'\sigma}^\dagger \hat a_{p'\sigma} -
+\hat a_{p'\sigma}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma+} - \\
+&\quad\,\,
+\hat a_{p+}^\dagger \hat a_{p'\sigma}^\dagger \hat a_{p'\sigma} \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \\
+%
+&= \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \hat a_{p'\sigma}^\dagger \hat a_{p'\sigma} -
+\hat a_{p'\sigma}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma+} - \\
+&\quad\,\,
+\hat a_{p+}^\dagger \hat a_{p'\sigma}^\dagger \left( \delta_{pp'} \delta_{\sigma-} - \hat a_{p-}^\dagger \hat a_{p'\sigma} \right) \hat a_{q-} \hat a_{q+} \\
+%
+&= \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \hat a_{p'\sigma}^\dagger \hat a_{p'\sigma} -
+\hat a_{p'\sigma}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma+} - \\
+&\quad\,\,
+\hat a_{p+}^\dagger \hat a_{p'\sigma}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma-} -
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{p'\sigma}^\dagger \hat a_{q-} \hat a_{q+} \hat a_{p'\sigma} \\
+%
+&= \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \hat a_{p'\sigma}^\dagger \hat a_{p'\sigma} -
+\hat a_{p'\sigma}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma+} - \\
+&\quad\,\,
+\hat a_{p+}^\dagger \hat a_{p'\sigma}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma-} -
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \left( \delta_{qp'} \delta_{\sigma-} - \hat a_{q-} \hat a_{p'\sigma}^\dagger \right) \hat a_{q+} \hat a_{p'\sigma} \\
+%
+&= \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \hat a_{p'\sigma}^\dagger \hat a_{p'\sigma} -
+\hat a_{p'\sigma}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma+} - \\
+&\quad\,\,
+\hat a_{p+}^\dagger \hat a_{p'\sigma}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma-} -
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q+} \hat a_{p'\sigma} \delta_{qp'} \delta_{\sigma-} + \\
+&\quad\,\,
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{p'\sigma}^\dagger \hat a_{q+} \hat a_{p'\sigma} .
+\end{align*}
+%
+Only one change is needed now
+\begin{align*}
+\left[ \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+}, \hat a_{p'\sigma}^\dagger \hat a_{p'\sigma} \right]
+%
+&= - \hat a_{p'\sigma}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma+} -
+\hat a_{p+}^\dagger \hat a_{p'\sigma}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma-} - \\
+&\quad\,\,
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q+} \hat a_{p'\sigma} \delta_{qp'} \delta_{\sigma-} +
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{p'\sigma} \delta_{qp'} \delta_{\sigma+} \\
+%
+&= \hat a_{p-}^\dagger \hat a_{p'\sigma}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma+} -
+\hat a_{p+}^\dagger \hat a_{p'\sigma}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma-} - \\
+&\quad\,\,
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q+} \hat a_{p'\sigma} \delta_{qp'} \delta_{\sigma-} +
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{p'\sigma} \delta_{qp'} \delta_{\sigma+} .
+\end{align*}
+%
+If we then insert this in $\hat V$ and $\hat S_z$ above we obtain
+\begin{align*}
+\left[ \hat H_0 , \hat S_z \right]
+%
+&= -\frac{1}{4} g \sum_{p,q} \sum_{p',\sigma} \sigma \left(
+\hat a_{p-}^\dagger \hat a_{p'\sigma}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma+} -
+\hat a_{p+}^\dagger \hat a_{p'\sigma}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \delta_{\sigma-} - \right. \\
+&\quad\,\, \left.
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q+} \hat a_{p'\sigma} \delta_{qp'} \delta_{\sigma-} +
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{p'\sigma} \delta_{qp'} \delta_{\sigma+} \right) \\
+%
+&= -\frac{1}{4} g \sum_{p,q} \left(
+\hat a_{p-}^\dagger \hat a_{p+}^\dagger \hat a_{q-} \hat a_{q+} -
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} -
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q+} \hat a_{q-} +
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \right) \\
+%
+&= 0.
+\end{align*}
+%
+Then we move to the commutator between
+$\hat H_0$ and $\hat S^2$. Using Eqs.~\eqref{eq:H_0},~\eqref{eq:S_z},~\eqref{eq:S^2} and~\eqref{eq:S_pm}:
+\[ 
+\left[ \hat H_0, \hat S^2 \right]
+%
+= \left[ \hat H_0, \hat S_z^2 + \frac{1}{2} \left( \hat S_+ \hat S_- + \hat S_- \hat S_+ \right) \right]
+%
+= \frac{1}{2} \left(  \left[ \hat H_0, \hat S_+ \hat S_- \right] + \left[ \hat H_0, \hat S_- \hat S_+ \right] \right), \]
+%
+where we have used the fact that $\hat H_0$ commutes with $\hat S_z$ and thereby  $\hat S_z^2$. The other operators give rise to
+\begin{align*}
+\left[ \hat H_0, \hat S_+ \hat S_- \right]
+%
+&=  \left[ \xi \sum_{p,\sigma} (p-1) \hat a_{p\sigma}^\dagger \hat a_{p\sigma}, \left( \sum_p \hat a_{p+}^\dagger \hat a_{p-} \right) \left( \sum_p \hat a_{p-}^\dagger \hat a_{p+} \right) \right] \\
+%
+&= \xi \sum_{p,\sigma} \sum_{p',p''} (p-1)
+\left[ \hat a_{p\sigma}^\dagger \hat a_{p\sigma},
+\hat a_{p'+}^\dagger \hat a_{p'-} \hat a_{p''-}^\dagger \hat a_{p''+} \right] . \\
+\end{align*}
+%
+We use again the commutation relation between creation and annihilation operators and find
+\begin{align*}
+\left[ \hat H_0, \hat S_+ \hat S_- \right]
+%
+&= - \xi \sum_{p,\sigma} \sum_{p',p''} (p-1)
+\left[ \hat a_{p'+}^\dagger \hat a_{p'-} \hat a_{p''-}^\dagger \hat a_{p''+},
+\hat a_{p\sigma}^\dagger \hat a_{p\sigma} \right] \\
+%
+&= - \xi \sum_{p,\sigma} \sum_{p',p''} (p-1) \left(
+\hat a_{p'-}^\dagger \hat a_{p\sigma}^\dagger \hat a_{p''-} \hat a_{p''+} \delta_{pp'} \delta_{\sigma+} -
+\hat a_{p'+}^\dagger \hat a_{p\sigma}^\dagger \hat a_{p''-} \hat a_{p''+} \delta_{pp'} \delta_{\sigma-} - \right. \\
+&\quad\,\, \left.
+\hat a_{p'+}^\dagger \hat a_{p'-}^\dagger \hat a_{p''+} \hat a_{p\sigma} \delta_{pp''} \delta_{\sigma-} +
+\hat a_{p'+}^\dagger \hat a_{p'-}^\dagger \hat a_{p''-} \hat a_{p\sigma} \delta_{pp''} \delta_{\sigma+} \right) \\
+%
+&= - \xi \sum_{p',p''} (p-1) \left(
+\hat a_{p'-}^\dagger \hat a_{p'+}^\dagger \hat a_{p''-} \hat a_{p''+} -
+\hat a_{p'+}^\dagger \hat a_{p'-}^\dagger \hat a_{p''-} \hat a_{p''+} - \right. \\
+&\quad\,\, \left.
+\hat a_{p'+}^\dagger \hat a_{p'-}^\dagger \hat a_{p''+} \hat a_{p''-} +
+\hat a_{p'+}^\dagger \hat a_{p'-}^\dagger \hat a_{p''-} \hat a_{p''+} \right) \\
+%
+&= 0 .
+\end{align*}
+%
+We proceed then with the commutator between $\hat H_0$ and $\hat S_- \hat S_+$. Here we need
+\[ \left[ \hat S_+ , \hat S_- \right] = 2 \hat S_z \quad \Rightarrow \quad
+\hat S_- \hat S_+ = \hat S_+ S_- - 2 \hat S_z . \]
+%
+Using this relation and the fact that 
+$\hat S_+ \hat S_-$ commutes with $\hat H_0$, we can find the commutator between $\hat H_0$ and $\hat S^2$:
+\begin{align*}
+\left[ \hat H_0, \hat S^2 \right]
+%
+&= \frac{1}{2} \left( \left[ \hat H_0, \hat S_+ \hat S_- \right] + \left[ \hat H_0, \hat S_- \hat S_+ \right] \right) \\
+%
+&= \frac{1}{2} \left( \left[ \hat H_0, \hat S_+ S_- - \hat S_z \right] \right) \\
+%
+&= 0,
+\end{align*}
+where we have also used that $\hat H_0$ commutes with $\hat S_z$.
+
+Finally, we need to find the corresponding commutator between
+$\hat V$ and $\hat S^2$. Using Eq.~\eqref{eq:S^2}, and that $\hat S_z$ og $\hat S_z^2$ commute with  $\hat V$ and
+\begin{align*}
+\left[ \hat V, \hat S^2 \right]
+%
+&= \left[ \hat V, \hat S_z^2 + \frac{1}{2} \left( \hat S_+ \hat S_- + \hat S_- \hat S_+ \right) \right]
+%
+= \left[ \hat V, \hat S_z^2 + \hat S_+ \hat S_- - \hat S_z \right] \\
+%
+&= \left[ V, \hat S_+ \hat S_- \right]
+%
+= \left( \left[ V, \hat S_+ \right] \hat S_- + \hat S_+ \left[ \hat V, \hat S_- \right] \right),
+\end{align*}
+combined with  $\hat S_- = \hat S_+^\dagger$ and  $\hat V^\dagger = \hat V$,  we find
+\[ \left[ \hat V, \hat S^2 \right] =
+\left[ V, \hat S_+ \right] \hat S_- - \hat S_+ \left[ \hat V, \hat S_+ \right]^\dagger
+= \left[ V, \hat S_+ \right] \hat S_- - \left( \left[ V, \hat S_+ \right] \hat S_- \right)^\dagger. \]
+%
+We need to find  $[V, \hat S_+]$. Inserting for $\hat V$ using Eq.~\eqref{eq:V} and for $\hat S_+$ from Eq.~\eqref{eq:S_pm} we can calculate
+\[ \left[ \hat V, \hat S_+ \right] = \left[ -\frac{1}{2} g \sum_{p,q} \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+}, \sum_p \hat a_{p+}^\dagger \hat a_{p-} \right]
+%
+= -\frac{1}{2} g \sum_{p,p',q} \left[ \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+}, \hat a_{p'+}^\dagger \hat a_{p'-} \right] . \]
+Let us then look at the commutator between the creation and annihilation operators
+\begin{align*}
+\left[ \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+}, \hat a_{p'+}^\dagger \hat a_{p'-} \right]
+%
+&= \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \hat a_{p'+}^\dagger \hat a_{p'-} - \hat a_{p'+}^\dagger \hat a_{p'-} \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \\
+%
+&= \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \hat a_{p'+}^\dagger \hat a_{p'-} - \hat a_{p+}^\dagger \hat a_{p'+}^\dagger \hat a_{p'-} \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \\
+%
+&= \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \hat a_{p'+}^\dagger \hat a_{p'-} - \hat a_{p+}^\dagger \hat a_{p'+}^\dagger \left( \delta_{pp'} - \hat a_{p-}^\dagger \hat a_{p'-} \right) \hat a_{q-} \hat a_{q+} \\
+%
+&= \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \hat a_{p'+}^\dagger \hat a_{p'-} - \hat a_{p+}^\dagger \hat a_{p'+}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} + \\
+&\quad\,\,
+\hat a_{p+}^\dagger \hat a_{p'+}^\dagger \hat a_{p-}^\dagger \hat a_{p'-} \hat a_{q-} \hat a_{q+}  \\
+%
+&= \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q+} \hat a_{p'+}^\dagger \hat a_{p'-} - \hat a_{p+}^\dagger \hat a_{p'+}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} + \\
+&\quad\,\,
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{p'+}^\dagger \hat a_{q+} \hat a_{p'-}  \\
+%
+&= - \hat a_{p+}^\dagger \hat a_{p'+}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} +
+\hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{p'-} \delta_{qp'} .
+\end{align*}
+%
+Inserting back in  $[\hat V, \hat S_+]$:
+\begin{align*}
+\left[ \hat V, \hat S_+ \right]
+%
+&= -\frac{1}{2} g \sum_{p,p',q} \left( \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{p'-} \delta_{qp'}  - \hat a_{p+}^\dagger \hat a_{p'+}^\dagger \hat a_{q-} \hat a_{q+} \delta_{pp'} \right) \\
+%
+&= -\frac{1}{2} g \sum_{p,q} \left( \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q-} + \hat a_{p+}^\dagger \hat a_{p+}^\dagger \hat a_{q+} \hat a_{q-} \right).
+\end{align*}
+%
+We insert then this expression in $[\hat V, \hat S^2]$ and employing Eq.~\eqref{eq:S_pm} again for for $S_\pm$ we arrive at
+\begin{align*}
+\left[ \hat V, \hat S^2 \right]
+%
+&= -\frac{g}{2} \sum_{p,p',q} \left( \left[ \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q-} + \hat a_{p+}^\dagger \hat a_{p+}^\dagger \hat a_{q+} \hat a_{q-} \right] \hat a_{p'-}^\dagger \hat a_{p'+} - \right. \\
+%
+&\quad\,\, \left.
+\hat a_{p'+}^\dagger \hat a_{p'-} \left[ \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q-} + \hat a_{p+}^\dagger \hat a_{p+}^\dagger \hat a_{q+} \hat a_{q-} \right]^\dagger \right) \\
+%
+&= -\frac{g}{2} \sum_{p,p',q} \left( \left[ \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q-} + \hat a_{p+}^\dagger \hat a_{p+}^\dagger \hat a_{q+} \hat a_{q-} \right] \hat a_{p'-}^\dagger \hat a_{p'+} - \right. \\
+%
+&\quad\,\, \left.
+\hat a_{p'+}^\dagger \hat a_{p'-} \left[ \hat a_{q-}^\dagger \hat a_{q-}^\dagger \hat a_{p-} \hat a_{p+} + \hat a_{q-}^\dagger \hat a_{q+}^\dagger \hat a_{p+} \hat a_{p+}  \right] \right) .
+\end{align*}
+%
+Further manipulations result in
+\begin{align*}
+\left[ \hat V, \hat S^2 \right]
+%
+&= -\frac{g}{2} \sum_{p,p',q} \left( \left[ \hat a_{p+}^\dagger \hat a_{p-}^\dagger \hat a_{q-} \hat a_{q-} + \hat a_{p+}^\dagger \hat a_{p+}^\dagger \hat a_{q+} \hat a_{q-} \right] \hat a_{p'-}^\dagger \hat a_{p'+} - \right. \\
+%
+&\quad\,\, \left.
+\hat a_{p'+}^\dagger \hat a_{p'-} \left[ \hat a_{q-}^\dagger \hat a_{q-}^\dagger \hat a_{p-} \hat a_{p+} + \hat a_{q-}^\dagger \hat a_{q+}^\dagger \hat a_{p+} \hat a_{p+}  \right] \right) .
+\end{align*}
+A commutator between two operators is also an operator. When such an operator acts on a state we see that 
+\[ \left[ \hat V, \hat S^2 \right] = 0. \]
+%
+It is straightforward to see from Eq.~\eqref{eq:P} that the interaction of Eq.~\eqref{eq:V} can be written as
+\[ \hat V = -\frac{1}{2} g \sum_{p,q} \hat P_p^+ \hat P_q^- , \]
+and since $\hat H = \hat H_0 + \hat V$, where $\hat H_0$ is given by Eq.~\eqref{eq:H_0}, we have
+\begin{equation}
+\hat H = \sum_{p,\sigma} (p-1) \hat a_{p\sigma}^\dagger \hat a_{p\sigma} -\frac{1}{2} g \sum_{p,q} \hat P_p^+ \hat P_q^-,
+\label{eq:H}
+\end{equation}
+%
+with $\xi = 1$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The Hamiltonian matrix}
+The aim here is to compute the Hamiltonian matrix for a system with no broken pairs. This means that every level $p$ contains
+two particles, one with spin up and one with spin down. We employ the basis
+\[ \ket{\Phi_0} = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \end{pmatrix}, \quad
+\ket{\Phi_1} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \\ 0 \\ 0 \end{pmatrix}, \quad \cdots \quad
+\ket{\Phi_5} = \begin{pmatrix} 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 1 \end{pmatrix}, \]
+%
+where
+\begin{align*}
+\ket{\Phi_0} &= \hat a_{2+}^\dagger \hat a_{2-}^\dagger \hat a_{1+}^\dagger \hat a_{1-}^\dagger \ket{0} = \hat P_2^+ \hat P_1^+ \ket{0}, \\
+%
+\ket{\Phi_1} &= \hat P_3^+ \hat P_1^+ \ket{0}, \\
+%
+\ket{\Phi_2} &= \hat P_4^+ \hat P_1^+ \ket{0}, \\
+%
+\ket{\Phi_3} &= \hat P_3^+ \hat P_2^+ \ket{0}, \\
+%
+\ket{\Phi_4} &= \hat P_4^+ \hat P_2^+ \ket{0}, \\
+%
+\ket{\Phi_5} &= \hat P_4^+ \hat P_3^+ \ket{0}. \\
+\end{align*}
+%
+We are now going to compute $\bra{\Phi_i} \hat H \ket{\Phi_j}$ using the Hamiltonian of Eq.~\eqref{eq:H}. 
+The one-body operator acts only on the diagonal and results in terms proportional with $(p-1)$. The interaction
+will excite or deexcite a pair of particles from level $q$ to level $p$. Using this it is easy to see that the Hamilotnian matrix becomes
+\[ \hat H = \begin{pmatrix}
+2 - g & -g/2 & -g/2 & -g/2 & -g/2 & 0 \\
+-g/2 & 4- g & -g/2 & -g/2 & 0 & -g/2 \\
+-g/2 & -g/2 & 6 -g & 0 & -g/2 & -g/2 \\
+-g/2 & -g/2 & 0 & 6 -g & -g/2 & -g/2 \\
+-g/2 & 0 & -g/2 & -g/2 & 8 - g & -g/2 \\
+0 & -g/2 & -g/2 & -g/2 & -g/2 & 10 - g \\
+\end{pmatrix} . \]
+%
+This matrix can easily be diagonalized using for example Octave or Matlab or python. 
+ 
+
+\end{document}
