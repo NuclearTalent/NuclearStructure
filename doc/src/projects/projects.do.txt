@@ -204,7 +204,7 @@ against the exact result for the ground state. Introduce thereafter a finite sin
 
 
 
-===== Part 2, buidling your own shell-model program =====
+===== Part 2, building your own shell-model program =====
 
 The way we will set up the Slater determinants here follows a simple odometric recipe. The way it is done in more professional codes, is to use bitwise manipulations. The latter is a possible extension/challenge for those interested.
 
@@ -260,11 +260,11 @@ to consider only the single-particle states $0f_{7/2}$ and $1p_{3/2}$.
 * Compare the results in the last problem to the full $1s0d$ model space results and to experiment.
 * Calculate the spectroscopic factors from the ground state of ${}^{23}\mbox{O}$ to all states in  ${}^{22}\mbox{O}$ in the full $1s0d$ model space. Use the sum rule to obtain the orbital occupations in ${}^{23}\mbox{O}$ for $0d_{5/2}$, $1s_{1/2}$ and $0d_{3/2}$. Compare these to those given in the so-called xxx.occ file.
 * Calculate the spectroscopic factors from the ground state of ${}^{23}\mbox{O}$ to all states in  ${}^{24}\mbox{O}$ in the full $1s0d$ model space. Use the sum rule to obtain the number of holes in those three orbits in ${}^{23}\mbox{O}$. Compare these to those given in the xxx.occ file.
-* Calculate the ${}^{23}\mbox{O}$  $\mbox{5/2}^+_1$ to ${}^{22}\mbox{O}$ $\mbox{0}^+_1$ spectroscopic factor. Explain why it is so small.
-* Use the interaction wspot to obtain the single-particle decay width for the the ${}^{23}\mbox{O}$ $5/2^{+}_{1}$ state using the experimental neutron separation energy as a constraint. Combine this with the result of the last problem  to obtain its neutron decay width. Compare to experiment.
-* Calculate the neutron decay width of the ${}^{25}\mbox{O}$ $\mbox{3/2}^+_1$ state and compare to experiment. Use the experimental neutron separation energy as a constraint.
-* Calculate the gamma decay of ${}^{22}\mbox{O}$ for levels up to 6 MeV and compare to experiment. Calculate the B(E2) for Coulex to the $\mbox{2}^+_1$ state in ${}^{22}\mbox{O}$ and compare with experiment.
-* Calculate the magnetic moment for the $\mbox{1/2}^+$ ground state of ${}^{23}\mbox{O}$ and compare to the single-particle (Schmidt) value.
+* Calculate the ${}^{23}\mbox{O}$  $\mbox{5/2}^+_1$ to ${}^{22}\mbox{O}$  $\mbox{0}^+_1$ spectroscopic factor. Explain why it is so small.
+* Use the interaction wspot to obtain the single-particle decay width for the ${}^{23}\mbox{O}$  $\mbox{5/2}^{+}_{1}$ state using the experimental neutron separation energy as a constraint. Combine this with the result of the last problem  to obtain its neutron decay width. Compare to experiment.
+* Calculate the neutron decay width of the ${}^{25}\mbox{O}$  $\mbox{3/2}^{+}_{1}$ state and compare to experiment. Use the experimental neutron separation energy as a constraint.
+* Calculate the gamma decay of ${}^{22}\mbox{O}$ for levels up to 6 MeV and compare to experiment. Calculate the B(E2) for Coulex to the $\mbox{2}^{+}_{1}$ state in ${}^{22}\mbox{O}$ and compare with experiment.
+* Calculate the magnetic moment for the  $\mbox{1/2}^+_1$ ground state of ${}^{23}\mbox{O}$ and compare to the single-particle (Schmidt) value.
 * Calculate the Fermi ($F$) and Gamow-Teller ($GT$) beta decay of ${}^{22}\mbox{O}$. The experimental energy of the lowest $1^{+}$ state in ${}^{22}\mbox{F}$ is 1.627 MeV. You will need to put this in the xxx.beq file and rerun the beta program (see the end of the xxx.bat file for how to do this). Compare the summed $B(F)$ and $B(GT)$ values to that expected from the sum-rules. What fraction of the $GT$ sum-rule is in the transition to the lowest energy $1^{+}$ state?
 
 
