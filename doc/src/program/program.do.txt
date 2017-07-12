@@ -175,15 +175,17 @@ The acronyms are
 | Wednesday 12 | 930am1130am | Introduction to $\beta$-decay, experiment (RG)  |  |
 |           | 1130am-1230pm | $\beta$-decay and sum rules from theory (BAB)  |  |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
-|         | 230pm-6pm  |        | Work on shell-model project and NushellX |
+|         | 230pm-330pm | Discussion of IBM and shell-model by Noam, Tobias and Takaharu|                     |
+|         | 330pm-6pm  |        | Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
 | Thursday 13 | 930am1030am | Electromagnetic decays from experiment (AG) |  |
 |          | 1030am-1230pm | Shell-model transition probabilities (BAB) |  |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
-|         | 230pm-6pm  |            |  Work on shell-model project and NushellX |
+|         | 230pm-330pm | Presentation by Guillaume |                     |
+|         | 330pm-6pm  |            |  Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
 | Friday 14 | 930am11am | Advanced aspects of  $\beta$-decay, experiment (RG)  |  |
-|         | 11am-1230pm | Summary of first two weeks and outlook for final week (MHJ)  |                     |
+|         | 11am-1230pm | Summary of first two weeks and outlook for final week and discussion of the shell-model project (MHJ)  |                     |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-5pm  |             |  Group presentation of work on shell-model project and NushellX  |
 |--------------------------------------------------------------------------|
