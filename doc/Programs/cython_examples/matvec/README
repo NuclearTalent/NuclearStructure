@@ -1,0 +1,13 @@
+This code contains example to run a matrix vector operation using 4 different
+approaches. The first is the standard python approach with for loops, the second
+is a version using cython. The third uses list comprehension and vector
+operation in python, while the last calls the matmul function from numpy.
+
+The cython module is in the file matvec.pyx, while setup.py contains information to
+compile and build the module using distutils.
+
+To compile the cython module, run:
+        python setup.py build_ext --inplace
+
+To execute example, run:
+        python example.py 5000
