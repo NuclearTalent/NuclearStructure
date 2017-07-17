@@ -148,7 +148,7 @@ MathJax.Hub.Config({
 <center><b><a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA</b></center>
 <br>
 <p>&nbsp;<br>
-<center><h4>Jul 6, 2017</h4></center> <!-- date -->
+<center><h4>Jul 17, 2017</h4></center> <!-- date -->
 <br>
 <p>
 
@@ -2590,13 +2590,15 @@ can be allocated once you have created the many-body basis and know \( N_{SD} \)
 <b></b>
 <ol>
 <p><li> Initialize \( H(\alpha,\beta)=0.0 \)</li>
+<p><li> Set up an outer loop over \( \beta \)</li>
 <p><li> Loop over \( \alpha = 1, NSD \)</li>
 <p><li> For each \( \alpha \), loop over \( a=1,ntbme \)  and fetch \( V(a) \) and the single-particle indices \( p,q,r,s \)</li> 
 <p><li> If \( V(a) = 0 \) skip.  Otherwise, apply \( \hat{a}^\dagger_p\hat{a}^\dagger_q \hat{a}_s \hat{a}_r \) to the Slater determinant labeled by \( \alpha \).</li>
-<p><li> Find, if any, the label \( \beta  \) of the resulting Slater determinant and the phase (which is 0, +1, -1).</li>
+<p><li> Find, if any, the label \( \beta \) of the resulting Slater determinant and the phase (which is 0, +1, -1).</li>
 <p><li> If phase \( \neq 0 \), then update \( H(\alpha,\beta) \)  as \( H(\alpha,\beta) + phase*V(a) \). The sum is important because multiple operators might contribute to the same matrix element.</li>
 <p><li> Continue loop over \( a \)</li>
 <p><li> Continue loop over \( \alpha \).</li>
+<p><li> End the outer loop over \( \beta \).</li>
 </ol>
 <p>
 
@@ -2618,6 +2620,1061 @@ contribute to diagonal matrix elements, that is, \( H(\alpha,\alpha) \).
 Simply find the occupied single-particle states \( i \) and add the corresponding \( \epsilon(i) \).
 
 
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec94">Hamiltonian matrix without the bit representation </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Consider wave functions \( \Psi \) expressed as linear combinations of
+Slater determinants \( D \) of orthonormal spin-orbitals \( \phi({\bf r}) \):
+<p>&nbsp;<br>
+$$
+\begin{equation}
+\Psi = \sum_i c_i D_i
+\tag{2}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+Using the Slater-Condon rules the matrix elements of any one-body
+(\( {\cal O}_1 \)) or two-body (\( {\cal O}_2 \)) operator expressed in the
+determinant space have simple expressions involving one- and two-fermion
+integrals in our given single-particle basis.
+The diagonal elements are given by:
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+  \langle D | {\cal O}_1 | D \rangle & = & \sum_{i \in D} \langle \phi_i | {\cal O}_1 | \phi_i \rangle \\
+  \langle D | {\cal O}_2 | D \rangle & = & \frac{1}{2} \sum_{(i,j) \in D}  
+      \langle \phi_i \phi_j | {\cal O}_2 | \phi_i \phi_j \rangle - \nonumber \\
+ & & 
+      \langle \phi_i \phi_j | {\cal O}_2 | \phi_j \phi_i \rangle \nonumber 
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec95">Hamiltonian matrix without the bit representation, one and two-body operators </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+For two determinants which differ only by the substitution of single-particle states \( i \) with
+a single-particle state \( j \):
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+  \langle D | {\cal O}_1 | D_i^j \rangle & = & \langle \phi_i | {\cal O}_1 | \phi_j \rangle \\
+  \langle D | {\cal O}_2 | D_i^j \rangle & = & \sum_{k \in D} 
+      \langle \phi_i \phi_k | {\cal O}_2 | \phi_j \phi_k \rangle - 
+      \langle \phi_i \phi_k | {\cal O}_2 | \phi_k \phi_j \rangle \nonumber
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+For two determinants which differ by two single-particle states
+<p>&nbsp;<br>
+$$
+\begin{eqnarray}
+  \langle D | {\cal O}_1 | D_{ik}^{jl} \rangle & = & 0 \\
+  \langle D | {\cal O}_2 | D_{ik}^{jl} \rangle & = & 
+      \langle \phi_i \phi_k | {\cal O}_2 | \phi_j \phi_l \rangle -
+      \langle \phi_i \phi_k | {\cal O}_2 | \phi_l \phi_j \rangle \nonumber 
+\end{eqnarray}
+$$
+<p>&nbsp;<br>
+
+All other matrix elements involving determinants with more than two
+substitutions are zero.
+
+
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec96">Strategies for setting up an algorithm </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+An efficient implementation of these rules requires
+
+<ul>
+<p><li> to find the number of spin-orbital substitutions between two determinants</li>
+<p><li> to find which spin-orbitals are involved in the substitution</li>
+<p><li> to compute the phase factor if a reordering of the spin-orbitals has occured</li>
+</ul>
+<p>
+
+We can solve this problem using our odometric approach or alternatively using a bit representation as discussed below and in more detail in 
+
+<ul>
+<p><li> <a href="https://github.com/scemama/slater_condon" target="_blank">Scemama and Gimer's article (Fortran codes)</a></li>
+<p><li> <a href="https://arxiv.org/abs/0810.2644" target="_blank">Simen Kvaal's article on how to build an FCI code (C++ code)</a></li>
+</ul>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec97">Operators in second quantization </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+In the build-up of a shell-model or FCI code that is meant to tackle large dimensionalities
+we need to deal with the action of the Hamiltonian \( \hat{H} \) on a
+Slater determinant represented in second quantization as
+<p>&nbsp;<br>
+$$
+ |\alpha_1\dots \alpha_n\rangle = a_{\alpha_1}^{\dagger} a_{\alpha_2}^{\dagger} \dots a_{\alpha_n}^{\dagger} |0\rangle.
+$$
+<p>&nbsp;<br>
+
+The time consuming part stems from the action of the Hamiltonian
+on the above determinant,
+<p>&nbsp;<br>
+$$
+\left(\sum_{\alpha\beta} \langle \alpha|t+u|\beta\rangle a_\alpha^{\dagger} a_\beta + \frac{1}{4} \sum_{\alpha\beta\gamma\delta}
+                \langle \alpha \beta|\hat{v}|\gamma \delta\rangle a_\alpha^{\dagger} a_\beta^{\dagger} a_\delta a_\gamma\right)a_{\alpha_1}^{\dagger} a_{\alpha_2}^{\dagger} \dots a_{\alpha_n}^{\dagger} |0\rangle.
+$$
+<p>&nbsp;<br>
+
+A practically useful way to implement this action is to encode a Slater determinant as a bit pattern.
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec98">Operators in second quantization </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Assume that we have at our disposal \( n \) different single-particle orbits
+\( \alpha_0,\alpha_2,\dots,\alpha_{n-1} \) and that we can distribute  among these orbits \( N\le n \) particles.
+
+<p>
+A Slater  determinant can then be coded as an integer of \( n \) bits. As an example, if we have \( n=16 \) single-particle states
+\( \alpha_0,\alpha_1,\dots,\alpha_{15} \) and \( N=4 \) fermions occupying the states \( \alpha_3 \), \( \alpha_6 \), \( \alpha_{10} \) and \( \alpha_{13} \)
+we could write this Slater determinant as
+
+<p>&nbsp;<br>
+$$
+\Phi_{\Lambda} = a_{\alpha_3}^{\dagger} a_{\alpha_6}^{\dagger} a_{\alpha_{10}}^{\dagger} a_{\alpha_{13}}^{\dagger} |0\rangle.
+$$
+<p>&nbsp;<br>
+
+The unoccupied single-particle states have bit value \( 0 \) while the occupied ones are represented by bit state \( 1 \). 
+In the binary notation we would write this   16 bits long integer as
+<p>&nbsp;<br>
+$$
+\begin{array}{cccccccccccccccc}
+{\alpha_0}&{\alpha_1}&{\alpha_2}&{\alpha_3}&{\alpha_4}&{\alpha_5}&{\alpha_6}&{\alpha_7} & {\alpha_8} &{\alpha_9} & {\alpha_{10}} &{\alpha_{11}} &{\alpha_{12}} &{\alpha_{13}} &{\alpha_{14}} & {\alpha_{15}} \\
+{0} & {0} &{0} &{1} &{0} &{0} &{1} &{0} &{0} &{0} &{1} &{0} &{0} &{1} &{0} & {0} \\
+\end{array}
+$$
+<p>&nbsp;<br>
+
+which translates into the decimal number
+<p>&nbsp;<br>
+$$
+2^3+2^6+2^{10}+2^{13}=9288.
+$$
+<p>&nbsp;<br>
+
+We can thus encode a Slater determinant as a bit pattern.
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec99">Operators in second quantization </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+With \( N \) particles that can be distributed over \( n \) single-particle states, the total number of Slater determinats (and defining thereby the dimensionality of the system) is
+<p>&nbsp;<br>
+$$
+\mathrm{dim}(\mathcal{H}) = \left(\begin{array}{c} n \\N\end{array}\right).
+$$
+<p>&nbsp;<br>
+
+The total number of bit patterns is \( 2^n \).
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec100">Operators in second quantization </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We assume again that we have at our disposal \( n \) different single-particle orbits
+\( \alpha_0,\alpha_2,\dots,\alpha_{n-1} \) and that we can distribute  among these orbits \( N\le n \) particles.
+The ordering among these states is important as it defines the order of the creation operators.
+We will write the determinant 
+<p>&nbsp;<br>
+$$
+\Phi_{\Lambda} = a_{\alpha_3}^{\dagger} a_{\alpha_6}^{\dagger} a_{\alpha_{10}}^{\dagger} a_{\alpha_{13}}^{\dagger} |0\rangle,
+$$
+<p>&nbsp;<br>
+
+in a more compact way as 
+<p>&nbsp;<br>
+$$
+\Phi_{3,6,10,13} = |0001001000100100\rangle.
+$$
+<p>&nbsp;<br>
+
+The action of a creation operator is thus
+<p>&nbsp;<br>
+$$
+a^{\dagger}_{\alpha_4}\Phi_{3,6,10,13} = a^{\dagger}_{\alpha_4}|0001001000100100\rangle=a^{\dagger}_{\alpha_4}a_{\alpha_3}^{\dagger} a_{\alpha_6}^{\dagger} a_{\alpha_{10}}^{\dagger} a_{\alpha_{13}}^{\dagger} |0\rangle,
+$$
+<p>&nbsp;<br>
+
+which becomes
+<p>&nbsp;<br>
+$$
+-a_{\alpha_3}^{\dagger} a^{\dagger}_{\alpha_4} a_{\alpha_6}^{\dagger} a_{\alpha_{10}}^{\dagger} a_{\alpha_{13}}^{\dagger} |0\rangle=-|0001101000100100\rangle.
+$$
+<p>&nbsp;<br>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec101">Operators in second quantization </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Similarly
+<p>&nbsp;<br>
+$$
+a^{\dagger}_{\alpha_6}\Phi_{3,6,10,13} = a^{\dagger}_{\alpha_6}|0001001000100100\rangle=a^{\dagger}_{\alpha_6}a_{\alpha_3}^{\dagger} a_{\alpha_6}^{\dagger} a_{\alpha_{10}}^{\dagger} a_{\alpha_{13}}^{\dagger} |0\rangle,
+$$
+<p>&nbsp;<br>
+
+which becomes
+<p>&nbsp;<br>
+$$
+-a^{\dagger}_{\alpha_4} (a_{\alpha_6}^{\dagger})^ 2 a_{\alpha_{10}}^{\dagger} a_{\alpha_{13}}^{\dagger} |0\rangle=0!
+$$
+<p>&nbsp;<br>
+
+This gives a simple recipe:  
+
+<ul>
+<p><li> If one of the bits \( b_j \) is \( 1 \) and we act with a creation operator on this bit, we return a null vector</li>
+<p><li> If \( b_j=0 \), we set it to \( 1 \) and return a sign factor \( (-1)^l \), where \( l \) is the number of bits set before bit \( j \).</li>
+</ul>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec102">Operators in second quantization </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Consider the action of \( a^{\dagger}_{\alpha_2} \) on various slater determinants:
+<p>&nbsp;<br>
+$$
+\begin{array}{ccc}
+a^{\dagger}_{\alpha_2}\Phi_{00111}& = a^{\dagger}_{\alpha_2}|00111\rangle&=0\times |00111\rangle\\
+a^{\dagger}_{\alpha_2}\Phi_{01011}& = a^{\dagger}_{\alpha_2}|01011\rangle&=(-1)\times |01111\rangle\\
+a^{\dagger}_{\alpha_2}\Phi_{01101}& = a^{\dagger}_{\alpha_2}|01101\rangle&=0\times |01101\rangle\\
+a^{\dagger}_{\alpha_2}\Phi_{01110}& = a^{\dagger}_{\alpha_2}|01110\rangle&=0\times |01110\rangle\\
+a^{\dagger}_{\alpha_2}\Phi_{10011}& = a^{\dagger}_{\alpha_2}|10011\rangle&=(-1)\times |10111\rangle\\
+a^{\dagger}_{\alpha_2}\Phi_{10101}& = a^{\dagger}_{\alpha_2}|10101\rangle&=0\times |10101\rangle\\
+a^{\dagger}_{\alpha_2}\Phi_{10110}& = a^{\dagger}_{\alpha_2}|10110\rangle&=0\times |10110\rangle\\
+a^{\dagger}_{\alpha_2}\Phi_{11001}& = a^{\dagger}_{\alpha_2}|11001\rangle&=(+1)\times |11101\rangle\\
+a^{\dagger}_{\alpha_2}\Phi_{11010}& = a^{\dagger}_{\alpha_2}|11010\rangle&=(+1)\times |11110\rangle\\
+\end{array}
+$$
+<p>&nbsp;<br>
+
+What is the simplest way to obtain the phase when we act with one annihilation(creation) operator
+on the given Slater determinant representation?
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec103">Operators in second quantization </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We have an SD representation
+<p>&nbsp;<br>
+$$
+\Phi_{\Lambda} = a_{\alpha_0}^{\dagger} a_{\alpha_3}^{\dagger} a_{\alpha_6}^{\dagger} a_{\alpha_{10}}^{\dagger} a_{\alpha_{13}}^{\dagger} |0\rangle,
+$$
+<p>&nbsp;<br>
+
+in a more compact way as
+<p>&nbsp;<br>
+$$
+\Phi_{0,3,6,10,13} = |1001001000100100\rangle.
+$$
+<p>&nbsp;<br>
+
+The action of
+<p>&nbsp;<br>
+$$
+a^{\dagger}_{\alpha_4}a_{\alpha_0}\Phi_{0,3,6,10,13} = a^{\dagger}_{\alpha_4}|0001001000100100\rangle=a^{\dagger}_{\alpha_4}a_{\alpha_3}^{\dagger} a_{\alpha_6}^{\dagger} a_{\alpha_{10}}^{\dagger} a_{\alpha_{13}}^{\dagger} |0\rangle,
+$$
+<p>&nbsp;<br>
+
+which becomes
+<p>&nbsp;<br>
+$$
+-a_{\alpha_3}^{\dagger} a^{\dagger}_{\alpha_4} a_{\alpha_6}^{\dagger} a_{\alpha_{10}}^{\dagger} a_{\alpha_{13}}^{\dagger} |0\rangle=-|0001101000100100\rangle.
+$$
+<p>&nbsp;<br>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec104">Operators in second quantization </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The action
+<p>&nbsp;<br>
+$$
+a_{\alpha_0}\Phi_{0,3,6,10,13} = |0001001000100100\rangle,
+$$
+<p>&nbsp;<br>
+
+can be obtained by subtracting the logical sum (AND operation) of \( \Phi_{0,3,6,10,13} \) and 
+a word which represents only \( \alpha_0 \), that is
+<p>&nbsp;<br>
+$$
+|1000000000000000\rangle,
+$$
+<p>&nbsp;<br>
+
+from \( \Phi_{0,3,6,10,13}= |1001001000100100\rangle \).
+
+<p>
+This operation gives \( |0001001000100100\rangle \).
+
+<p>
+Similarly, we can form \( a^{\dagger}_{\alpha_4}a_{\alpha_0}\Phi_{0,3,6,10,13} \), say, by adding 
+\( |0000100000000000\rangle \) to \( a_{\alpha_0}\Phi_{0,3,6,10,13} \), first checking that their logical sum
+is zero in order to make sure that orbital \( \alpha_4 \) is not already occupied.
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec105">Operators in second quantization </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+It is trickier however to get the phase \( (-1)^l \). 
+One possibility is as follows
+
+<ul>
+<p><li> Let \( S_1 \) be a word that represents the $1-$bit to be removed and all others set to zero.</li>
+</ul>
+<p>
+
+In the previous example \( S_1=|1000000000000000\rangle \)
+
+<ul>
+<p><li> Define \( S_2 \) as the similar word that represents the bit to be added, that is in our case</li>
+</ul>
+<p>
+
+\( S_2=|0000100000000000\rangle \).
+
+<ul>
+<p><li> Compute then \( S=S_1-S_2 \), which here becomes</li>
+</ul>
+<p>&nbsp;<br>
+$$
+S=|0111000000000000\rangle
+$$
+<p>&nbsp;<br>
+
+
+<ul>
+<p><li> Perform then the logical AND operation of \( S \) with the word containing</li> 
+</ul>
+<p>&nbsp;<br>
+$$
+\Phi_{0,3,6,10,13} = |1001001000100100\rangle,
+$$
+<p>&nbsp;<br>
+
+which results in \( |0001000000000000\rangle \). Counting the number of $1-$bits gives the phase.  Here you need however an algorithm for bitcounting.
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec106">Bit counting </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We include here a python program which may aid in this direction. It uses bit manipulation functions from <a href="http://wiki.python.org/moin/BitManipulation" target="_blank"><tt>http://wiki.python.org/moin/BitManipulation</tt></a>.
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
+<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">import</span> <span style="color: #008b45; text-decoration: underline">math</span>
+
+<span style="color: #CD5555">&quot;&quot;&quot;</span>
+<span style="color: #CD5555">A simple Python class for Slater determinant manipulation</span>
+<span style="color: #CD5555">Bit-manipulation stolen from:</span>
+
+<span style="color: #CD5555">http://wiki.python.org/moin/BitManipulation</span>
+<span style="color: #CD5555">&quot;&quot;&quot;</span>
+
+<span style="color: #228B22"># bitCount() counts the number of bits set (not an optimal function)</span>
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">bitCount</span>(int_type):
+    <span style="color: #CD5555">&quot;&quot;&quot; Count bits set in integer &quot;&quot;&quot;</span>
+    count = <span style="color: #B452CD">0</span>
+    <span style="color: #8B008B; font-weight: bold">while</span>(int_type):
+        int_type &amp;= int_type - <span style="color: #B452CD">1</span>
+        count += <span style="color: #B452CD">1</span>
+    <span style="color: #8B008B; font-weight: bold">return</span>(count)
+
+
+<span style="color: #228B22"># testBit() returns a nonzero result, 2**offset, if the bit at &#39;offset&#39; is one.</span>
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">testBit</span>(int_type, offset):
+    mask = <span style="color: #B452CD">1</span> &lt;&lt; offset
+    <span style="color: #8B008B; font-weight: bold">return</span>(int_type &amp; mask) &gt;&gt; offset
+
+<span style="color: #228B22"># setBit() returns an integer with the bit at &#39;offset&#39; set to 1.</span>
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">setBit</span>(int_type, offset):
+    mask = <span style="color: #B452CD">1</span> &lt;&lt; offset
+    <span style="color: #8B008B; font-weight: bold">return</span>(int_type | mask)
+
+<span style="color: #228B22"># clearBit() returns an integer with the bit at &#39;offset&#39; cleared.</span>
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">clearBit</span>(int_type, offset):
+    mask = ~(<span style="color: #B452CD">1</span> &lt;&lt; offset)
+    <span style="color: #8B008B; font-weight: bold">return</span>(int_type &amp; mask)
+
+<span style="color: #228B22"># toggleBit() returns an integer with the bit at &#39;offset&#39; inverted, 0 -&gt; 1 and 1 -&gt; 0.</span>
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">toggleBit</span>(int_type, offset):
+    mask = <span style="color: #B452CD">1</span> &lt;&lt; offset
+    <span style="color: #8B008B; font-weight: bold">return</span>(int_type ^ mask)
+
+<span style="color: #228B22"># binary string made from number</span>
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">bin0</span>(s):
+    <span style="color: #8B008B; font-weight: bold">return</span> <span style="color: #658b00">str</span>(s) <span style="color: #8B008B; font-weight: bold">if</span> s&lt;=<span style="color: #B452CD">1</span> <span style="color: #8B008B; font-weight: bold">else</span> bin0(s&gt;&gt;<span style="color: #B452CD">1</span>) + <span style="color: #658b00">str</span>(s&amp;<span style="color: #B452CD">1</span>)
+
+<span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">bin</span>(s, L = <span style="color: #B452CD">0</span>):
+    ss = bin0(s)
+    <span style="color: #8B008B; font-weight: bold">if</span> L &gt; <span style="color: #B452CD">0</span>:
+        <span style="color: #8B008B; font-weight: bold">return</span> <span style="color: #CD5555">&#39;0&#39;</span>*(L-<span style="color: #658b00">len</span>(ss)) + ss
+    <span style="color: #8B008B; font-weight: bold">else</span>:
+        <span style="color: #8B008B; font-weight: bold">return</span> ss
+    
+    
+
+<span style="color: #8B008B; font-weight: bold">class</span> <span style="color: #008b45; font-weight: bold">Slater</span>:
+    <span style="color: #CD5555">&quot;&quot;&quot; Class for Slater determinants &quot;&quot;&quot;</span>
+    <span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">__init__</span>(<span style="color: #658b00">self</span>):
+        <span style="color: #658b00">self</span>.word = <span style="color: #658b00">int</span>(<span style="color: #B452CD">0</span>)
+
+    <span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">create</span>(<span style="color: #658b00">self</span>, j):
+        <span style="color: #8B008B; font-weight: bold">print</span> <span style="color: #CD5555">&quot;c^+_&quot;</span> + <span style="color: #658b00">str</span>(j) + <span style="color: #CD5555">&quot; |&quot;</span> + <span style="color: #658b00">bin</span>(<span style="color: #658b00">self</span>.word) + <span style="color: #CD5555">&quot;&gt;  = &quot;</span>,
+        <span style="color: #228B22"># Assume bit j is set, then we return zero.</span>
+        s = <span style="color: #B452CD">0</span>
+        <span style="color: #228B22"># Check if bit j is set.</span>
+        isset = testBit(<span style="color: #658b00">self</span>.word, j)
+        <span style="color: #8B008B; font-weight: bold">if</span> isset == <span style="color: #B452CD">0</span>:
+            bits = bitCount(<span style="color: #658b00">self</span>.word &amp; ((<span style="color: #B452CD">1</span>&lt;&lt;j)-<span style="color: #B452CD">1</span>))
+            s = <span style="color: #658b00">pow</span>(-<span style="color: #B452CD">1</span>, bits)
+            <span style="color: #658b00">self</span>.word = setBit(<span style="color: #658b00">self</span>.word, j)
+
+        <span style="color: #8B008B; font-weight: bold">print</span> <span style="color: #658b00">str</span>(s) + <span style="color: #CD5555">&quot; x |&quot;</span> + <span style="color: #658b00">bin</span>(<span style="color: #658b00">self</span>.word) + <span style="color: #CD5555">&quot;&gt;&quot;</span>
+        <span style="color: #8B008B; font-weight: bold">return</span> s
+        
+    <span style="color: #8B008B; font-weight: bold">def</span> <span style="color: #008b45">annihilate</span>(<span style="color: #658b00">self</span>, j):
+        <span style="color: #8B008B; font-weight: bold">print</span> <span style="color: #CD5555">&quot;c_&quot;</span> + <span style="color: #658b00">str</span>(j) + <span style="color: #CD5555">&quot; |&quot;</span> + <span style="color: #658b00">bin</span>(<span style="color: #658b00">self</span>.word) + <span style="color: #CD5555">&quot;&gt;  = &quot;</span>,
+        <span style="color: #228B22"># Assume bit j is not set, then we return zero.</span>
+        s = <span style="color: #B452CD">0</span>
+        <span style="color: #228B22"># Check if bit j is set.</span>
+        isset = testBit(<span style="color: #658b00">self</span>.word, j)
+        <span style="color: #8B008B; font-weight: bold">if</span> isset == <span style="color: #B452CD">1</span>:
+            bits = bitCount(<span style="color: #658b00">self</span>.word &amp; ((<span style="color: #B452CD">1</span>&lt;&lt;j)-<span style="color: #B452CD">1</span>))
+            s = <span style="color: #658b00">pow</span>(-<span style="color: #B452CD">1</span>, bits)
+            <span style="color: #658b00">self</span>.word = clearBit(<span style="color: #658b00">self</span>.word, j)
+
+        <span style="color: #8B008B; font-weight: bold">print</span> <span style="color: #658b00">str</span>(s) + <span style="color: #CD5555">&quot; x |&quot;</span> + <span style="color: #658b00">bin</span>(<span style="color: #658b00">self</span>.word) + <span style="color: #CD5555">&quot;&gt;&quot;</span>
+        <span style="color: #8B008B; font-weight: bold">return</span> s
+
+
+
+<span style="color: #228B22"># Do some testing:</span>
+
+phi = Slater()
+phi.create(<span style="color: #B452CD">0</span>)
+phi.create(<span style="color: #B452CD">1</span>)
+phi.create(<span style="color: #B452CD">2</span>)
+phi.create(<span style="color: #B452CD">3</span>)
+
+<span style="color: #8B008B; font-weight: bold">print</span>
+
+
+s = phi.annihilate(<span style="color: #B452CD">2</span>)
+s = phi.create(<span style="color: #B452CD">7</span>)
+s = phi.annihilate(<span style="color: #B452CD">0</span>)
+s = phi.create(<span style="color: #B452CD">200</span>)
+</pre></div>
+
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec107">Eigenvalue problems, basic definitions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Let us consider the matrix \( \mathbf{A} \) of dimension \( n \). The eigenvalues of
+\( \mathbf{A} \) are defined through the matrix equation 
+<p>&nbsp;<br>
+$$
+   \mathbf{A}\mathbf{x}^{(\nu)} = \lambda^{(\nu)}\mathbf{x}^{(\nu)},
+$$
+<p>&nbsp;<br>
+
+where \( \lambda^{(\nu)} \) are the eigenvalues and \( \mathbf{x}^{(\nu)} \) the
+corresponding eigenvectors.
+Unless otherwise stated, when we use the wording eigenvector we mean the
+right eigenvector. The left eigenvalue problem is defined as 
+<p>&nbsp;<br>
+$$
+\mathbf{x}^{(\nu)}_L\mathbf{A} = \lambda^{(\nu)}\mathbf{x}^{(\nu)}_L
+$$
+<p>&nbsp;<br>
+
+The above right eigenvector problem is equivalent to a set of \( n \) equations with \( n \) unknowns
+\( x_i \).
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec108">Eigenvalue problems, basic definitions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The eigenvalue problem can be rewritten as 
+<p>&nbsp;<br>
+$$
+   \left( \mathbf{A}-\lambda^{(\nu)} \mathbf{I} \right) \mathbf{x}^{(\nu)} = 0,
+$$
+<p>&nbsp;<br>
+
+with \( \mathbf{I} \) being the unity matrix. This equation provides
+a solution to the problem if and only if the determinant
+is zero, namely
+<p>&nbsp;<br>
+$$
+   \left| \mathbf{A}-\lambda^{(\nu)}\mathbf{I}\right| = 0,
+$$
+<p>&nbsp;<br>
+
+which in turn means that the determinant is a polynomial
+of degree \( n \) in \( \lambda \) and in general we will have 
+\( n \) distinct zeros.
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec109">Eigenvalue problems, basic definitions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The eigenvalues of a matrix 
+\( \mathbf{A}\in {\mathbb{C}}^{n\times n} \)
+are thus the \( n \) roots of its characteristic polynomial 
+<p>&nbsp;<br>
+$$
+P(\lambda) = det(\lambda\mathbf{I}-\mathbf{A}),
+$$
+<p>&nbsp;<br>
+
+or 
+<p>&nbsp;<br>
+$$
+  P(\lambda)= \prod_{i=1}^{n}\left(\lambda_i-\lambda\right).
+$$
+<p>&nbsp;<br>
+
+The set of these roots is called the spectrum and is denoted as
+\( \lambda(\mathbf{A}) \).
+If \( \lambda(\mathbf{A})=\left\{\lambda_1,\lambda_2,\dots ,\lambda_n\right\} \) then we have
+<p>&nbsp;<br>
+$$
+   det(\mathbf{A})= \lambda_1\lambda_2\dots\lambda_n, 
+$$
+<p>&nbsp;<br>
+
+and if we define the trace of \( \mathbf{A} \) as
+<p>&nbsp;<br>
+$$
+Tr(\mathbf{A})=\sum_{i=1}^n a_{ii}$$
+<p>&nbsp;<br>
+
+then
+<p>&nbsp;<br>
+$$
+Tr(\mathbf{A})=\lambda_1+\lambda_2+\dots+\lambda_n.
+$$
+<p>&nbsp;<br>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec110">Abel-Ruffini Impossibility Theorem </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The <em>Abel-Ruffini</em> theorem (also known as Abel's impossibility theorem) 
+states that there is no general solution in radicals to polynomial equations of degree five or higher.
+
+<p>
+The content of this theorem is frequently misunderstood. It does not assert that higher-degree polynomial equations are unsolvable. 
+In fact, if the polynomial has real or complex coefficients, and we allow complex solutions, then every polynomial equation has solutions; this is the fundamental theorem of algebra. Although these solutions cannot always be computed exactly with radicals, they can be computed to any desired degree of accuracy using numerical methods such as the Newton-Raphson method or Laguerre method, and in this way they are no different from solutions to polynomial equations of the second, third, or fourth degrees.
+
+<p>
+The theorem only concerns the form that such a solution must take. The content of the theorem is 
+that the solution of a higher-degree equation cannot in all cases be expressed in terms of the polynomial coefficients with a finite number of operations of addition, subtraction, multiplication, division and root extraction. Some polynomials of arbitrary degree, of which the simplest nontrivial example is the monomial equation \( ax^n = b \), are always solvable with a radical.
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec111">Abel-Ruffini Impossibility Theorem </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The <em>Abel-Ruffini</em> theorem says that there are some fifth-degree equations whose solution cannot be so expressed. 
+The equation \( x^5 - x + 1 = 0 \) is an example. Some other fifth degree equations can be solved by radicals, 
+for example \( x^5 - x^4 - x + 1 = 0 \). The precise criterion that distinguishes between those equations that can be solved 
+by radicals and those that cannot was given by Galois and is now part of Galois theory: 
+a polynomial equation can be solved by radicals if and only if its Galois group is a solvable group.
+
+<p>
+Today, in the modern algebraic context, we say that second, third and fourth degree polynomial 
+equations can always be solved by radicals because the symmetric groups \( S_2, S_3 \) and \( S_4 \) are solvable groups, 
+whereas \( S_n \) is not solvable for \( n \ge 5 \).
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec112">Eigenvalue problems, basic definitions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+In the present discussion we assume that our matrix is real and symmetric, that is 
+\( \mathbf{A}\in {\mathbb{R}}^{n\times n} \).
+The matrix \( \mathbf{A} \) has \( n \) eigenvalues
+\( \lambda_1\dots \lambda_n \) (distinct or not). Let \( \mathbf{D} \) be the
+diagonal matrix with the eigenvalues on the diagonal
+<p>&nbsp;<br>
+$$
+\mathbf{D}=    \left( \begin{array}{ccccccc} \lambda_1 & 0 & 0   & 0    & \dots  &0     & 0 \\
+                                0 & \lambda_2 & 0 & 0    & \dots  &0     &0 \\
+                                0   & 0 & \lambda_3 & 0  &0       &\dots & 0\\
+                                \dots  & \dots & \dots & \dots  &\dots      &\dots & \dots\\
+                                0   & \dots & \dots & \dots  &\dots       &\lambda_{n-1} & \\
+                                0   & \dots & \dots & \dots  &\dots       &0 & \lambda_n
+             \end{array} \right).
+$$
+<p>&nbsp;<br>
+
+If \( \mathbf{A} \) is real and symmetric then there exists a real orthogonal matrix \( \mathbf{S} \) such that
+<p>&nbsp;<br>
+$$
+     \mathbf{S}^T \mathbf{A}\mathbf{S}= \mathrm{diag}(\lambda_1,\lambda_2,\dots ,\lambda_n),
+$$
+<p>&nbsp;<br>
+
+and for \( j=1:n \) we have \( \mathbf{A}\mathbf{S}(:,j) = \lambda_j \mathbf{S}(:,j) \).
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec113">Eigenvalue problems, basic definitions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+To obtain the eigenvalues of \( \mathbf{A}\in {\mathbb{R}}^{n\times n} \),
+the strategy is to
+perform a series of similarity transformations on the original
+matrix \( \mathbf{A} \), in order to reduce it either into a  diagonal form as above
+or into a  tridiagonal form.
+
+<p>
+We say that a matrix \( \mathbf{B} \) is a similarity
+transform  of  \( \mathbf{A} \) if 
+<p>&nbsp;<br>
+$$
+     \mathbf{B}= \mathbf{S}^T \mathbf{A}\mathbf{S}, \hspace{1cm} \mathrm{where} \hspace{1cm}  \mathbf{S}^T\mathbf{S}=\mathbf{S}^{-1}\mathbf{S} =\mathbf{I}.
+$$
+<p>&nbsp;<br>
+
+The importance of a similarity transformation lies in the fact that
+the resulting matrix has the same
+eigenvalues, but the eigenvectors are in general different.
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec114">Eigenvalue problems, basic definitions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+To prove this we
+start with  the eigenvalue problem and a similarity transformed matrix \( \mathbf{B} \).
+<p>&nbsp;<br>
+$$
+   \mathbf{A}\mathbf{x}=\lambda\mathbf{x} \hspace{1cm} \mathrm{and}\hspace{1cm} 
+    \mathbf{B}= \mathbf{S}^T \mathbf{A}\mathbf{S}.
+$$
+<p>&nbsp;<br>
+
+We multiply the first equation on the left by \( \mathbf{S}^T \) and insert
+\( \mathbf{S}^{T}\mathbf{S} = \mathbf{I} \) between \( \mathbf{A} \) and \( \mathbf{x} \). Then we get
+<p>&nbsp;<br>
+$$
+\begin{equation}
+   (\mathbf{S}^T\mathbf{A}\mathbf{S})(\mathbf{S}^T\mathbf{x})=\lambda\mathbf{S}^T\mathbf{x} ,
+\tag{3}
+\end{equation}  
+$$
+<p>&nbsp;<br>
+
+which is the same as 
+<p>&nbsp;<br>
+$$
+   \mathbf{B} \left ( \mathbf{S}^T\mathbf{x} \right ) = \lambda \left (\mathbf{S}^T\mathbf{x}\right ).
+$$
+<p>&nbsp;<br>
+
+The variable  \( \lambda \) is an eigenvalue of \( \mathbf{B} \) as well, but with
+eigenvector \( \mathbf{S}^T\mathbf{x} \).
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec115">Eigenvalue problems, basic definitions </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The basic philosophy is to
+
+<ul>
+ <p><li> Either apply subsequent similarity transformations (direct method) so that</li> 
+</ul>
+<p>&nbsp;<br>
+$$
+\begin{equation}
+   \mathbf{S}_N^T\dots \mathbf{S}_1^T\mathbf{A}\mathbf{S}_1\dots \mathbf{S}_N=\mathbf{D} ,
+\tag{4}
+\end{equation}
+$$
+<p>&nbsp;<br>
+
+
+<ul>
+ <p><li> Or apply subsequent similarity transformations so that \( \mathbf{A} \) becomes tridiagonal (Householder) or upper/lower triangular (the <em>QR</em> method to be discussed later).</li>
+
+<p><li> Thereafter, techniques for obtaining eigenvalues from tridiagonal matrices can be used.</li>
+ <p><li> Or use so-called power methods</li>
+ <p><li> Or use iterative methods (Krylov, Lanczos, Arnoldi). These methods are popular for huge matrix problems.</li>
+</ul>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec116">Discussion of  methods for eigenvalues </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b>The general overview.</b>
+<p>
+One speaks normally of two main approaches to solving the eigenvalue problem.
+
+<ul>
+ <p><li> The first is the formal method, involving determinants and the  characteristic polynomial. This proves how many eigenvalues  there are, and is the way most of you learned about how to solve the eigenvalue problem, but for matrices of dimensions greater than 2 or 3, it is rather impractical.</li>
+ <p><li> The other general approach is to use similarity or unitary tranformations  to reduce a matrix to diagonal form. This is normally done in two steps: first reduce to for example a <em>tridiagonal</em> form, and then to diagonal form. The main algorithms we will discuss in detail, Jacobi's and  Householder's  (so-called direct method) and Lanczos algorithms (an iterative method), follow this methodology.</li> 
+</ul>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec117">Eigenvalues methods </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Direct or non-iterative methods  require for matrices of dimensionality \( n\times n \) typically \( O(n^3) \) operations. These methods are normally called standard methods and are used for dimensionalities
+\( n \sim 10^5 \) or smaller. A brief historical overview
+
+<p>
+<table border="1">
+<thead>
+<tr><th align="center">Year</th> <td align="center">    \( n \)     </td> <th align="center">                 </th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   1950    </td> <td align="center">   \( n=20 \)          </td> <td align="center">   (Wilkinson)          </td> </tr>
+<tr><td align="center">   1965    </td> <td align="center">   \( n=200 \)         </td> <td align="center">   (Forsythe et al.)    </td> </tr>
+<tr><td align="center">   1980    </td> <td align="center">   \( n=2000 \)        </td> <td align="center">   Linpack              </td> </tr>
+<tr><td align="center">   1995    </td> <td align="center">   \( n=20000 \)       </td> <td align="center">   Lapack               </td> </tr>
+<tr><td align="center">   2012    </td> <td align="center">   \( n\sim 10^5 \)    </td> <td align="center">   Lapack               </td> </tr>
+</tbody>
+</table>
+<p>
+shows that in the course of 60 years the dimension that  direct diagonalization methods can handle  has increased by almost a factor of
+\( 10^4 \). However, it pales beside the progress achieved by computer hardware, from flops to petaflops, a factor of almost \( 10^{15} \). We see clearly played out in history the \( O(n^3) \) bottleneck  of direct matrix algorithms.
+
+<p>
+Sloppily speaking, when  \( n\sim 10^4 \) is cubed we have \( O(10^{12}) \) operations, which is smaller than the \( 10^{15} \) increase in flops.
+
+
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec118">Discussion of methods for eigenvalues </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+If the matrix to diagonalize is large and sparse, direct methods simply become impractical, 
+also because
+many of the direct methods tend to destroy sparsity. As a result large dense matrices may arise during the diagonalization procedure.  The idea behind iterative methods is to project the 
+$n-$dimensional problem in smaller spaces, so-called Krylov subspaces. 
+Given a matrix \( \mathbf{A} \) and a vector \( \mathbf{v} \), the associated Krylov sequences of vectors
+(and thereby subspaces) 
+\( \mathbf{v} \), \( \mathbf{A}\mathbf{v} \), \( \mathbf{A}^2\mathbf{v} \), \( \mathbf{A}^3\mathbf{v},\dots \), represent
+successively larger Krylov subspaces.
+
+<p>
+<table border="1">
+<thead>
+<tr><th align="center">             Matrix             </th> <td align="center">\( \mathbf{A}\mathbf{x}=\mathbf{b} \)</td> <td align="center">\( \mathbf{A}\mathbf{x}=\lambda\mathbf{x} \)</td> </tr>
+</thead>
+<tbody>
+<tr><td align="left">   \( \mathbf{A}=\mathbf{A}^* \)       </td> <td align="left">   Conjugate gradient                       </td> <td align="left">   Lanczos                                         </td> </tr>
+<tr><td align="left">   \( \mathbf{A}\ne \mathbf{A}^* \)    </td> <td align="left">   GMRES etc                                </td> <td align="left">   Arnoldi                                         </td> </tr>
+</tbody>
+</table>
+
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec119">Eigenvalues and Lanczos' method </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Basic features with a real symmetric matrix (and normally huge \( n> 10^6 \) and sparse) 
+\( \hat{A} \) of dimension \( n\times n \):
+
+<ul>
+<p><li> Lanczos' algorithm generates a sequence of real tridiagonal matrices \( T_k \) of dimension \( k\times k \) with \( k\le n \), with the property that the extremal eigenvalues of \( T_k \) are progressively better estimates of \( \hat{A} \)' extremal eigenvalues.* The method converges to the extremal eigenvalues.</li>
+<p><li> The similarity transformation is</li> 
+</ul>
+<p>&nbsp;<br>
+$$
+\hat{T}= \hat{Q}^{T}\hat{A}\hat{Q},
+$$
+<p>&nbsp;<br>
+
+with the first vector \( \hat{Q}\hat{e}_1=\hat{q}_1 \).
+
+<p>
+We are going to solve iteratively
+<p>&nbsp;<br>
+$$
+\hat{T}= \hat{Q}^{T}\hat{A}\hat{Q},
+$$
+<p>&nbsp;<br>
+
+with the first vector \( \hat{Q}\hat{e}_1=\hat{q}_1 \).
+We can write out the matrix \( \hat{Q} \) in terms of its column vectors 
+<p>&nbsp;<br>
+$$
+\hat{Q}=\left[\hat{q}_1\hat{q}_2\dots\hat{q}_n\right].
+$$
+<p>&nbsp;<br>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec120">Eigenvalues and Lanczos' method, tridiagonal matrix </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The matrix
+<p>&nbsp;<br>
+$$
+\hat{T}= \hat{Q}^{T}\hat{A}\hat{Q},
+$$
+<p>&nbsp;<br>
+
+can be written as 
+<p>&nbsp;<br>
+$$
+    \hat{T} = \left(\begin{array}{cccccc}
+                           \alpha_1& \beta_1 & 0 &\dots   & \dots &0 \\
+                           \beta_1 & \alpha_2 & \beta_2 &0 &\dots &0 \\
+                           0& \beta_2 & \alpha_3 & \beta_3 & \dots &0 \\
+                           \dots& \dots   & \dots &\dots   &\dots & 0 \\
+                           \dots&   &  &\beta_{n-2}  &\alpha_{n-1}& \beta_{n-1} \\
+                           0&  \dots  &\dots  &0   &\beta_{n-1} & \alpha_{n} \\
+                      \end{array} \right)
+$$
+<p>&nbsp;<br>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec121">Eigenvalues and Lanczos' method, tridiagonal and orthogonal matrices </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+Using the fact that 
+<p>&nbsp;<br>
+$$
+\hat{Q}\hat{Q}^T=\hat{I}, 
+$$
+<p>&nbsp;<br>
+
+we can rewrite 
+<p>&nbsp;<br>
+$$
+\hat{T}= \hat{Q}^{T}\hat{A}\hat{Q},
+$$
+<p>&nbsp;<br>
+
+as 
+<p>&nbsp;<br>
+$$
+\hat{Q}\hat{T}= \hat{A}\hat{Q}.
+$$
+<p>&nbsp;<br>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec122">Eigenvalues and Lanczos' method </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+If we equate columns 
+<p>&nbsp;<br>
+$$
+\hat{T} = \left(\begin{array}{cccccc}
+        \alpha_1& \beta_1 & 0 &\dots   & \dots &0 \\
+        \beta_1 & \alpha_2 & \beta_2 &0 &\dots &0 \\
+        0& \beta_2 & \alpha_3 & \beta_3 & \dots &0 \\
+        \dots& \dots   & \dots &\dots   &\dots & 0 \\
+        \dots&   &  &\beta_{n-2}  &\alpha_{n-1}& \beta_{n-1} \\
+        0&  \dots  &\dots  &0   &\beta_{n-1} & \alpha_{n} \\
+        \end{array} \right)
+$$
+<p>&nbsp;<br>
+
+we obtain
+<p>&nbsp;<br>
+$$
+\hat{A}\hat{q}_k=\beta_{k-1}\hat{q}_{k-1}+\alpha_k\hat{q}_k+\beta_k\hat{q}_{k+1}.
+$$
+<p>&nbsp;<br>
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec123">Eigenvalues and Lanczos' method, defining the Lanczos' vectors  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We have thus
+<p>&nbsp;<br>
+$$
+\hat{A}\hat{q}_k=\beta_{k-1}\hat{q}_{k-1}+\alpha_k\hat{q}_k+\beta_k\hat{q}_{k+1},
+$$
+<p>&nbsp;<br>
+
+with \( \beta_0\hat{q}_0=0 \) for \( k=1:n-1 \). Remember that the vectors \( \hat{q}_k \)  are orthornormal and this implies
+<p>&nbsp;<br>
+$$
+\alpha_k=\hat{q}_k^T\hat{A}\hat{q}_k,
+$$
+<p>&nbsp;<br>
+
+and these vectors are called Lanczos vectors.
+</div>
+</section>
+
+
+<section>
+<h2 id="___sec124">Eigenvalues and Lanczos' method, basic steps </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+We have thus
+<p>&nbsp;<br>
+$$
+\hat{A}\hat{q}_k=\beta_{k-1}\hat{q}_{k-1}+\alpha_k\hat{q}_k+\beta_k\hat{q}_{k+1},
+$$
+<p>&nbsp;<br>
+
+with \( \beta_0\hat{q}_0=0 \) for \( k=1:n-1 \) and 
+<p>&nbsp;<br>
+$$
+\alpha_k=\hat{q}_k^T\hat{A}\hat{q}_k.
+$$
+<p>&nbsp;<br>
+
+If 
+<p>&nbsp;<br>
+$$
+\hat{r}_k=(\hat{A}-\alpha_k\hat{I})\hat{q}_k-\beta_{k-1}\hat{q}_{k-1},
+$$
+<p>&nbsp;<br>
+
+is non-zero, then 
+<p>&nbsp;<br>
+$$
+\hat{q}_{k+1}=\hat{r}_{k}/\beta_k,
+$$
+<p>&nbsp;<br>
+
+with \( \beta_k=\pm ||\hat{r}_{k}||_2 \).
 </div>
 </section>
 
