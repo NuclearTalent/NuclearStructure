@@ -135,22 +135,22 @@ The acronyms are
 |        | 1230pm-230pm  | Lunch +own activities |                             |
 |        | 230pm-6pm   | More survey of data (BAB) | NushellX hands-on and discussion of project (MHJ) |
 |--------------------------------------------------------------------------|
-| Tuesday 4 | 930am1130pm | Mean-field and shell-model basics (MHJ)    |   Discussion of second quantization and simple shell-model project |      
+| Tuesday 4 | 930am-1130pm | Mean-field and shell-model basics (MHJ)    |   Discussion of second quantization and simple shell-model project |      
 |         | 1130am-1230pm |Single-particle potentials and shell-model basics (BAB)    |  |      
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  | Single-particle potentials           | Studies of separation energies, shell gaps etc   |
 |--------------------------------------------------------------------------|
-| Wednesday 5 | 930am1130am | Welcome by ECT director Jochen Wambach and Shell-model basics (MHJ)    |   Discussion of simple shell-model project |      
+| Wednesday 5 | 930am-1130am | Welcome by ECT director Jochen Wambach and Shell-model basics (MHJ)    |   Discussion of simple shell-model project |      
 |          | 1130am-1230pm | Shell-model dimensionalities (BAB)    |    |      
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  |            | Work on shell-model project and NushellX  |
 |--------------------------------------------------------------------------|
-| Thursday 6 | 930am1130am | Shell-model basics (MHJ)    |   Discussion of simple shell-model project |      
+| Thursday 6 | 930am-1130am | Shell-model basics (MHJ)    |   Discussion of simple shell-model project |      
 |          | 1130am-1230pm  | Proton-neutron formalism and isospin (BAB)  |    |      
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  |            | Work on shell-model project and NushellX  |
 |--------------------------------------------------------------------------|
-| Friday 7 | 930am1230pm | Effective interactions for shell model (GJ)    |    |      
+| Friday 7 | 930am-1230pm | Effective interactions for shell model (GJ)    |    |      
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-5pm  |            |  Group presentation of work on shell-model project and NushellX  |
 |--------------------------------------------------------------------------|
@@ -161,30 +161,30 @@ The acronyms are
 |--------------------------------------------------------------------------|
 | Day   |  | Lecture Topics and lecturer |   Projects and exercises        |
 |--------------------------------------------------------------------------|
-| Monday 10 | 930am1030am | Masses from experiment  (AG) |                           |
+| Monday 10 | 930am-1030am | Masses from experiment  (AG) |                           |
 |        | 1030am-1230pm | Effective Hamiltonians (BAB and GJ) |                           |
 |        | 1230pm-230pm  | Lunch +own activities |                             |
 |        | 230pm-6pm   |  | Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Tuesday 11 | 930am1030am | Spectroscopic factors from experiment (AG) | |
+| Tuesday 11 | 930am-1030am | Spectroscopic factors from experiment (AG) | |
 |         | 1030am-1230pm | Spectroscopic factors from theory (BAB) | |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-330pm | Monte Carlo Shell-model seminar by Takaharu Otsuka |                     |
 |         | 330pm-6pm  |            |  Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Wednesday 12 | 930am1130am | Introduction to $\beta$-decay, experiment (RG)  |  |
+| Wednesday 12 | 930am-1130am | Introduction to $\beta$-decay, experiment (RG)  |  |
 |           | 1130am-1230pm | $\beta$-decay and sum rules from theory (BAB)  |  |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-330pm | Discussion of IBM and shell-model by Noam, Tobias and Takaharu|                     |
 |         | 330pm-6pm  |        | Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Thursday 13 | 930am1030am | Electromagnetic decays from experiment (AG) |  |
+| Thursday 13 | 930am-1030am | Electromagnetic decays from experiment (AG) |  |
 |          | 1030am-1230pm | Shell-model transition probabilities (BAB) |  |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-330pm | Presentation by Guillaume |                     |
 |         | 330pm-6pm  |            |  Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Friday 14 | 930am11am | Advanced aspects of  $\beta$-decay, experiment (RG)  |  |
+| Friday 14 | 930am-11am | Advanced aspects of  $\beta$-decay, experiment (RG)  |  |
 |         | 11am-1230pm | Summary of first two weeks and outlook for final week and discussion of the shell-model project (MHJ)  |                     |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-5pm  |             |  Group presentation of work on shell-model project and NushellX  |
@@ -193,28 +193,30 @@ The acronyms are
 
 === Week 3, July 17-21 ===
 
-A more detailed program for the last week will be finalized during the second week. The topics here are tentative and depend on how much we were able to cover during the first two weeks.
 
 |--------------------------------------------------------------------------|
 | Day   |  | Lecture Topics and lecturer |   Projects and exercises        |
 |--------------------------------------------------------------------------|
-| Monday 17 | 930am1230pm | Shell-model studies (BAB and MHJ) |        |
-|        | 1230pm-230pm  | Lunch +own activities |                             |
+| Monday 17 | 930am-12pm | Building a shell-model code (MHJ) |        |
+|          | 12pm-1pm | More on $\beta$-decay and $\gamma$ decay  (BAB) |  |
+|        | 1pm-230pm  | Lunch +own activities |                             |
 |        | 230pm-6pm   |  | Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Tuesday 18 | 930am1230pm |  Shell-model studies (BAB and MHJ) |        |
-|         | 1230pm-230pm | Lunch+ own activities |                     |
+| Tuesday 18 | 930am-12pm | Building a shell-model code, Lanczos' algorithm and Hartree-Fock theory (MHJ) |        |
+|          | 12pm-1pm | $\gamma$ decay  (BAB) |  |
+|         | 1pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  |            |  Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Wednesday 19 | 930am1230pm | Two-body transition operators and double-beta decay (BAB) | |
-|         | 1230pm-230pm | Lunch+ own activities |                     |
+| Wednesday 19 |  930am-12pm | From Hartree-Fock theory to the shell-model, analyzing the results (MHJ) |        |
+|          | 12pm-1pm | $\gamma$ decay Two-body transition operators and double-beta decay (BAB)  |  |
+|         | 1pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  |        |   Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
-| Thursday 20 | 930am1230pm | Advanced shell-model topics and interpretations of data (MHJ) |  |
+| Thursday 20 |  930am-1230pm | From Hartree-Fock theory to the shell model, discussion of final project  and summmary of course (BAB and MHJ) |        |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
-|         | 230pm-6pm  |            |  Work on shell-model project and NushellX |
+|         | 230pm-5pm  |            |      Group presentation of work on shell-model project and NushellX  |
 |--------------------------------------------------------------------------|
-| Friday 21 | 930am1230pm | Summary of course  |   Group presentation of work on shell-model project and NushellX  |
+| Friday 21 | 930am1230pm | Project work and own activities (no lectures) |   |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
 |         | 230pm-6pm  | Own activities     | |
 |--------------------------------------------------------------------------|
