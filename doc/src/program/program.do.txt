@@ -205,12 +205,14 @@ The acronyms are
 | Tuesday 18 | 930am-12pm | Building a shell-model code, Lanczos' algorithm and Hartree-Fock theory (MHJ) |        |
 |          | 12pm-1pm | $\gamma$ decay  (BAB) |  |
 |         | 1pm-230pm | Lunch+ own activities |                     |
-|         | 230pm-6pm  |            |  Work on shell-model project and NushellX |
+|         | 230pm-330pm | Laser spectroscopy talk by Agi and Shane |  |
+|         | 330pm-6pm  |            |  Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
 | Wednesday 19 |  930am-12pm | From Hartree-Fock theory to the shell-model, analyzing the results (MHJ) |        |
 |          | 12pm-1pm | $\gamma$ decay Two-body transition operators and double-beta decay (BAB)  |  |
 |         | 1pm-230pm | Lunch+ own activities |                     |
-|         | 230pm-6pm  |        |   Work on shell-model project and NushellX |
+|         | 230pm-330pm | No-core shell-model talk by Patrick |  |
+|         | 330pm-6pm  |        |   Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
 | Thursday 20 |  930am-1230pm | From Hartree-Fock theory to the shell model, discussion of final project  and summmary of course (BAB and MHJ) |        |
 |         | 1230pm-230pm | Lunch+ own activities |                     |
