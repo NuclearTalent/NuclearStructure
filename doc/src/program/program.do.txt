@@ -211,7 +211,7 @@ The acronyms are
 | Wednesday 19 |  930am-12pm | From Hartree-Fock theory to the shell-model, analyzing the results (MHJ) |        |
 |          | 12pm-1pm | $\gamma$ decay Two-body transition operators and double-beta decay (BAB)  |  |
 |         | 1pm-230pm | Lunch+ own activities |                     |
-|         | 230pm-330pm | No-core shell-model talk by Patrick |  |
+|         | 230pm-330pm | No-core shell-model talk by Patrick  and Nuclear interactions by Tor |  |
 |         | 330pm-6pm  |        |   Work on shell-model project and NushellX |
 |--------------------------------------------------------------------------|
 | Thursday 20 |  930am-1230pm | From Hartree-Fock theory to the shell model, discussion of final project  and summmary of course (BAB and MHJ) |        |

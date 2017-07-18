@@ -1964,11 +1964,11 @@ Simply find the occupied single-particle states $i$ and add the corresponding $\
 ===== Hamiltonian matrix without the bit representation =====
 !bblock
 
-Consider wave functions $\Psi$ expressed as linear combinations of
-Slater determinants $D$ of orthonormal spin-orbitals $\phi({\bf r})$:
+Consider the many-body state $\Psi_{\lambda}$ expressed as linear combinations of
+Slater determinants ($SD$) of orthonormal single-particle states $\phi({\bf r})$:
 !bt
 \begin{equation}
-\Psi = \sum_i c_i D_i
+\Psi_{\lambda} = \sum_i C_{\lambda i} SD_i
 \end{equation}
 !et
 Using the Slater-Condon rules the matrix elements of any one-body
@@ -1978,8 +1978,8 @@ integrals in our given single-particle basis.
 The diagonal elements are given by:
 !bt
 \begin{eqnarray}
-  \langle D | {\cal O}_1 | D \rangle & = & \sum_{i \in D} \langle \phi_i | {\cal O}_1 | \phi_i \rangle \\
-  \langle D | {\cal O}_2 | D \rangle & = & \frac{1}{2} \sum_{(i,j) \in D}  
+  \langle SD | {\cal O}_1 | SD \rangle & = & \sum_{i \in SD} \langle \phi_i | {\cal O}_1 | \phi_i \rangle \\
+  \langle SD | {\cal O}_2 | SD \rangle & = & \frac{1}{2} \sum_{(i,j) \in SD}  
       \langle \phi_i \phi_j | {\cal O}_2 | \phi_i \phi_j \rangle - \nonumber \\
  & & 
       \langle \phi_i \phi_j | {\cal O}_2 | \phi_j \phi_i \rangle \nonumber 
@@ -1995,8 +1995,8 @@ For two determinants which differ only by the substitution of single-particle st
 a single-particle state $j$:
 !bt
 \begin{eqnarray}
-  \langle D | {\cal O}_1 | D_i^j \rangle & = & \langle \phi_i | {\cal O}_1 | \phi_j \rangle \\
-  \langle D | {\cal O}_2 | D_i^j \rangle & = & \sum_{k \in D} 
+  \langle SD | {\cal O}_1 | SD_i^j \rangle & = & \langle \phi_i | {\cal O}_1 | \phi_j \rangle \\
+  \langle SD | {\cal O}_2 | SD_i^j \rangle & = & \sum_{k \in SD} 
       \langle \phi_i \phi_k | {\cal O}_2 | \phi_j \phi_k \rangle - 
       \langle \phi_i \phi_k | {\cal O}_2 | \phi_k \phi_j \rangle \nonumber
 \end{eqnarray}
@@ -2004,8 +2004,8 @@ a single-particle state $j$:
 For two determinants which differ by two single-particle states
 !bt
 \begin{eqnarray}
-  \langle D | {\cal O}_1 | D_{ik}^{jl} \rangle & = & 0 \\
-  \langle D | {\cal O}_2 | D_{ik}^{jl} \rangle & = & 
+  \langle SD | {\cal O}_1 | SD_{ik}^{jl} \rangle & = & 0 \\
+  \langle SD | {\cal O}_2 | SD_{ik}^{jl} \rangle & = & 
       \langle \phi_i \phi_k | {\cal O}_2 | \phi_j \phi_l \rangle -
       \langle \phi_i \phi_k | {\cal O}_2 | \phi_l \phi_j \rangle \nonumber 
 \end{eqnarray}
@@ -2022,16 +2022,70 @@ substitutions are zero.
 
 An efficient implementation of these rules requires
 
-* to find the number of spin-orbital substitutions between two determinants
-* to find which spin-orbitals are involved in the substitution
-* to compute the phase factor if a reordering of the spin-orbitals has occured
+* to find the number of single-particle state substitutions between two determinants
+* to find which single-particle states are involved in the substitution
+* to compute the phase factor if a reordering of the single-particle states has occured
 
 We can solve this problem using our odometric approach or alternatively using a bit representation as discussed below and in more detail in 
 
 * "Scemama and Gimer's article (Fortran codes)":"https://github.com/scemama/slater_condon"
 * "Simen Kvaal's article on how to build an FCI code (C++ code)":"https://arxiv.org/abs/0810.2644"
 
+We recommend in particular the article by Simen Kvaal. It contains nice general classes for creation and annihilation operators as well as the calculation of the phase (see below). 
 !eblock
+
+
+!split
+===== Computing expectation values and transitions in the shell-model  =====
+!bblock
+When we diagonalize the Hamiltonian matrix, the eigenvectors are the coefficients $C_{\lambda i}$ used 
+to express the many-body state $\Psi_{\lambda}$ in terms of  a linear combinations of
+Slater determinants ($SD$) of orthonormal single-particle states $\phi({\bf r})$.
+
+With these eigenvectors we can compute say the transition likelyhood of a one-body operator as
+!bt
+\[
+\langle \Psi_{\lambda} \vert {\cal O}_1 \vert \Psi_{\sigma} \rangle  = 
+\sum_{ij}C_{\lambda i}^*C_{\sigma j}  \langle SD_i | {\cal O}_1 | SD_j \rangle .
+\]
+!et
+Writing the one-body operator in second quantization as 
+!bt
+\[
+{\cal O}_1  = \sum_{pq} \langle p \vert {\cal o}_1 \vert q\rangle a_p^{\dagger} a_q, 
+\]
+!et
+we have
+!bt
+\[
+\langle \Psi_{\lambda} \vert {\cal O}_1 \vert \Psi_{\sigma} \rangle  = 
+\sum_{pq}\langle p \vert {\cal o}_1 \vert q\rangle \sum_{ij}C_{\lambda i}^*C_{\sigma j}  \langle SD_i |a_p^{\dagger} a_q | SD_j \rangle .
+\]
+!et 
+!eblock
+
+
+!split
+===== Computing expectation values and transitions in the shell-model and spectroscopic factors  =====
+!bblock
+The terms we need to evalute then are just the elements 
+!bt
+\[
+\langle SD_i |a_p^{\dagger} a_q | SD_j \rangle, 
+\]
+!et 
+which can be rewritten in terms of spectroscopic factors by inserting a complete set of Slater determinats as
+!bt
+\[
+\langle SD_i |a_p^{\dagger} a_q | SD_j \rangle = \sum_{l}\langle SD_i \vert a_p^{\dagger}\vert SD_l\rangle \langle SD_l \vert  a_q \vert SD_j \rangle,
+\]
+!et
+where $\langle SD_l\vert a_q(a_p^{\dagger})\vert SD_j\rangle$ are the spectroscopic factors. These can be easily evaluated in $m$-scheme. Using the Wigner-Eckart theorem we can transform these to a $J$-coupled scheme through so-called reduced matrix elements.
+
+!eblock
+
+
+
 
 !split
 ===== Operators in second quantization =====
@@ -2059,8 +2113,8 @@ A practically useful way to implement this action is to encode a Slater determin
 !split
 ===== Operators in second quantization =====
 !bblock
-Assume that we have at our disposal $n$ different single-particle orbits
-$\alpha_0,\alpha_2,\dots,\alpha_{n-1}$ and that we can distribute  among these orbits $N\le n$ particles.
+Assume that we have at our disposal $n$ different single-particle states
+$\alpha_0,\alpha_2,\dots,\alpha_{n-1}$ and that we can distribute  among these states $N\le n$ particles.
 
 A Slater  determinant can then be coded as an integer of $n$ bits. As an example, if we have $n=16$ single-particle states
 $\alpha_0,\alpha_1,\dots,\alpha_{15}$ and $N=4$ fermions occupying the states $\alpha_3$, $\alpha_6$, $\alpha_{10}$ and $\alpha_{13}$
@@ -2234,7 +2288,7 @@ This operation gives $|0001001000100100\rangle$.
 
 Similarly, we can form $a^{\dagger}_{\alpha_4}a_{\alpha_0}\Phi_{0,3,6,10,13}$, say, by adding 
 $|0000100000000000\rangle$ to $a_{\alpha_0}\Phi_{0,3,6,10,13}$, first checking that their logical sum
-is zero in order to make sure that orbital $\alpha_4$ is not already occupied. 
+is zero in order to make sure that the state $\alpha_4$ is not already occupied. 
 !eblock
 
 
@@ -2245,7 +2299,7 @@ is zero in order to make sure that orbital $\alpha_4$ is not already occupied.
 !bblock
 It is trickier however to get the phase $(-1)^l$. 
 One possibility is as follows
-* Let $S_1$ be a word that represents the $1-$bit to be removed and all others set to zero.
+* Let $S_1$ be a word that represents the 1-bit to be removed and all others set to zero.
 In the previous example $S_1=|1000000000000000\rangle$
 * Define $S_2$ as the similar word that represents the bit to be added, that is in our case
 $S_2=|0000100000000000\rangle$.
@@ -2261,7 +2315,7 @@ S=|0111000000000000\rangle
 \Phi_{0,3,6,10,13} = |1001001000100100\rangle,
 \]
 !et
-which results in $|0001000000000000\rangle$. Counting the number of $1-$bits gives the phase.  Here you need however an algorithm for bitcounting. 
+which results in $|0001000000000000\rangle$. Counting the number of 1-bits gives the phase.  Here you need however an algorithm for bitcounting. 
 !eblock
 
 
