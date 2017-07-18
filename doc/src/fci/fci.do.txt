@@ -2683,11 +2683,11 @@ $n \sim 10^5$ or smaller. A brief historical overview
 |  1965 | $n=200$      |(Forsythe et al.)|
 |  1980 | $n=2000$     |Linpack          |
 |  1995 | $n=20000$    |Lapack           |
-|  2012 | $n\sim 10^5$ |Lapack           |
+|  This decade | $n\sim 10^5$ |Lapack           |
 |----------------------------------------|
 
 shows that in the course of 60 years the dimension that  direct diagonalization methods can handle  has increased by almost a factor of
-$10^4$. However, it pales beside the progress achieved by computer hardware, from flops to petaflops, a factor of almost $10^{15}$. We see clearly played out in history the $O(n^3)$ bottleneck  of direct matrix algorithms.
+$10^4$ (note this is for serial versions). However, it pales beside the progress achieved by computer hardware, from flops to petaflops, a factor of almost $10^{15}$. We see clearly played out in history the $O(n^3)$ bottleneck  of direct matrix algorithms.
 
 Sloppily speaking, when  $n\sim 10^4$ is cubed we have $O(10^{12})$ operations, which is smaller than the $10^{15}$ increase in flops.  
 
