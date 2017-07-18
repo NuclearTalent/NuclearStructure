@@ -1455,7 +1455,7 @@ diagonal.
 
 
 !split
-===== Developing a  Hartree-Fock program, a simple Python program  =====
+===== "Developing a  Hartree-Fock program, a simple Python program":"https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode"  =====
 
 An example of a function written in python which performs the Hartree-Fock calculation is shown here. In setting up your code you will need to write a function which sets up the single-particle basis, the matrix elements $t_{\alpha\gamma}$ of the one-body operator (called $h0$ in the function below) and the antisymmetrized TBMEs (called *nninteraction* in the code link below) and the density matrix elements $\rho_{\beta\delta}$ (called *densityMatrix* below). 
 The python program  shows how one can, in a brute force way read in matrix elements in $m$-scheme and compute the Hartree-Fock single-particle energies for four major shells. The interaction which has been used is the so-called N3LO interaction of "Machleidt and Entem":"http://journals.aps.org/prc/abstract/10.1103/PhysRevC.68.041001"
@@ -1474,7 +1474,7 @@ $\langle pq \vert \hat{v}\vert rs \rangle$.
 You will need to read these two files and set up arrays which store the matrix elements while running the program.
 
 !split
-===== Developing a  Hartree-Fock program, the simple Python program =====
+===== "Developing a  Hartree-Fock program, the simple Python program":"https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode" =====
 
 !bc pycod
 	""" Star HF-iterations, preparing variables and density matrix """

@@ -273,7 +273,7 @@ MathJax.Hub.Config({
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
-     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">Why Hartree-Fock?</a></li>
+     <!-- navigation toc: --> <li><a href="._hfock-bs001.html#___sec0" style="font-size: 80%;">Why Hartree-Fock?</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs002.html#___sec1" style="font-size: 80%;">Why Hartree-Fock?</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs003.html#___sec2" style="font-size: 80%;">Definitions and notations</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs004.html#___sec3" style="font-size: 80%;">Definitions and notations</a></li>
@@ -339,7 +339,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._hfock-bs064.html#___sec63" style="font-size: 80%;">Developing a  Hartree-Fock program</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs065.html#___sec64" style="font-size: 80%;">Developing a  Hartree-Fock program for neutron drops (easy to include protons)</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs066.html#___sec65" style="font-size: 80%;">Developing a  Hartree-Fock program, the algorithm</a></li>
-     <!-- navigation toc: --> <li><a href="._hfock-bs067.html#___sec66" style="font-size: 80%;">Developing a  Hartree-Fock program, the density matrix</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec66" style="font-size: 80%;">Developing a  Hartree-Fock program, the density matrix</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs068.html#___sec67" style="font-size: 80%;">Developing a  Hartree-Fock program, additional considerations</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs069.html#___sec68" style="font-size: 80%;">"Developing a  Hartree-Fock program, a simple Python program":"https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode"</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs070.html#___sec69" style="font-size: 80%;">Developing a  Hartree-Fock program, a simple Python program and input files</a></li>
@@ -358,65 +358,52 @@ MathJax.Hub.Config({
 
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 
-<a name="part0001"></a>
+<a name="part0067"></a>
 <!-- !split -->
 
-<h2 id="___sec0" class="anchor">Why Hartree-Fock?  </h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
-Hartree-Fock (HF) theory is an algorithm for finding an approximative expression for the ground state of a given Hamiltonian. The basic ingredients are
+<h2 id="___sec66" class="anchor">Developing a  Hartree-Fock program, the density matrix  </h2>
 
-<ul>
-  <li> Define a single-particle basis \( \{\psi_{\alpha}\} \) so that</li>
-</ul>
-
-$$ 
-\hat{h}^{\mathrm{HF}}\psi_{\alpha} = \varepsilon_{\alpha}\psi_{\alpha}
+<p>
+The equations are often rewritten in terms of a so-called density matrix,
+which is defined as 
+$$
+\begin{equation}
+\rho_{\gamma\delta}=\sum_{i=1}^{N}\langle\gamma|i\rangle\langle i|\delta\rangle = \sum_{i=1}^{N}C_{i\gamma}C^*_{i\delta}.
+\tag{18}
+\end{equation}
 $$
 
-with the Hartree-Fock Hamiltonian defined as
+It means that we can rewrite the Hartree-Fock Hamiltonian as
 $$
-\hat{h}^{\mathrm{HF}}=\hat{t}+\hat{u}_{\mathrm{ext}}+\hat{u}^{\mathrm{HF}}
-$$
-
-
-<ul>
-  <li> The term  \( \hat{u}^{\mathrm{HF}} \) is a single-particle potential to be determined by the HF algorithm.</li>
-  <li> The HF algorithm means to choose \( \hat{u}^{\mathrm{HF}} \) in order to have</li> 
-</ul>
-
-$$ \langle \hat{H} \rangle = E^{\mathrm{HF}}= \langle \Phi_0 | \hat{H}|\Phi_0 \rangle
+\hat{h}_{\alpha\beta}^{HF}=\epsilon_{\alpha}\delta_{\alpha,\beta}+
+\sum_{\gamma\delta} \rho_{\gamma\delta}\langle \alpha\gamma|V|\beta\delta\rangle_{AS}.
 $$
 
-that is to find a local minimum with a Slater determinant \( \Phi_0 \) being the ansatz for the ground state. 
-
-<ul>
-  <li> The variational principle ensures that \( E^{\mathrm{HF}} \ge E_0 \), with \( E_0 \) the exact ground state energy.</li>
-</ul>
-</div>
-</div>
-
+It is convenient to use the density matrix since we can precalculate in every iteration the product of two eigenvector components \( C \).
 
 <p>
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._hfock-bs000.html">&laquo;</a></li>
+<li><a href="._hfock-bs066.html">&laquo;</a></li>
   <li><a href="._hfock-bs000.html">1</a></li>
-  <li class="active"><a href="._hfock-bs001.html">2</a></li>
-  <li><a href="._hfock-bs002.html">3</a></li>
-  <li><a href="._hfock-bs003.html">4</a></li>
-  <li><a href="._hfock-bs004.html">5</a></li>
-  <li><a href="._hfock-bs005.html">6</a></li>
-  <li><a href="._hfock-bs006.html">7</a></li>
-  <li><a href="._hfock-bs007.html">8</a></li>
-  <li><a href="._hfock-bs008.html">9</a></li>
-  <li><a href="._hfock-bs009.html">10</a></li>
-  <li><a href="._hfock-bs010.html">11</a></li>
   <li><a href="">...</a></li>
+  <li><a href="._hfock-bs059.html">60</a></li>
+  <li><a href="._hfock-bs060.html">61</a></li>
+  <li><a href="._hfock-bs061.html">62</a></li>
+  <li><a href="._hfock-bs062.html">63</a></li>
+  <li><a href="._hfock-bs063.html">64</a></li>
+  <li><a href="._hfock-bs064.html">65</a></li>
+  <li><a href="._hfock-bs065.html">66</a></li>
+  <li><a href="._hfock-bs066.html">67</a></li>
+  <li class="active"><a href="._hfock-bs067.html">68</a></li>
+  <li><a href="._hfock-bs068.html">69</a></li>
+  <li><a href="._hfock-bs069.html">70</a></li>
+  <li><a href="._hfock-bs070.html">71</a></li>
+  <li><a href="._hfock-bs071.html">72</a></li>
+  <li><a href="._hfock-bs072.html">73</a></li>
   <li><a href="._hfock-bs073.html">74</a></li>
-  <li><a href="._hfock-bs002.html">&raquo;</a></li>
+  <li><a href="._hfock-bs068.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 
