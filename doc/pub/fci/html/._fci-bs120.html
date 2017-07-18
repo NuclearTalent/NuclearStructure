@@ -458,24 +458,24 @@ Direct or non-iterative methods  require for matrices of dimensionality \( n\tim
 <p>
 
 <div class="row">
-  <div class="col-xs-4">
+  <div class="col-xs-5">
     <table class="table table-striped table-hover table-condensed">
 <thead>
-<tr><td align="center"><b>Year</b></td> <td align="center">    \( n \)     </td> <td align="center"><b>                 </b></td> </tr>
+<tr><td align="center"><b>    Year   </b></td> <td align="center">    \( n \)     </td> <td align="center"><b>                 </b></td> </tr>
 </thead>
 <tbody>
-<tr><td align="center">   1950    </td> <td align="center">   \( n=20 \)          </td> <td align="center">   (Wilkinson)          </td> </tr>
-<tr><td align="center">   1965    </td> <td align="center">   \( n=200 \)         </td> <td align="center">   (Forsythe et al.)    </td> </tr>
-<tr><td align="center">   1980    </td> <td align="center">   \( n=2000 \)        </td> <td align="center">   Linpack              </td> </tr>
-<tr><td align="center">   1995    </td> <td align="center">   \( n=20000 \)       </td> <td align="center">   Lapack               </td> </tr>
-<tr><td align="center">   2012    </td> <td align="center">   \( n\sim 10^5 \)    </td> <td align="center">   Lapack               </td> </tr>
+<tr><td align="center">   1950           </td> <td align="center">   \( n=20 \)          </td> <td align="center">   (Wilkinson)          </td> </tr>
+<tr><td align="center">   1965           </td> <td align="center">   \( n=200 \)         </td> <td align="center">   (Forsythe et al.)    </td> </tr>
+<tr><td align="center">   1980           </td> <td align="center">   \( n=2000 \)        </td> <td align="center">   Linpack              </td> </tr>
+<tr><td align="center">   1995           </td> <td align="center">   \( n=20000 \)       </td> <td align="center">   Lapack               </td> </tr>
+<tr><td align="center">   This decade    </td> <td align="center">   \( n\sim 10^5 \)    </td> <td align="center">   Lapack               </td> </tr>
 </tbody>
     </table>
-  </div> <!-- col-xs-4 -->
+  </div> <!-- col-xs-5 -->
 </div> <!-- cell row -->
 <p>
 shows that in the course of 60 years the dimension that  direct diagonalization methods can handle  has increased by almost a factor of
-\( 10^4 \). However, it pales beside the progress achieved by computer hardware, from flops to petaflops, a factor of almost \( 10^{15} \). We see clearly played out in history the \( O(n^3) \) bottleneck  of direct matrix algorithms.
+\( 10^4 \) (note this is for serial versions). However, it pales beside the progress achieved by computer hardware, from flops to petaflops, a factor of almost \( 10^{15} \). We see clearly played out in history the \( O(n^3) \) bottleneck  of direct matrix algorithms.
 
 <p>
 Sloppily speaking, when  \( n\sim 10^4 \) is cubed we have \( O(10^{12}) \) operations, which is smaller than the \( 10^{15} \) increase in flops.
