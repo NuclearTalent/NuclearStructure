@@ -217,8 +217,14 @@ div { text-align: justify; text-justify: inter-word; }
                None,
                '___sec95'),
               ('Strategies for setting up an algorithm', 2, None, '___sec96'),
-              ('Operators in second quantization', 2, None, '___sec97'),
-              ('Operators in second quantization', 2, None, '___sec98'),
+              ('Computing expectation values and transitions in the shell-model',
+               2,
+               None,
+               '___sec97'),
+              ('Computing expectation values and transitions in the shell-model and spectroscopic factors',
+               2,
+               None,
+               '___sec98'),
               ('Operators in second quantization', 2, None, '___sec99'),
               ('Operators in second quantization', 2, None, '___sec100'),
               ('Operators in second quantization', 2, None, '___sec101'),
@@ -226,29 +232,23 @@ div { text-align: justify; text-justify: inter-word; }
               ('Operators in second quantization', 2, None, '___sec103'),
               ('Operators in second quantization', 2, None, '___sec104'),
               ('Operators in second quantization', 2, None, '___sec105'),
-              ('Bit counting', 2, None, '___sec106'),
-              ('Eigenvalue problems, basic definitions',
-               2,
-               None,
-               '___sec107'),
-              ('Eigenvalue problems, basic definitions',
-               2,
-               None,
-               '___sec108'),
+              ('Operators in second quantization', 2, None, '___sec106'),
+              ('Operators in second quantization', 2, None, '___sec107'),
+              ('Bit counting', 2, None, '___sec108'),
               ('Eigenvalue problems, basic definitions',
                2,
                None,
                '___sec109'),
-              ('Abel-Ruffini Impossibility Theorem', 2, None, '___sec110'),
-              ('Abel-Ruffini Impossibility Theorem', 2, None, '___sec111'),
               ('Eigenvalue problems, basic definitions',
                2,
                None,
-               '___sec112'),
+               '___sec110'),
               ('Eigenvalue problems, basic definitions',
                2,
                None,
-               '___sec113'),
+               '___sec111'),
+              ('Abel-Ruffini Impossibility Theorem', 2, None, '___sec112'),
+              ('Abel-Ruffini Impossibility Theorem', 2, None, '___sec113'),
               ('Eigenvalue problems, basic definitions',
                2,
                None,
@@ -257,30 +257,38 @@ div { text-align: justify; text-justify: inter-word; }
                2,
                None,
                '___sec115'),
-              ('Discussion of  methods for eigenvalues',
+              ('Eigenvalue problems, basic definitions',
                2,
                None,
                '___sec116'),
-              ('Eigenvalues methods', 2, None, '___sec117'),
-              ('Discussion of methods for eigenvalues', 2, None, '___sec118'),
-              ("Eigenvalues and Lanczos' method", 2, None, '___sec119'),
+              ('Eigenvalue problems, basic definitions',
+               2,
+               None,
+               '___sec117'),
+              ('Discussion of  methods for eigenvalues',
+               2,
+               None,
+               '___sec118'),
+              ('Eigenvalues methods', 2, None, '___sec119'),
+              ('Discussion of methods for eigenvalues', 2, None, '___sec120'),
+              ("Eigenvalues and Lanczos' method", 2, None, '___sec121'),
               ("Eigenvalues and Lanczos' method, tridiagonal matrix",
                2,
                None,
-               '___sec120'),
+               '___sec122'),
               ("Eigenvalues and Lanczos' method, tridiagonal and orthogonal matrices",
                2,
                None,
-               '___sec121'),
-              ("Eigenvalues and Lanczos' method", 2, None, '___sec122'),
+               '___sec123'),
+              ("Eigenvalues and Lanczos' method", 2, None, '___sec124'),
               ("Eigenvalues and Lanczos' method, defining the Lanczos' vectors",
                2,
                None,
-               '___sec123'),
+               '___sec125'),
               ("Eigenvalues and Lanczos' method, basic steps",
                2,
                None,
-               '___sec124')]}
+               '___sec126')]}
 end of tocinfo -->
 
 <body>
@@ -322,7 +330,7 @@ MathJax.Hub.Config({
 <center><b><a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA</b></center>
 <br>
 <p>
-<center><h4>Jul 17, 2017</h4></center> <!-- date -->
+<center><h4>Jul 18, 2017</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -2771,11 +2779,11 @@ Simply find the occupied single-particle states \( i \) and add the correspondin
 <p>
 
 <p>
-Consider wave functions \( \Psi \) expressed as linear combinations of
-Slater determinants \( D \) of orthonormal spin-orbitals \( \phi({\bf r}) \):
+Consider the many-body state \( \Psi_{\lambda} \) expressed as linear combinations of
+Slater determinants (\( SD \)) of orthonormal single-particle states \( \phi({\bf r}) \):
 $$
 \begin{equation}
-\Psi = \sum_i c_i D_i
+\Psi_{\lambda} = \sum_i C_{\lambda i} SD_i
 \label{_auto1}
 \end{equation}
 $$
@@ -2787,8 +2795,8 @@ integrals in our given single-particle basis.
 The diagonal elements are given by:
 $$
 \begin{eqnarray}
-  \langle D | {\cal O}_1 | D \rangle & = & \sum_{i \in D} \langle \phi_i | {\cal O}_1 | \phi_i \rangle \\
-  \langle D | {\cal O}_2 | D \rangle & = & \frac{1}{2} \sum_{(i,j) \in D}  
+  \langle SD | {\cal O}_1 | SD \rangle & = & \sum_{i \in SD} \langle \phi_i | {\cal O}_1 | \phi_i \rangle \\
+  \langle SD | {\cal O}_2 | SD \rangle & = & \frac{1}{2} \sum_{(i,j) \in SD}  
       \langle \phi_i \phi_j | {\cal O}_2 | \phi_i \phi_j \rangle - \nonumber \\
  & & 
       \langle \phi_i \phi_j | {\cal O}_2 | \phi_j \phi_i \rangle \nonumber 
@@ -2810,8 +2818,8 @@ For two determinants which differ only by the substitution of single-particle st
 a single-particle state \( j \):
 $$
 \begin{eqnarray}
-  \langle D | {\cal O}_1 | D_i^j \rangle & = & \langle \phi_i | {\cal O}_1 | \phi_j \rangle \\
-  \langle D | {\cal O}_2 | D_i^j \rangle & = & \sum_{k \in D} 
+  \langle SD | {\cal O}_1 | SD_i^j \rangle & = & \langle \phi_i | {\cal O}_1 | \phi_j \rangle \\
+  \langle SD | {\cal O}_2 | SD_i^j \rangle & = & \sum_{k \in SD} 
       \langle \phi_i \phi_k | {\cal O}_2 | \phi_j \phi_k \rangle - 
       \langle \phi_i \phi_k | {\cal O}_2 | \phi_k \phi_j \rangle \nonumber
 \end{eqnarray}
@@ -2820,8 +2828,8 @@ $$
 For two determinants which differ by two single-particle states
 $$
 \begin{eqnarray}
-  \langle D | {\cal O}_1 | D_{ik}^{jl} \rangle & = & 0 \\
-  \langle D | {\cal O}_2 | D_{ik}^{jl} \rangle & = & 
+  \langle SD | {\cal O}_1 | SD_{ik}^{jl} \rangle & = & 0 \\
+  \langle SD | {\cal O}_2 | SD_{ik}^{jl} \rangle & = & 
       \langle \phi_i \phi_k | {\cal O}_2 | \phi_j \phi_l \rangle -
       \langle \phi_i \phi_k | {\cal O}_2 | \phi_l \phi_j \rangle \nonumber 
 \end{eqnarray}
@@ -2846,9 +2854,9 @@ substitutions are zero.
 An efficient implementation of these rules requires
 
 <ul>
-<li> to find the number of spin-orbital substitutions between two determinants</li>
-<li> to find which spin-orbitals are involved in the substitution</li>
-<li> to compute the phase factor if a reordering of the spin-orbitals has occured</li>
+<li> to find the number of single-particle state substitutions between two determinants</li>
+<li> to find which single-particle states are involved in the substitution</li>
+<li> to compute the phase factor if a reordering of the single-particle states has occured</li>
 </ul>
 
 We can solve this problem using our odometric approach or alternatively using a bit representation as discussed below and in more detail in 
@@ -2857,13 +2865,69 @@ We can solve this problem using our odometric approach or alternatively using a 
 <li> <a href="https://github.com/scemama/slater_condon" target="_blank">Scemama and Gimer's article (Fortran codes)</a></li>
 <li> <a href="https://arxiv.org/abs/0810.2644" target="_blank">Simen Kvaal's article on how to build an FCI code (C++ code)</a></li>
 </ul>
+
+We recommend in particular the article by Simen Kvaal. It contains nice general classes for creation and annihilation operators as well as the calculation of the phase (see below).
 </div>
 
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec97">Operators in second quantization </h2>
+<h2 id="___sec97">Computing expectation values and transitions in the shell-model  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+When we diagonalize the Hamiltonian matrix, the eigenvectors are the coefficients \( C_{\lambda i} \) used 
+to express the many-body state \( \Psi_{\lambda} \) in terms of  a linear combinations of
+Slater determinants (\( SD \)) of orthonormal single-particle states \( \phi({\bf r}) \).
+
+<p>
+With these eigenvectors we can compute say the transition likelyhood of a one-body operator as
+$$
+\langle \Psi_{\lambda} \vert {\cal O}_1 \vert \Psi_{\sigma} \rangle  = 
+\sum_{ij}C_{\lambda i}^*C_{\sigma j}  \langle SD_i | {\cal O}_1 | SD_j \rangle .
+$$
+
+Writing the one-body operator in second quantization as 
+$$
+{\cal O}_1  = \sum_{pq} \langle p \vert {\cal o}_1 \vert q\rangle a_p^{\dagger} a_q, 
+$$
+
+we have
+$$
+\langle \Psi_{\lambda} \vert {\cal O}_1 \vert \Psi_{\sigma} \rangle  = 
+\sum_{pq}\langle p \vert {\cal o}_1 \vert q\rangle \sum_{ij}C_{\lambda i}^*C_{\sigma j}  \langle SD_i |a_p^{\dagger} a_q | SD_j \rangle .
+$$
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec98">Computing expectation values and transitions in the shell-model and spectroscopic factors  </h2>
+<div class="alert alert-block alert-block alert-text-normal">
+<b></b>
+<p>
+The terms we need to evalute then are just the elements 
+$$
+\langle SD_i |a_p^{\dagger} a_q | SD_j \rangle, 
+$$
+
+which can be rewritten in terms of spectroscopic factors by inserting a complete set of Slater determinats as
+$$
+\langle SD_i |a_p^{\dagger} a_q | SD_j \rangle = \sum_{l}\langle SD_i \vert a_p^{\dagger}\vert SD_l\rangle \langle SD_l \vert  a_q \vert SD_j \rangle,
+$$
+
+where \( \langle SD_l\vert a_q(a_p^{\dagger})\vert SD_j\rangle \) are the spectroscopic factors. These can be easily evaluated in \( m \)-scheme. Using the Wigner-Eckart theorem we can transform these to a \( J \)-coupled scheme through so-called reduced matrix elements.
+
+
+</div>
+
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec99">Operators in second quantization </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -2888,12 +2952,12 @@ A practically useful way to implement this action is to encode a Slater determin
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec98">Operators in second quantization </h2>
+<h2 id="___sec100">Operators in second quantization </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
-Assume that we have at our disposal \( n \) different single-particle orbits
-\( \alpha_0,\alpha_2,\dots,\alpha_{n-1} \) and that we can distribute  among these orbits \( N\le n \) particles.
+Assume that we have at our disposal \( n \) different single-particle states
+\( \alpha_0,\alpha_2,\dots,\alpha_{n-1} \) and that we can distribute  among these states \( N\le n \) particles.
 
 <p>
 A Slater  determinant can then be coded as an integer of \( n \) bits. As an example, if we have \( n=16 \) single-particle states
@@ -2924,7 +2988,7 @@ We can thus encode a Slater determinant as a bit pattern.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec99">Operators in second quantization </h2>
+<h2 id="___sec101">Operators in second quantization </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -2940,7 +3004,7 @@ The total number of bit patterns is \( 2^n \).
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec100">Operators in second quantization </h2>
+<h2 id="___sec102">Operators in second quantization </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -2972,7 +3036,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec101">Operators in second quantization </h2>
+<h2 id="___sec103">Operators in second quantization </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -2998,7 +3062,7 @@ This gives a simple recipe:
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec102">Operators in second quantization </h2>
+<h2 id="___sec104">Operators in second quantization </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3025,7 +3089,7 @@ on the given Slater determinant representation?
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec103">Operators in second quantization </h2>
+<h2 id="___sec105">Operators in second quantization </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3054,7 +3118,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec104">Operators in second quantization </h2>
+<h2 id="___sec106">Operators in second quantization </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3077,14 +3141,14 @@ This operation gives \( |0001001000100100\rangle \).
 <p>
 Similarly, we can form \( a^{\dagger}_{\alpha_4}a_{\alpha_0}\Phi_{0,3,6,10,13} \), say, by adding 
 \( |0000100000000000\rangle \) to \( a_{\alpha_0}\Phi_{0,3,6,10,13} \), first checking that their logical sum
-is zero in order to make sure that orbital \( \alpha_4 \) is not already occupied.
+is zero in order to make sure that the state \( \alpha_4 \) is not already occupied.
 </div>
 
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec105">Operators in second quantization </h2>
+<h2 id="___sec107">Operators in second quantization </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3092,7 +3156,7 @@ It is trickier however to get the phase \( (-1)^l \).
 One possibility is as follows
 
 <ul>
-<li> Let \( S_1 \) be a word that represents the $1-$bit to be removed and all others set to zero.</li>
+<li> Let \( S_1 \) be a word that represents the 1-bit to be removed and all others set to zero.</li>
 </ul>
 
 In the previous example \( S_1=|1000000000000000\rangle \)
@@ -3120,14 +3184,14 @@ $$
 \Phi_{0,3,6,10,13} = |1001001000100100\rangle,
 $$
 
-which results in \( |0001000000000000\rangle \). Counting the number of $1-$bits gives the phase.  Here you need however an algorithm for bitcounting.
+which results in \( |0001000000000000\rangle \). Counting the number of 1-bits gives the phase.  Here you need however an algorithm for bitcounting.
 </div>
 
 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec106">Bit counting </h2>
+<h2 id="___sec108">Bit counting </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3253,7 +3317,7 @@ s = phi.create(<span style="color: #B452CD">200</span>)
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec107">Eigenvalue problems, basic definitions </h2>
+<h2 id="___sec109">Eigenvalue problems, basic definitions </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3279,7 +3343,7 @@ The above right eigenvector problem is equivalent to a set of \( n \) equations 
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec108">Eigenvalue problems, basic definitions </h2>
+<h2 id="___sec110">Eigenvalue problems, basic definitions </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3304,7 +3368,7 @@ of degree \( n \) in \( \lambda \) and in general we will have
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec109">Eigenvalue problems, basic definitions </h2>
+<h2 id="___sec111">Eigenvalue problems, basic definitions </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3341,7 +3405,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec110">Abel-Ruffini Impossibility Theorem </h2>
+<h2 id="___sec112">Abel-Ruffini Impossibility Theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3361,7 +3425,7 @@ that the solution of a higher-degree equation cannot in all cases be expressed i
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec111">Abel-Ruffini Impossibility Theorem </h2>
+<h2 id="___sec113">Abel-Ruffini Impossibility Theorem </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3383,7 +3447,7 @@ whereas \( S_n \) is not solvable for \( n \ge 5 \).
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec112">Eigenvalue problems, basic definitions </h2>
+<h2 id="___sec114">Eigenvalue problems, basic definitions </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3414,7 +3478,7 @@ and for \( j=1:n \) we have \( \mathbf{A}\mathbf{S}(:,j) = \lambda_j \mathbf{S}(
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec113">Eigenvalue problems, basic definitions </h2>
+<h2 id="___sec115">Eigenvalue problems, basic definitions </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3440,7 +3504,7 @@ eigenvalues, but the eigenvectors are in general different.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec114">Eigenvalue problems, basic definitions </h2>
+<h2 id="___sec116">Eigenvalue problems, basic definitions </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3473,7 +3537,7 @@ eigenvector \( \mathbf{S}^T\mathbf{x} \).
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec115">Eigenvalue problems, basic definitions </h2>
+<h2 id="___sec117">Eigenvalue problems, basic definitions </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3503,7 +3567,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec116">Discussion of  methods for eigenvalues </h2>
+<h2 id="___sec118">Discussion of  methods for eigenvalues </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b>The general overview.</b>
 <p>
@@ -3521,7 +3585,7 @@ One speaks normally of two main approaches to solving the eigenvalue problem.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec117">Eigenvalues methods </h2>
+<h2 id="___sec119">Eigenvalues methods </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3555,7 +3619,7 @@ Sloppily speaking, when  \( n\sim 10^4 \) is cubed we have \( O(10^{12}) \) oper
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec118">Discussion of methods for eigenvalues </h2>
+<h2 id="___sec120">Discussion of methods for eigenvalues </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3585,7 +3649,7 @@ successively larger Krylov subspaces.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec119">Eigenvalues and Lanczos' method </h2>
+<h2 id="___sec121">Eigenvalues and Lanczos' method </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3620,7 +3684,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec120">Eigenvalues and Lanczos' method, tridiagonal matrix </h2>
+<h2 id="___sec122">Eigenvalues and Lanczos' method, tridiagonal matrix </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3646,7 +3710,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec121">Eigenvalues and Lanczos' method, tridiagonal and orthogonal matrices </h2>
+<h2 id="___sec123">Eigenvalues and Lanczos' method, tridiagonal and orthogonal matrices </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3670,7 +3734,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec122">Eigenvalues and Lanczos' method </h2>
+<h2 id="___sec124">Eigenvalues and Lanczos' method </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3696,7 +3760,7 @@ $$
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec123">Eigenvalues and Lanczos' method, defining the Lanczos' vectors  </h2>
+<h2 id="___sec125">Eigenvalues and Lanczos' method, defining the Lanczos' vectors  </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
@@ -3717,7 +3781,7 @@ and these vectors are called Lanczos vectors.
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
 
-<h2 id="___sec124">Eigenvalues and Lanczos' method, basic steps </h2>
+<h2 id="___sec126">Eigenvalues and Lanczos' method, basic steps </h2>
 <div class="alert alert-block alert-block alert-text-normal">
 <b></b>
 <p>
