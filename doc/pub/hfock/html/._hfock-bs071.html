@@ -273,7 +273,7 @@ MathJax.Hub.Config({
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
-     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">Why Hartree-Fock?</a></li>
+     <!-- navigation toc: --> <li><a href="._hfock-bs001.html#___sec0" style="font-size: 80%;">Why Hartree-Fock?</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs002.html#___sec1" style="font-size: 80%;">Why Hartree-Fock?</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs003.html#___sec2" style="font-size: 80%;">Definitions and notations</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs004.html#___sec3" style="font-size: 80%;">Definitions and notations</a></li>
@@ -343,7 +343,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._hfock-bs068.html#___sec67" style="font-size: 80%;">Developing a  Hartree-Fock program, additional considerations</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs069.html#___sec68" style="font-size: 80%;">"Developing a  Hartree-Fock program, a simple Python program":"https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode"</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs070.html#___sec69" style="font-size: 80%;">Developing a  Hartree-Fock program, a simple Python program and input files</a></li>
-     <!-- navigation toc: --> <li><a href="._hfock-bs071.html#___sec70" style="font-size: 80%;">"Developing a  Hartree-Fock program, the simple Python program":"https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode"</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec70" style="font-size: 80%;">"Developing a  Hartree-Fock program, the simple Python program":"https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode"</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs072.html#___sec71" style="font-size: 80%;">Developing a  Hartree-Fock program, analyzing the results</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs073.html#___sec72" style="font-size: 80%;">Developing a  Hartree-Fock program, separation energies</a></li>
 
@@ -358,65 +358,87 @@ MathJax.Hub.Config({
 
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 
-<a name="part0001"></a>
+<a name="part0071"></a>
 <!-- !split -->
 
-<h2 id="___sec0" class="anchor">Why Hartree-Fock?  </h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
-Hartree-Fock (HF) theory is an algorithm for finding an approximative expression for the ground state of a given Hamiltonian. The basic ingredients are
+<h2 id="___sec70" class="anchor"><a href="https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode" target="_self">Developing a  Hartree-Fock program, the simple Python program</a> </h2>
 
-<ul>
-  <li> Define a single-particle basis \( \{\psi_{\alpha}\} \) so that</li>
-</ul>
+<p>
 
-$$ 
-\hat{h}^{\mathrm{HF}}\psi_{\alpha} = \varepsilon_{\alpha}\psi_{\alpha}
-$$
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>	<span style="color: #BA2121; font-style: italic">&quot;&quot;&quot; Star HF-iterations, preparing variables and density matrix &quot;&quot;&quot;</span>
 
-with the Hartree-Fock Hamiltonian defined as
-$$
-\hat{h}^{\mathrm{HF}}=\hat{t}+\hat{u}_{\mathrm{ext}}+\hat{u}^{\mathrm{HF}}
-$$
-
-
-<ul>
-  <li> The term  \( \hat{u}^{\mathrm{HF}} \) is a single-particle potential to be determined by the HF algorithm.</li>
-  <li> The HF algorithm means to choose \( \hat{u}^{\mathrm{HF}} \) in order to have</li> 
-</ul>
-
-$$ \langle \hat{H} \rangle = E^{\mathrm{HF}}= \langle \Phi_0 | \hat{H}|\Phi_0 \rangle
-$$
-
-that is to find a local minimum with a Slater determinant \( \Phi_0 \) being the ansatz for the ground state. 
-
-<ul>
-  <li> The variational principle ensures that \( E^{\mathrm{HF}} \ge E_0 \), with \( E_0 \) the exact ground state energy.</li>
-</ul>
-</div>
-</div>
-
-
+        <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot; Coefficients for setting up density matrix, assuming only one along the diagonals &quot;&quot;&quot;</span>
+	C <span style="color: #666666">=</span> np<span style="color: #666666">.</span>eye(spOrbitals) <span style="color: #408080; font-style: italic"># HF coefficients</span>
+        DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros([spOrbitals,spOrbitals])
+        <span style="color: #008000; font-weight: bold">for</span> gamma <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(spOrbitals):
+            <span style="color: #008000; font-weight: bold">for</span> delta <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(spOrbitals):
+                <span style="color: #008000">sum</span> <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+                <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(Nparticles):
+                    <span style="color: #008000">sum</span> <span style="color: #666666">+=</span> C[gamma][i]<span style="color: #666666">*</span>C[delta][i]
+                DensityMatrix[gamma][delta] <span style="color: #666666">=</span> Decimal(<span style="color: #008000">sum</span>)
+        maxHFiter <span style="color: #666666">=</span> <span style="color: #666666">100</span>
+        epsilon <span style="color: #666666">=</span>  <span style="color: #666666">1.0e-10</span> 
+        difference <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+	hf_count <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+	oldenergies <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(spOrbitals)
+	newenergies <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(spOrbitals)
+	<span style="color: #008000; font-weight: bold">while</span> hf_count <span style="color: #666666">&lt;</span> maxHFiter <span style="color: #AA22FF; font-weight: bold">and</span> difference <span style="color: #666666">&gt;</span> epsilon:
+		<span style="color: #008000; font-weight: bold">print</span> <span style="color: #BA2121">&quot;############### Iteration </span><span style="color: #BB6688; font-weight: bold">%i</span><span style="color: #BA2121"> ###############&quot;</span> <span style="color: #666666">%</span> hf_count
+   	        HFmatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros([spOrbitals,spOrbitals])		
+		<span style="color: #008000; font-weight: bold">for</span> alpha <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(spOrbitals):
+			<span style="color: #008000; font-weight: bold">for</span> beta <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(spOrbitals):
+                            <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;  If tests for three-dimensional systems, including isospin conservation &quot;&quot;&quot;</span>
+                            <span style="color: #008000; font-weight: bold">if</span> l[alpha] <span style="color: #666666">!=</span> l[beta] <span style="color: #AA22FF; font-weight: bold">and</span> j[alpha] <span style="color: #666666">!=</span> j[beta] <span style="color: #AA22FF; font-weight: bold">and</span> mj[alpha] <span style="color: #666666">!=</span> mj[beta] <span style="color: #AA22FF; font-weight: bold">and</span> tz[alpha] <span style="color: #666666">!=</span> tz[beta]: <span style="color: #008000; font-weight: bold">continue</span>
+                            <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;  Setting up the Fock matrix using the density matrix and antisymmetrized NN interaction in m-scheme &quot;&quot;&quot;</span>
+     		            sumFockTerm <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+                            <span style="color: #008000; font-weight: bold">for</span> gamma <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(spOrbitals):
+                                <span style="color: #008000; font-weight: bold">for</span> delta <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(spOrbitals):
+                                    <span style="color: #008000; font-weight: bold">if</span> (mj[alpha]<span style="color: #666666">+</span>mj[gamma]) <span style="color: #666666">!=</span> (mj[beta]<span style="color: #666666">+</span>mj[delta]) <span style="color: #AA22FF; font-weight: bold">and</span> (tz[alpha]<span style="color: #666666">+</span>tz[gamma]) <span style="color: #666666">!=</span> (tz[beta]<span style="color: #666666">+</span>tz[delta]): <span style="color: #008000; font-weight: bold">continue</span>
+                                    sumFockTerm <span style="color: #666666">+=</span> DensityMatrix[gamma][delta]<span style="color: #666666">*</span>nninteraction[alpha][gamma][beta][delta]
+                            HFmatrix[alpha][beta] <span style="color: #666666">=</span> Decimal(sumFockTerm)
+                            <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;  Adding the one-body term, here plain harmonic oscillator &quot;&quot;&quot;</span>
+                            <span style="color: #008000; font-weight: bold">if</span> beta <span style="color: #666666">==</span> alpha:   HFmatrix[alpha][alpha] <span style="color: #666666">+=</span> singleparticleH[alpha]
+		spenergies, C <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linalg<span style="color: #666666">.</span>eigh(HFmatrix)
+                <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot; Setting up new density matrix in m-scheme &quot;&quot;&quot;</span>
+                DensityMatrix <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros([spOrbitals,spOrbitals])
+                <span style="color: #008000; font-weight: bold">for</span> gamma <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(spOrbitals):
+                    <span style="color: #008000; font-weight: bold">for</span> delta <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(spOrbitals):
+                        <span style="color: #008000">sum</span> <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+                        <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(Nparticles):
+                            <span style="color: #008000">sum</span> <span style="color: #666666">+=</span> C[gamma][i]<span style="color: #666666">*</span>C[delta][i]
+                        DensityMatrix[gamma][delta] <span style="color: #666666">=</span> Decimal(<span style="color: #008000">sum</span>)
+		newenergies <span style="color: #666666">=</span> spenergies
+                <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot; Brute force computation of difference between previous and new sp HF energies &quot;&quot;&quot;</span>
+                <span style="color: #008000">sum</span> <span style="color: #666666">=0.0</span>
+                <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(spOrbitals):
+                    <span style="color: #008000">sum</span> <span style="color: #666666">+=</span> (<span style="color: #008000">abs</span>(newenergies[i]<span style="color: #666666">-</span>oldenergies[i]))<span style="color: #666666">/</span>spOrbitals
+                difference <span style="color: #666666">=</span> <span style="color: #008000">sum</span>
+                oldenergies <span style="color: #666666">=</span> newenergies
+                <span style="color: #008000; font-weight: bold">print</span> <span style="color: #BA2121">&quot;Single-particle energies, ordering may have changed &quot;</span>
+                <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(spOrbitals):
+                    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&#39;{0:4d}  {1:.4f}&#39;</span><span style="color: #666666">.</span>format(i, Decimal(oldenergies[i])))
+		hf_count <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+</pre></div>
 <p>
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._hfock-bs000.html">&laquo;</a></li>
+<li><a href="._hfock-bs070.html">&laquo;</a></li>
   <li><a href="._hfock-bs000.html">1</a></li>
-  <li class="active"><a href="._hfock-bs001.html">2</a></li>
-  <li><a href="._hfock-bs002.html">3</a></li>
-  <li><a href="._hfock-bs003.html">4</a></li>
-  <li><a href="._hfock-bs004.html">5</a></li>
-  <li><a href="._hfock-bs005.html">6</a></li>
-  <li><a href="._hfock-bs006.html">7</a></li>
-  <li><a href="._hfock-bs007.html">8</a></li>
-  <li><a href="._hfock-bs008.html">9</a></li>
-  <li><a href="._hfock-bs009.html">10</a></li>
-  <li><a href="._hfock-bs010.html">11</a></li>
   <li><a href="">...</a></li>
+  <li><a href="._hfock-bs063.html">64</a></li>
+  <li><a href="._hfock-bs064.html">65</a></li>
+  <li><a href="._hfock-bs065.html">66</a></li>
+  <li><a href="._hfock-bs066.html">67</a></li>
+  <li><a href="._hfock-bs067.html">68</a></li>
+  <li><a href="._hfock-bs068.html">69</a></li>
+  <li><a href="._hfock-bs069.html">70</a></li>
+  <li><a href="._hfock-bs070.html">71</a></li>
+  <li class="active"><a href="._hfock-bs071.html">72</a></li>
+  <li><a href="._hfock-bs072.html">73</a></li>
   <li><a href="._hfock-bs073.html">74</a></li>
-  <li><a href="._hfock-bs002.html">&raquo;</a></li>
+  <li><a href="._hfock-bs072.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 

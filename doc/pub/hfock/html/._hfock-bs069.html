@@ -273,7 +273,7 @@ MathJax.Hub.Config({
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
         <ul class="dropdown-menu">
-     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">Why Hartree-Fock?</a></li>
+     <!-- navigation toc: --> <li><a href="._hfock-bs001.html#___sec0" style="font-size: 80%;">Why Hartree-Fock?</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs002.html#___sec1" style="font-size: 80%;">Why Hartree-Fock?</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs003.html#___sec2" style="font-size: 80%;">Definitions and notations</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs004.html#___sec3" style="font-size: 80%;">Definitions and notations</a></li>
@@ -341,7 +341,7 @@ MathJax.Hub.Config({
      <!-- navigation toc: --> <li><a href="._hfock-bs066.html#___sec65" style="font-size: 80%;">Developing a  Hartree-Fock program, the algorithm</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs067.html#___sec66" style="font-size: 80%;">Developing a  Hartree-Fock program, the density matrix</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs068.html#___sec67" style="font-size: 80%;">Developing a  Hartree-Fock program, additional considerations</a></li>
-     <!-- navigation toc: --> <li><a href="._hfock-bs069.html#___sec68" style="font-size: 80%;">"Developing a  Hartree-Fock program, a simple Python program":"https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode"</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec68" style="font-size: 80%;">"Developing a  Hartree-Fock program, a simple Python program":"https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode"</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs070.html#___sec69" style="font-size: 80%;">Developing a  Hartree-Fock program, a simple Python program and input files</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs071.html#___sec70" style="font-size: 80%;">"Developing a  Hartree-Fock program, the simple Python program":"https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode"</a></li>
      <!-- navigation toc: --> <li><a href="._hfock-bs072.html#___sec71" style="font-size: 80%;">Developing a  Hartree-Fock program, analyzing the results</a></li>
@@ -358,65 +358,41 @@ MathJax.Hub.Config({
 
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 
-<a name="part0001"></a>
+<a name="part0069"></a>
 <!-- !split -->
 
-<h2 id="___sec0" class="anchor">Why Hartree-Fock?  </h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
-Hartree-Fock (HF) theory is an algorithm for finding an approximative expression for the ground state of a given Hamiltonian. The basic ingredients are
+<h2 id="___sec68" class="anchor"><a href="https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode" target="_self">Developing a  Hartree-Fock program, a simple Python program</a>  </h2>
 
-<ul>
-  <li> Define a single-particle basis \( \{\psi_{\alpha}\} \) so that</li>
-</ul>
+<p>
+An example of a function written in python which performs the Hartree-Fock calculation is shown here. In setting up your code you will need to write a function which sets up the single-particle basis, the matrix elements \( t_{\alpha\gamma} \) of the one-body operator (called \( h0 \) in the function below) and the antisymmetrized TBMEs (called <em>nninteraction</em> in the code link below) and the density matrix elements \( \rho_{\beta\delta} \) (called <em>densityMatrix</em> below). 
+The python program  shows how one can, in a brute force way read in matrix elements in \( m \)-scheme and compute the Hartree-Fock single-particle energies for four major shells. The interaction which has been used is the so-called N3LO interaction of <a href="http://journals.aps.org/prc/abstract/10.1103/PhysRevC.68.041001" target="_self">Machleidt and Entem</a>
+using the <a href="http://journals.aps.org/prc/abstract/10.1103/PhysRevC.75.061001" target="_self">Similarity Renormalization Group</a> approach method to renormalize the interaction, using an oscillator energy \( \hbar\omega=10 \) MeV.
 
-$$ 
-\hat{h}^{\mathrm{HF}}\psi_{\alpha} = \varepsilon_{\alpha}\psi_{\alpha}
-$$
-
-with the Hartree-Fock Hamiltonian defined as
-$$
-\hat{h}^{\mathrm{HF}}=\hat{t}+\hat{u}_{\mathrm{ext}}+\hat{u}^{\mathrm{HF}}
-$$
-
-
-<ul>
-  <li> The term  \( \hat{u}^{\mathrm{HF}} \) is a single-particle potential to be determined by the HF algorithm.</li>
-  <li> The HF algorithm means to choose \( \hat{u}^{\mathrm{HF}} \) in order to have</li> 
-</ul>
-
-$$ \langle \hat{H} \rangle = E^{\mathrm{HF}}= \langle \Phi_0 | \hat{H}|\Phi_0 \rangle
-$$
-
-that is to find a local minimum with a Slater determinant \( \Phi_0 \) being the ansatz for the ground state. 
-
-<ul>
-  <li> The variational principle ensures that \( E^{\mathrm{HF}} \ge E_0 \), with \( E_0 \) the exact ground state energy.</li>
-</ul>
-</div>
-</div>
-
+<p>
+The nucleon-nucleon two-body matrix elements are in \( m \)-scheme and are fully anti-symmetrized. The Hartree-Fock programs uses the density matrix discussed above in order to compute the Hartree-Fock matrix.
+Here we display the Hartree-Fock part only, assuming that single-particle data and two-body matrix elements have already been read in.
 
 <p>
 <p>
 <!-- navigation buttons at the bottom of the page -->
 <ul class="pagination">
-<li><a href="._hfock-bs000.html">&laquo;</a></li>
+<li><a href="._hfock-bs068.html">&laquo;</a></li>
   <li><a href="._hfock-bs000.html">1</a></li>
-  <li class="active"><a href="._hfock-bs001.html">2</a></li>
-  <li><a href="._hfock-bs002.html">3</a></li>
-  <li><a href="._hfock-bs003.html">4</a></li>
-  <li><a href="._hfock-bs004.html">5</a></li>
-  <li><a href="._hfock-bs005.html">6</a></li>
-  <li><a href="._hfock-bs006.html">7</a></li>
-  <li><a href="._hfock-bs007.html">8</a></li>
-  <li><a href="._hfock-bs008.html">9</a></li>
-  <li><a href="._hfock-bs009.html">10</a></li>
-  <li><a href="._hfock-bs010.html">11</a></li>
   <li><a href="">...</a></li>
+  <li><a href="._hfock-bs061.html">62</a></li>
+  <li><a href="._hfock-bs062.html">63</a></li>
+  <li><a href="._hfock-bs063.html">64</a></li>
+  <li><a href="._hfock-bs064.html">65</a></li>
+  <li><a href="._hfock-bs065.html">66</a></li>
+  <li><a href="._hfock-bs066.html">67</a></li>
+  <li><a href="._hfock-bs067.html">68</a></li>
+  <li><a href="._hfock-bs068.html">69</a></li>
+  <li class="active"><a href="._hfock-bs069.html">70</a></li>
+  <li><a href="._hfock-bs070.html">71</a></li>
+  <li><a href="._hfock-bs071.html">72</a></li>
+  <li><a href="._hfock-bs072.html">73</a></li>
   <li><a href="._hfock-bs073.html">74</a></li>
-  <li><a href="._hfock-bs002.html">&raquo;</a></li>
+  <li><a href="._hfock-bs070.html">&raquo;</a></li>
 </ul>
 <!-- ------------------- end of main content --------------- -->
 
