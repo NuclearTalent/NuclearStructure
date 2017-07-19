@@ -1125,7 +1125,7 @@ Calculating the difference
 !bt
 \[
   E[\Phi^{\mathrm{HF}}(N)]-   E[\Phi^{\mathrm{HF}}(N-1)] = \langle k | \hat{h}_0 | k \rangle +
-  \frac{1}{2}\sum_{i=1;i\ne k}^N\langle ik|\hat{v}|ik\rangle_{AS}  \frac{1}{2}\sum_{j=1;j\ne k}^N\langle kj|\hat{v}|kj\rangle_{AS},
+  \frac{1}{2}\sum_{i=1;i\ne k}^N\langle ik|\hat{v}|ik\rangle_{AS} + \frac{1}{2}\sum_{j=1;j\ne k}^N\langle kj|\hat{v}|kj\rangle_{AS},
 \]
 !et
 we obtain
@@ -1202,7 +1202,7 @@ Calculating the difference
 \[
   E[\Phi^{\mathrm{HF}}(A)]-   E[\Phi^{\mathrm{HF}}(A-1)] 
   = \langle k | \hat{h}_0 | k \rangle +
-  \frac{1}{2}\sum_{i=1;i\ne k}^A\langle ik|\hat{v}|ik\rangle_{AS}  \frac{1}{2}\sum_{j=1;j\ne k}^A\langle kj|\hat{v}|kj\rangle_{AS},
+  \frac{1}{2}\sum_{i=1;i\ne k}^A\langle ik|\hat{v}|ik\rangle_{AS} + \frac{1}{2}\sum_{j=1;j\ne k}^A\langle kj|\hat{v}|kj\rangle_{AS},
 \]
 !et
 which becomes 
@@ -1359,36 +1359,15 @@ Hint: $C$ is a unitary matrix.
 !split
 ===== Developing a  Hartree-Fock program  =====
 
-Neutron drops are a powerful theoretical laboratory for testing,
-validating and improving nuclear structure models. Indeed, all
-approaches to nuclear structure, from ab initio theory to shell model
-to density functional theory are applicable in such systems. We will,
-therefore, use neutron drops as a test system for setting up a
-Hartree-Fock code.  This program can later be extended to studies of
-the binding energy of nuclei like $^{16}$O or $^{40}$Ca. The
+
+The
 single-particle energies obtained by solving the Hartree-Fock
-equations can then be directly related to experimental separation
-energies. For those of you interested in such studies, the program you
-will end up developing here can be used in later projects, with simple
-extensions.  Since Hartree-Fock theory is the starting point for
+equations can be directly related to experimental separation
+energies.  Since Hartree-Fock theory is the starting point for
 several many-body techniques (density functional theory, random-phase
 approximation, shell-model etc), the aim here is to develop a computer
 program to solve the Hartree-Fock equations in a given single-particle basis,
 here the harmonic oscillator.
-
-!split
-===== Developing a  Hartree-Fock program for neutron drops (easy to include protons) =====
-The Hamiltonian for a system of $N$ neutron drops confined in a
-harmonic potential reads
-!bt
-\[
-\hat{H} = \sum_{i=1}^{N} \frac{\hat{p}_{i}^{2}}{2m}+\sum_{i=1}^{N} \frac{1}{2} m\omega {r}_{i}^{2}+\sum_{i<j} \hat{V}_{ij},
-\]
-!et
-with $\hbar^{2}/2m = 20.73$ fm$^{2}$, $mc^{2} = 938.90590$ MeV, and 
-$\hat{V}_{ij}$ is the two-body interaction potential whose 
-matrix elements are precalculated
-and to be read in by you.
 
 
 !split
@@ -1763,7 +1742,7 @@ or from  first order in many-body perturbation theory, is given by (in an uncoup
 
 !bt
 \begin{equation*}
-\epsilon_p=\langle p| \tilde{f}|p\rangle = \langle p|\hat{h}_0|p\rangle +\sum_{i\le F} \langle pi|\hat{v}|pi\rangle+\frac{1}{2}\sum_{ij\le\alpha_F} \langle pij|\hat{w}|pij\rangle,
+\epsilon_p=\langle p| \tilde{f}|p\rangle = \langle p|\hat{h}_0|p\rangle +\sum_{i\le F} \langle pi|\hat{v}|pi\rangle+\frac{1}{2}\sum_{ij\le F} \langle pij|\hat{w}|pij\rangle,
 \end{equation*}
 !et
 where we have included the three-body interaction as well.
@@ -1838,12 +1817,10 @@ $\hat{v}$ can be written as
 
 !bt
 \begin{equation}
-\hat{v} = \sum_{k} \hat{v}_{k} = \sum_{k} \mbox{\boldmath $C^{(k)}\cdot
-Q^{(k)}$},
+\hat{v} = \sum_{k} \hat{v}_{k} = \sum_{k} C^{(k)}\cdot Q^{(k)},
 \end{equation}
 !et
-where the operators \mbox{\boldmath $C^{(k)}$} and
-\mbox{\boldmath $Q^{(k)}$} are irreducible spherical tensor
+where the operators $C^{(k)}$ and $Q^{(k)}$ are irreducible spherical tensor
 operators of rank $k$, acting in spin and coordinate space,
 respectively. The value of $k$ is limited to $k\le 2$ since the total eigenspin of the two-nucleon
 system is either $0$ or $1$. The term with
@@ -1876,7 +1853,7 @@ through the relation
 		       S'&L'&k
 		       \end{array}
 		 \right\} \nonumber \\
-& &\times \sum_{J'}(-1)^{J'}(2J'+1)\left\{ \begin{array}{ccc}
+&\times \sum_{J'}(-1)^{J'}(2J'+1)\left\{ \begin{array}{ccc}
 		       L&S&J'\\
 		       S'&L'&k
 		       \end{array}
@@ -1930,8 +1907,7 @@ representation of the $LS$-coupling scheme.
 ===== Analyzing our results, decomposing the Hamiltonian  =====
 Similar to the
 decomposition in the $jj$-scheme, the $LS$-coupled matrix element of a
-given component $k$ $\langle(\tilde{\alpha}_p\tilde{\alpha}_q
-  )LSJ'T\vert \hat{v}_{k}\vert (\tilde{\alpha}_r\tilde{\alpha}_s )LSJ'T\rangle $
+given component $k$ $\langle(\tilde{\alpha}_p\tilde{\alpha}_q)LSJ'T\vert \hat{v}_{k}\vert (\tilde{\alpha}_r\tilde{\alpha}_s )LSJ'T\rangle $
 are related to the corresponding matrix elements of the total
 interaction in the $jj$-scheme by
 

@@ -1602,7 +1602,7 @@ Calculating the difference
 <p>&nbsp;<br>
 $$
   E[\Phi^{\mathrm{HF}}(N)]-   E[\Phi^{\mathrm{HF}}(N-1)] = \langle k | \hat{h}_0 | k \rangle +
-  \frac{1}{2}\sum_{i=1;i\ne k}^N\langle ik|\hat{v}|ik\rangle_{AS}  \frac{1}{2}\sum_{j=1;j\ne k}^N\langle kj|\hat{v}|kj\rangle_{AS},
+  \frac{1}{2}\sum_{i=1;i\ne k}^N\langle ik|\hat{v}|ik\rangle_{AS} + \frac{1}{2}\sum_{j=1;j\ne k}^N\langle kj|\hat{v}|kj\rangle_{AS},
 $$
 <p>&nbsp;<br>
 
@@ -1701,7 +1701,7 @@ Calculating the difference
 $$
   E[\Phi^{\mathrm{HF}}(A)]-   E[\Phi^{\mathrm{HF}}(A-1)] 
   = \langle k | \hat{h}_0 | k \rangle +
-  \frac{1}{2}\sum_{i=1;i\ne k}^A\langle ik|\hat{v}|ik\rangle_{AS}  \frac{1}{2}\sum_{j=1;j\ne k}^A\langle kj|\hat{v}|kj\rangle_{AS},
+  \frac{1}{2}\sum_{i=1;i\ne k}^A\langle ik|\hat{v}|ik\rangle_{AS} + \frac{1}{2}\sum_{j=1;j\ne k}^A\langle kj|\hat{v}|kj\rangle_{AS},
 $$
 <p>&nbsp;<br>
 
@@ -1909,18 +1909,10 @@ Hint: \( C \) is a unitary matrix.
 <h2 id="___sec63">Developing a  Hartree-Fock program  </h2>
 
 <p>
-Neutron drops are a powerful theoretical laboratory for testing,
-validating and improving nuclear structure models. Indeed, all
-approaches to nuclear structure, from ab initio theory to shell model
-to density functional theory are applicable in such systems. We will,
-therefore, use neutron drops as a test system for setting up a
-Hartree-Fock code.  This program can later be extended to studies of
-the binding energy of nuclei like $^{16}$O or $^{40}$Ca. The
+The
 single-particle energies obtained by solving the Hartree-Fock
-equations can then be directly related to experimental separation
-energies. For those of you interested in such studies, the program you
-will end up developing here can be used in later projects, with simple
-extensions.  Since Hartree-Fock theory is the starting point for
+equations can be directly related to experimental separation
+energies.  Since Hartree-Fock theory is the starting point for
 several many-body techniques (density functional theory, random-phase
 approximation, shell-model etc), the aim here is to develop a computer
 program to solve the Hartree-Fock equations in a given single-particle basis,
@@ -1929,24 +1921,7 @@ here the harmonic oscillator.
 
 
 <section>
-<h2 id="___sec64">Developing a  Hartree-Fock program for neutron drops (easy to include protons) </h2>
-The Hamiltonian for a system of \( N \) neutron drops confined in a
-harmonic potential reads
-<p>&nbsp;<br>
-$$
-\hat{H} = \sum_{i=1}^{N} \frac{\hat{p}_{i}^{2}}{2m}+\sum_{i=1}^{N} \frac{1}{2} m\omega {r}_{i}^{2}+\sum_{i < j} \hat{V}_{ij},
-$$
-<p>&nbsp;<br>
-
-with \( \hbar^{2}/2m = 20.73 \) fm$^{2}$, \( mc^{2} = 938.90590 \) MeV, and 
-\( \hat{V}_{ij} \) is the two-body interaction potential whose 
-matrix elements are precalculated
-and to be read in by you.
-</section>
-
-
-<section>
-<h2 id="___sec65">Developing a  Hartree-Fock program, the algorithm   </h2>
+<h2 id="___sec64">Developing a  Hartree-Fock program, the algorithm   </h2>
 The Hartree-Fock algorithm can be broken down as follows. We recall that  our Hartree-Fock matrix  is 
 <p>&nbsp;<br>
 $$
@@ -1982,7 +1957,7 @@ $$
 
 
 <section>
-<h2 id="___sec66">Developing a  Hartree-Fock program, the density matrix  </h2>
+<h2 id="___sec65">Developing a  Hartree-Fock program, the density matrix  </h2>
 
 <p>
 The equations are often rewritten in terms of a so-called density matrix,
@@ -2009,7 +1984,7 @@ It is convenient to use the density matrix since we can precalculate in every it
 
 
 <section>
-<h2 id="___sec67">Developing a  Hartree-Fock program, additional considerations  </h2>
+<h2 id="___sec66">Developing a  Hartree-Fock program, additional considerations  </h2>
 
 <p>
 Note that \( \langle \alpha\vert\hat{h}_0\vert\beta \rangle \) denotes the
@@ -2024,7 +1999,7 @@ diagonal.
 
 
 <section>
-<h2 id="___sec68"><a href="https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode" target="_blank">Developing a  Hartree-Fock program, a simple Python program</a>  </h2>
+<h2 id="___sec67"><a href="https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode" target="_blank">Developing a  Hartree-Fock program, a simple Python program</a>  </h2>
 
 <p>
 An example of a function written in python which performs the Hartree-Fock calculation is shown here. In setting up your code you will need to write a function which sets up the single-particle basis, the matrix elements \( t_{\alpha\gamma} \) of the one-body operator (called \( h0 \) in the function below) and the antisymmetrized TBMEs (called <em>nninteraction</em> in the code link below) and the density matrix elements \( \rho_{\beta\delta} \) (called <em>densityMatrix</em> below). 
@@ -2038,7 +2013,7 @@ Here we display the Hartree-Fock part only, assuming that single-particle data a
 
 
 <section>
-<h2 id="___sec69">Developing a  Hartree-Fock program, a simple Python program and input files </h2>
+<h2 id="___sec68">Developing a  Hartree-Fock program, a simple Python program and input files </h2>
 
 <p>
 The input file spdata.dat contains the information of all single-particle quantum numbers needed to define this space. In total we have \( 40 \) single-particle states labeled by \( n \), \( j \), \( l \) and \( m \), where \( m \) is the projection of the total single-particle angular momentum \( j \). To every set of single-particle quantum numbers there is a unique number \( p \) identifiying them, meaning that the two-body matrix elements in the file twobody.dat are identified as 
@@ -2050,7 +2025,7 @@ You will need to read these two files and set up arrays which store the matrix e
 
 
 <section>
-<h2 id="___sec70"><a href="https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode" target="_blank">Developing a  Hartree-Fock program, the simple Python program</a> </h2>
+<h2 id="___sec69"><a href="https://github.com/NuclearTalent/NuclearStructure/tree/master/doc/Programs/HFcode" target="_blank">Developing a  Hartree-Fock program, the simple Python program</a> </h2>
 
 <p>
 
@@ -2113,7 +2088,7 @@ You will need to read these two files and set up arrays which store the matrix e
 
 
 <section>
-<h2 id="___sec71">Developing a  Hartree-Fock program, analyzing the results </h2>
+<h2 id="___sec70">Developing a  Hartree-Fock program, analyzing the results </h2>
 
 <p>
 Running the program, one finds that the lowest-lying states for a nucleus like \( {}^{16}\mbox{O} \), we see that the nucleon-nucleon force brings a natural spin-orbit splitting for the \( 0p \) states (or other states except the \( s \)-states).
@@ -2151,7 +2126,7 @@ The values of the lowest-lying states are (\( \pi \) for protons and \( \nu \) f
 
 
 <section>
-<h2 id="___sec72">Developing a  Hartree-Fock program, separation energies </h2>
+<h2 id="___sec71">Developing a  Hartree-Fock program, separation energies </h2>
 
 <p>
 We can use these results to attempt our first link with experimental data, namely to compute the shell gap or the separation energies. The shell gap for neutrons is given by
@@ -2167,7 +2142,7 @@ The splitting between the \( 0p_{3/2}^{\nu} \) and the \( 0p_{1/2}^{\nu} \) stat
 
 
 <section>
-<h2 id="___sec73">Analyzing the results in terms of the nuclear force components  </h2>
+<h2 id="___sec72">Analyzing the results in terms of the nuclear force components  </h2>
 
 <p>
 Our Hamiltonian contains one-body, two-body and three-body contributions and in 
@@ -2192,7 +2167,7 @@ $$
 
 
 <section>
-<h2 id="___sec74">Reminder on definitions  </h2>
+<h2 id="___sec73">Reminder on definitions  </h2>
 The action of the creation and annihilation operators with respect to a reference state \( \Phi_0 \) are then given by
  \( a_i|\Phi_0\rangle = |\Phi_i\rangle \) where a state labeled by \( |\Phi_i\rangle \) means that a particle in a 
 single-particle state \( i \) has been removed. Similarly, we have \( a_a^\dagger|\Phi_0\rangle = |\Phi^a\rangle \), \( a_i^\dagger|\Phi_0\rangle = 0 \) 
@@ -2220,7 +2195,7 @@ $$
 
 
 <section>
-<h2 id="___sec75">A general Hamiltonian  </h2>
+<h2 id="___sec74">A general Hamiltonian  </h2>
 This part of the Hamiltonian is commonly defined in terms of some external potential like the three-dimensional 
 harmonic oscillator or a particular mean-field basis. 
 Similarly, the two-body part of the Hamiltonian
@@ -2249,7 +2224,7 @@ We will assume that the  two-body operator \( \hat{v} \) is given by a nucleon-n
 
 
 <section>
-<h2 id="___sec76">Adding a three-body interaction  </h2>
+<h2 id="___sec75">Adding a three-body interaction  </h2>
 Finally, the three-body part of our Hamiltonian operator  is defined by
 
 <p>&nbsp;<br>
@@ -2276,7 +2251,7 @@ assuming thereby that all matrix elements are antisymmetrized.
 
 
 <section>
-<h2 id="___sec77">An additional reminder  </h2>
+<h2 id="___sec76">An additional reminder  </h2>
 
 <p>
 Introducing a reference state \( |\Phi_0\rangle \) as our new vacuum state
@@ -2317,7 +2292,7 @@ represents a correction to the single-particle operator \( \hat{h}_0 \) due to c
 
 
 <section>
-<h2 id="___sec78">Modification due to a three-body force   </h2>
+<h2 id="___sec77">Modification due to a three-body force   </h2>
 The two-body matrix elements are now modified in order to account for medium-modified contributions from the three-body interaction, resulting in
 
 <p>&nbsp;<br>
@@ -2337,7 +2312,7 @@ density dependent contribution stemming from a three-body interaction
 
 
 <section>
-<h2 id="___sec79">The monopole term  </h2>
+<h2 id="___sec78">The monopole term  </h2>
 
 <p>
 An important ingredient in studies of effective interactions and their
@@ -2377,7 +2352,7 @@ $$
 
 
 <section>
-<h2 id="___sec80">More on the monopole term  </h2>
+<h2 id="___sec79">More on the monopole term  </h2>
 
 <p>
 The spherical single-particle states,
@@ -2401,7 +2376,7 @@ $$
 
 
 <section>
-<h2 id="___sec81">Linking the monopole part with Hartree-Fock theory  </h2>
+<h2 id="___sec80">Linking the monopole part with Hartree-Fock theory  </h2>
 
 <p>
 The single-particle energy \( \epsilon_p \) resulting from for example a self-consistent Hartree-Fock field, 
@@ -2410,7 +2385,7 @@ or from  first order in many-body perturbation theory, is given by (in an uncoup
 <p>&nbsp;<br>
 $$
 \begin{equation*}
-\epsilon_p=\langle p| \tilde{f}|p\rangle = \langle p|\hat{h}_0|p\rangle +\sum_{i\le F} \langle pi|\hat{v}|pi\rangle+\frac{1}{2}\sum_{ij\le\alpha_F} \langle pij|\hat{w}|pij\rangle,
+\epsilon_p=\langle p| \tilde{f}|p\rangle = \langle p|\hat{h}_0|p\rangle +\sum_{i\le F} \langle pi|\hat{v}|pi\rangle+\frac{1}{2}\sum_{ij\le F} \langle pij|\hat{w}|pij\rangle,
 \end{equation*}
 $$
 <p>&nbsp;<br>
@@ -2420,7 +2395,7 @@ where we have included the three-body interaction as well.
 
 
 <section>
-<h2 id="___sec82">Linking the monopole part with Hartree-Fock theory, angular momentum  </h2>
+<h2 id="___sec81">Linking the monopole part with Hartree-Fock theory, angular momentum  </h2>
 We can rewrite this equation in an angular coupled basis (\( jj \)-coupled basis) as
 
 <p>&nbsp;<br>
@@ -2450,7 +2425,7 @@ from the three-body interaction as well.
 
 
 <section>
-<h2 id="___sec83">Linking the monopole part with Hartree-Fock theory, more definitions  </h2>
+<h2 id="___sec82">Linking the monopole part with Hartree-Fock theory, more definitions  </h2>
 
 <p>
 In
@@ -2468,7 +2443,7 @@ and charge symmetry.
 
 
 <section>
-<h2 id="___sec84">Final expressions for the monopole term  </h2>
+<h2 id="___sec83">Final expressions for the monopole term  </h2>
 
 <p>
 Using the definition of the single-particle energy in
@@ -2499,23 +2474,23 @@ $$
 
 
 <section>
-<h2 id="___sec85">Analyzing our results, decomposing the Hamiltonian  </h2>
+<h2 id="___sec84">Analyzing our results, decomposing the Hamiltonian  </h2>
 
 <p>
 The effective interaction is a
 scalar two-body operator. A general scalar two-body operator
 \( \hat{v} \) can be written as
 
+<p>&nbsp;<br>
 $$
 \begin{equation}
-\hat{v} = \sum_{k} \hat{v}_{k} = \sum_{k} \mbox{\boldmath $C^{(k)}\cdot
-Q^{(k)}$},
+\hat{v} = \sum_{k} \hat{v}_{k} = \sum_{k} C^{(k)}\cdot Q^{(k)},
 \tag{27}
 \end{equation}
 $$
+<p>&nbsp;<br>
 
-where the operators \mbox{\boldmath \( C^{(k)} \)} and
-\mbox{\boldmath \( Q^{(k)} \)} are irreducible spherical tensor
+where the operators \( C^{(k)} \) and \( Q^{(k)} \) are irreducible spherical tensor
 operators of rank \( k \), acting in spin and coordinate space,
 respectively. The value of \( k \) is limited to \( k\le 2 \) since the total eigenspin of the two-nucleon
 system is either \( 0 \) or \( 1 \). The term with
@@ -2530,7 +2505,7 @@ those of say \( \hat{v} \) or \( \tilde{v} \).
 
 
 <section>
-<h2 id="___sec86">Analyzing our results, decomposing the Hamiltonian  </h2>
+<h2 id="___sec85">Analyzing our results, decomposing the Hamiltonian  </h2>
 
 <p>
 One possible decomposition of the effective interaction is to
@@ -2551,7 +2526,7 @@ $$
 		       S'&L'&k
 		       \end{array}
 		 \right\} \nonumber \\
-& &\times \sum_{J'}(-1)^{J'}(2J'+1)\left\{ \begin{array}{ccc}
+&\times \sum_{J'}(-1)^{J'}(2J'+1)\left\{ \begin{array}{ccc}
 		       L&S&J'\\
 		       S'&L'&k
 		       \end{array}
@@ -2566,7 +2541,7 @@ $$
 
 
 <section>
-<h2 id="___sec87">Analyzing our results, decomposing the Hamiltonian  </h2>
+<h2 id="___sec86">Analyzing our results, decomposing the Hamiltonian  </h2>
 
 <p>
 The two-particle matrix elements are normalized and antisymmetrized.
@@ -2593,7 +2568,7 @@ $$
 
 
 <section>
-<h2 id="___sec88">Analyzing our results, decomposing the Hamiltonian  </h2>
+<h2 id="___sec87">Analyzing our results, decomposing the Hamiltonian  </h2>
 The transformation from an \( LS \) basis to a \( jj \)-coupled scheme is then given by the relation
 
 <p>&nbsp;<br>
@@ -2615,11 +2590,10 @@ representation of the \( LS \)-coupling scheme.
 
 
 <section>
-<h2 id="___sec89">Analyzing our results, decomposing the Hamiltonian  </h2>
+<h2 id="___sec88">Analyzing our results, decomposing the Hamiltonian  </h2>
 Similar to the
 decomposition in the \( jj \)-scheme, the \( LS \)-coupled matrix element of a
-given component \( k \) $\langle(\tilde{\alpha}_p\tilde{\alpha}_q
-  )LSJ'T\vert \hat{v}_{k}\vert (\tilde{\alpha}_r\tilde{\alpha}_s )LSJ'T\rangle $
+given component \( k \) $\langle(\tilde{\alpha}_p\tilde{\alpha}_q)LSJ'T\vert \hat{v}_{k}\vert (\tilde{\alpha}_r\tilde{\alpha}_s )LSJ'T\rangle $
 are related to the corresponding matrix elements of the total
 interaction in the \( jj \)-scheme by
 

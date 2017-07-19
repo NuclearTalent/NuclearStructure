@@ -158,6 +158,24 @@ formulas in HTML or ipython notebook files.
 
 
 
+===== Many-body perturbation theory =====
+
+
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/mbpt/pdf/mbpt-minted.pdf", compact: "6 pages per sheet": "http://nucleartalent.github.io/NuclearStructure/doc/pub/mbpt/pdf/mbpt-beamer-handouts2x3.pdf"
+   * For screen viewing:
+     * "standard Beamer format": "http://nucleartalent.github.io/NuclearStructure/doc/pub/mbpt/pdf/mbpt-beamer.pdf"
+ * HTML:
+   * "Plain html style": "http://nucleartalent.github.io/NuclearStructure/doc/pub/mbpt/html/mbpt.html"
+   * "Reveal html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/mbpt/html/mbpt-reveal.html"
+   * "Bootstrap html style for easy reading on mobile devices": "http://nucleartalent.github.io/NuclearStructure/doc/pub/mbpt/html/mbpt-bs.html"
+ * iPython notebook:
+   * "ipynb file": "http://nucleartalent.github.io/NuclearStructure/doc/pub/mbpt/ipynb/mbpt.ipynb"
+
+
+
 ===== Effective interactions =====
 
 
