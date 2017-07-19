@@ -255,7 +255,57 @@ div { text-align: justify; text-justify: inter-word; }
               (u'Developing a  Hartree-Fock program, separation energies',
                2,
                None,
-               '___sec72')]}
+               '___sec72'),
+              (u'Analyzing the results in terms of the nuclear force components',
+               2,
+               None,
+               '___sec73'),
+              (u'Reminder on definitions', 2, None, '___sec74'),
+              (u'A general Hamiltonian', 2, None, '___sec75'),
+              (u'Adding a three-body interaction', 2, None, '___sec76'),
+              (u'An additional reminder', 2, None, '___sec77'),
+              (u'Modification due to a three-body force',
+               2,
+               None,
+               '___sec78'),
+              (u'The monopole term', 2, None, '___sec79'),
+              (u'More on the monopole term', 2, None, '___sec80'),
+              (u'Linking the monopole part with Hartree-Fock theory',
+               2,
+               None,
+               '___sec81'),
+              (u'Linking the monopole part with Hartree-Fock theory, angular momentum',
+               2,
+               None,
+               '___sec82'),
+              (u'Linking the monopole part with Hartree-Fock theory, more definitions',
+               2,
+               None,
+               '___sec83'),
+              (u'Final expressions for the monopole term',
+               2,
+               None,
+               '___sec84'),
+              (u'Analyzing our results, decomposing the Hamiltonian',
+               2,
+               None,
+               '___sec85'),
+              (u'Analyzing our results, decomposing the Hamiltonian',
+               2,
+               None,
+               '___sec86'),
+              (u'Analyzing our results, decomposing the Hamiltonian',
+               2,
+               None,
+               '___sec87'),
+              (u'Analyzing our results, decomposing the Hamiltonian',
+               2,
+               None,
+               '___sec88'),
+              (u'Analyzing our results, decomposing the Hamiltonian',
+               2,
+               None,
+               '___sec89')]}
 end of tocinfo -->
 
 <body>
@@ -296,7 +346,7 @@ MathJax.Hub.Config({
 <center><b><a href="http://www.nscl.msu.edu/" target="_blank">National Superconducting Cyclotron Laboratory</a> and <a href="https://www.pa.msu.edu/" target="_blank">Department of Physics and Astronomy</a>, <a href="http://www.msu.edu/" target="_blank">Michigan State University</a>, East Lansing, MI 48824, USA</b></center>
 <br>
 <p>
-<center><h4>Jul 18, 2017</h4></center> <!-- date -->
+<center><h4>Jul 19, 2017</h4></center> <!-- date -->
 <br>
 <p>
 <!-- !split --><br><br><br><br><br><br><br><br><br><br>
@@ -2116,6 +2166,441 @@ $$
 
 For \( {}^{16}\mbox{O} \)  we have an experimental value for the  shell gap of \( 11.51 \) MeV for neutrons, while our Hartree-Fock calculations result in \( 25.65 \) MeV. This means that correlations beyond a simple Hartree-Fock calculation with a two-body force play an important role in nuclear physics.
 The splitting between the \( 0p_{3/2}^{\nu} \) and the \( 0p_{1/2}^{\nu} \) state is 4.88 MeV, while the experimental value for the gap between the ground state \( 1/2^{-} \) and the first excited \( 3/2^{-} \) states is 6.08 MeV. The two-nucleon spin-orbit force plays a central role here. In our discussion of nuclear forces we will see how the spin-orbit force comes into play here.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec73">Analyzing the results in terms of the nuclear force components  </h2>
+
+<p>
+Our Hamiltonian contains one-body, two-body and three-body contributions and in 
+the equations below, we  label states below the Fermi level \( F \) as \( i,j,\ldots \) while states 
+above the Fermi level are defined by \( a,b,\ldots \). General single-particle states
+are given by the letters  \( p,q \dots \). The
+quantities \( pq\dots \) represent the quantum numbers of various
+single-particle states, namely
+\( p=(n_p,l_p,j_p,m_{j_p},t_{z_p}) \).   
+The commutation relations for creation and annihilations operators with respect to
+a given reference state are then given by
+
+$$
+\begin{equation*}
+   \left\{a_p^\dagger, a_q \right\}= \delta_{pq}, p, q \leq F \hspace{0.5cm} \left\{a_p, a_q^\dagger \right\} =
+        \delta_{pq}, p, q > F.
+\end{equation*}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec74">Reminder on definitions  </h2>
+The action of the creation and annihilation operators with respect to a reference state \( \Phi_0 \) are then given by
+ \( a_i|\Phi_0\rangle = |\Phi_i\rangle \) where a state labeled by \( |\Phi_i\rangle \) means that a particle in a 
+single-particle state \( i \) has been removed. Similarly, we have \( a_a^\dagger|\Phi_0\rangle = |\Phi^a\rangle \), \( a_i^\dagger|\Phi_0\rangle = 0 \) 
+and \( a_a|\Phi_0\rangle = 0 \).  With the above definitions, we write our Hamiltonian as
+
+$$
+\begin{equation*}
+\hat{H}=\hat{H}_0+\hat{V}+\hat{W},
+\end{equation*}
+$$
+
+where 
+the single-particle part is given by
+
+$$
+\begin{equation*}
+    \hat{H}_0 = \sum_{pq} \langle p|\hat{h}_0|q\rangle a_p^\dagger a_q.
+ \end{equation*}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec75">A general Hamiltonian  </h2>
+This part of the Hamiltonian is commonly defined in terms of some external potential like the three-dimensional 
+harmonic oscillator or a particular mean-field basis. 
+Similarly, the two-body part of the Hamiltonian
+is given by
+
+$$
+\begin{equation*}
+  \hat{V} = \frac{1}{4}\sum_{pqrs} \langle pq|\hat{v}|rs\rangle_{\mathrm{AS}} a_p^\dagger a_q^\dagger a_s a_r
+\end{equation*}
+$$
+
+where we have employed antisymmetric matrix elements defined as
+
+$$
+\begin{equation*}
+\langle pq|\hat{v}|rs\rangle_{\mathrm{AS}}=\langle pq|\hat{v}|rs\rangle-\langle pq|\hat{v}|sr\rangle.
+\end{equation*}
+$$
+
+We will assume that the  two-body operator \( \hat{v} \) is given by a nucleon-nucleon interaction.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec76">Adding a three-body interaction  </h2>
+Finally, the three-body part of our Hamiltonian operator  is defined by
+
+$$
+\begin{equation*}
+   \hat{W} =\frac{1}{36} \sum_{pqrstu} \langle pqr|\hat{w}|stu\rangle_{\mathrm{AS}}a_p^\dagger a_q^\dagger a_r^\dagger a_u a_t a_s,
+\end{equation*}
+$$
+
+where we have defined the antisymmetric matrix elements
+
+$$
+\begin{equation*}
+          \langle pqr|\hat{w}|stu\rangle_{\mathrm{AS}}= \langle pqr|\hat{w}|stu\rangle + \langle pqr|\hat{w}|tus\rangle + \langle pqr|\hat{w}|ust\rangle- \langle pqr|\hat{w}|sut\rangle - \langle pqr|\hat{w}|tsu\rangle - \langle pqr|\hat{w}|uts\rangle.
+\end{equation*}
+$$
+
+We will in the discussions to come drop the \( \mathrm{AS} \) subscript,
+assuming thereby that all matrix elements are antisymmetrized.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec77">An additional reminder  </h2>
+
+<p>
+Introducing a reference state \( |\Phi_0\rangle \) as our new vacuum state
+leads to a redefinition of the Hamiltonian in terms of a constant
+reference energy \( E_0 \) defined as
+
+$$
+\begin{equation*}
+E_0 = \sum_{i\le F}\langle i | \hat{h}_0|i\rangle+\frac{1}{2}\sum_{ij\le F} \langle ij|\hat{v}|ij\rangle +\frac{1}{6}\sum_{ijk\le F} \langle ijk|\hat{w}|ijk\rangle,
+\end{equation*}
+$$
+
+and a normal-ordered Hamiltonian
+
+$$
+\begin{equation*}
+  \hat{H}_N=\sum_{pq}\langle p|\tilde{f}|q\rangle a^\dagger_p a_q+\frac{1}{4} \sum_{pqrs} \langle pq|\tilde{v}|rs\rangle a^\dagger_p a^\dagger_q a_s  a_r +\frac{1}{36} \sum_{\substack{pqr \\stu}}
+                 \langle pqr|\hat{w}|stu\rangle a^\dagger_p a^\dagger_q a^\dagger_r a_u a_t a_s 
+\end{equation*}
+$$
+
+where
+
+$$
+\begin{equation*}
+\langle p| \tilde{f}|q\rangle = \langle p|\hat{h}_0|q\rangle +\sum_{i\le F} \langle pi|\hat{v}|qi\rangle+\frac{1}{2}\sum_{ij\le\alpha_F} \langle pij|\hat{w}|qij\rangle,
+\end{equation*}
+$$
+
+represents a correction to the single-particle operator \( \hat{h}_0 \) due to contributions from the nucleons below the Fermi level.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec78">Modification due to a three-body force   </h2>
+The two-body matrix elements are now modified in order to account for medium-modified contributions from the three-body interaction, resulting in
+
+$$
+\begin{equation}
+\langle pq|\tilde{v}|rs\rangle=\langle pq|\hat{v}|rs\rangle+\sum_{i\le F} \langle pqi|\hat{w}|rsi\rangle.
+\label{eq:twobodyveff}
+\end{equation}
+$$
+
+In Eq. \eqref{eq:twobodyveff}, the effective two-body interaction
+\( \tilde{v} \) can contain both a standard two-nucleon interaction and a
+density dependent contribution stemming from a three-body interaction
+\( \hat{w} \).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec79">The monopole term  </h2>
+
+<p>
+An important ingredient in studies of effective interactions and their
+applications to nuclear structure, is the so-called monopole
+interaction, normally defined in terms of a nucleon-nucleon
+interaction \( \hat{v} \)
+
+$$
+\begin{equation}
+\bar{V}_{\alpha_p\alpha_q} = \frac{\sum_{J}(2J+1) \langle (\alpha_p\alpha_q)J | \hat{v} | (\alpha_p\alpha_q)J \rangle }{\sum_{J}(2J+1)},
+\label{eq:monopole1}
+\end{equation}
+$$
+
+where the total angular momentum of a two-body state \( J \) runs over all
+possible values.  
+In the above equation we have defined a nucleon-nucleon interaction in a so-called angular-momentum 
+coupled representation with the symbol \( \alpha_{p,q} \) representing all possible quantum numbers except the 
+magnetic substates \( m_{j_{p,q}} \)
+The monopole Hamiltonian can be interpreted as an angle-averaged matrix element.  
+We have assumed that the single-particle angular momenta \( j_p \) and \( j_q \) couple to a total
+two-particle angular momentum \( J \).  The summation over \( J \) with the value \( 2J+1 \) can be replaced
+by \( \sum_J(2J+1)=(2j_p+1)(2j_q+1) \) if \( \alpha_p\ne \alpha_q \). If \( \alpha_p=\alpha_q \) we can generalize this equation to, assuming that 
+our states can represent either protons or neutrons,
+
+$$
+\begin{equation}
+\sum_{J}(2J+1)=(2j_p+1)(2j_q+1-\delta_{\alpha_p\alpha_q}).
+\label{eq:jvalue}
+\end{equation}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec80">More on the monopole term  </h2>
+
+<p>
+The spherical single-particle states,
+provide an important ingredient for the formation of shells and
+interplay between spherical configurations and deformation in
+nuclei. Large shell gaps obtained from a monopole Hamiltonian are a
+prerequisite to obtain certain magic numbers. 
+Equation \eqref{eq:monopole1} can also be expressed in terms of the
+medium-modified two-body interaction defined in
+Eq. \eqref{eq:twobodyveff}, that is we can have
+
+$$
+\begin{equation}
+\tilde{V}_{\alpha_p\alpha_q} = \frac{\sum_{J}(2J+1) \langle (\alpha_p\alpha_q)J | \tilde{v} | (\alpha_p\alpha_q)J \rangle }{\sum_{J}(2J+1)}.
+\label{eq:monopole2}
+\end{equation}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec81">Linking the monopole part with Hartree-Fock theory  </h2>
+
+<p>
+The single-particle energy \( \epsilon_p \) resulting from for example a self-consistent Hartree-Fock field, 
+or from  first order in many-body perturbation theory, is given by (in an uncoupled basis)
+
+$$
+\begin{equation*}
+\epsilon_p=\langle p| \tilde{f}|p\rangle = \langle p|\hat{h}_0|p\rangle +\sum_{i\le F} \langle pi|\hat{v}|pi\rangle+\frac{1}{2}\sum_{ij\le\alpha_F} \langle pij|\hat{w}|pij\rangle,
+\end{equation*}
+$$
+
+where we have included the three-body interaction as well.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec82">Linking the monopole part with Hartree-Fock theory, angular momentum  </h2>
+We can rewrite this equation in an angular coupled basis (\( jj \)-coupled basis) as
+
+$$
+\begin{equation}
+\epsilon_{\alpha_p}= \langle \alpha_p|\hat{h}_0|\alpha_p\rangle+\frac{1}{2j_p+1}\sum_{\alpha_i\le \alpha_F}\sum_{J} (2J+1)\langle (\alpha_p\alpha_i)J | \hat{v} | (\alpha_p\alpha_i)J \rangle,
+\label{eq:spequation1}
+\end{equation}
+$$
+
+or
+
+$$
+\begin{equation}
+\epsilon_{\alpha_p}= \langle \alpha_p|\hat{h}_0|\alpha_p\rangle+\frac{1}{2j_p+1}\sum_{\alpha_i\le \alpha_F}\sum_{J} (2J+1)\langle (\alpha_p\alpha_i)J | \tilde{v} | (\alpha_p\alpha_i)J \rangle,
+\label{eq:spequation2}
+\end{equation}
+$$
+
+where the first equation contains a two-body force only while
+Eq. \eqref{eq:spequation2} includes the medium-modified contribution
+from the three-body interaction as well.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec83">Linking the monopole part with Hartree-Fock theory, more definitions  </h2>
+
+<p>
+In
+Eqs. \eqref{eq:spequation1} and \eqref{eq:spequation2}, we have
+used a compact notation for the single-particle states, with the
+symbol \( \alpha_p \) etc representing all possible quantum numbers except
+the magnetic substates \( m_{j_p} \), that is \( \alpha_p=(n_p,l_p,j_p,t_{z_p}) \). The symbol \( \alpha_F \) stands now for
+all single-particle states up to the Fermi level, excluding again the
+magnetic substates.  In the above two-body interaction matrix elements
+\( \langle (\alpha_p\alpha_i)J | \hat{v}(\tilde{v}) |(\alpha_p\alpha_i)J \rangle \) we have dropped additional quantum
+numbers like the isospin projection. Our interactions are diagonal in
+the projection of the total isospin but breaks both isospin symmetry
+and charge symmetry.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec84">Final expressions for the monopole term  </h2>
+
+<p>
+Using the definition of the single-particle energy in
+Eq. \eqref{eq:spequation1}, the definition of the monopole matrix
+element in Eqs. \eqref{eq:monopole1} or \eqref{eq:monopole2} and Eq. \eqref{eq:jvalue}, we can rewrite
+Eq. \eqref{eq:spequation1} as
+
+$$
+\begin{equation}
+\epsilon_{\alpha_{p}}=\langle \alpha_p|\hat{h}_0|\alpha_p\rangle+\sum_{\alpha_i\le \alpha_F}N_{\alpha_i}\bar{V}_{\alpha_p\alpha_i},
+\label{eq:spmono1}
+\end{equation}
+$$
+
+with \( N_{\alpha_i}=2\alpha_i+1 \), and Eq. \eqref{eq:spequation2} as
+
+$$
+\begin{equation}
+\epsilon_{\alpha_{p}}=\langle \alpha_p|\hat{h}_0|\alpha_p\rangle+\sum_{\alpha_i\le \alpha_F}N_{\alpha_i}\tilde{V}_{\alpha_p\alpha_i}.
+\label{eq:spmono2}
+\end{equation}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec85">Analyzing our results, decomposing the Hamiltonian  </h2>
+
+<p>
+The effective interaction is a
+scalar two-body operator. A general scalar two-body operator
+\( \hat{v} \) can be written as
+
+$$
+\begin{equation}
+\hat{v} = \sum_{k} \hat{v}_{k} = \sum_{k} \mbox{\boldmath $C^{(k)}\cdot
+Q^{(k)}$},
+\label{_auto4}
+\end{equation}
+$$
+
+where the operators \mbox{\boldmath \( C^{(k)} \)} and
+\mbox{\boldmath \( Q^{(k)} \)} are irreducible spherical tensor
+operators of rank \( k \), acting in spin and coordinate space,
+respectively. The value of \( k \) is limited to \( k\le 2 \) since the total eigenspin of the two-nucleon
+system is either \( 0 \) or \( 1 \). The term with
+\( k=0 \) refers to the central component of the two-body
+operator.
+The values of \( k=1 \) and \( k=2 \) are called
+the vector and the tensor components, respectively. The vector term is also called the two-body spin-orbit term, although it
+also contains the anti-symmetric spin-orbit term.
+Using standard angular momentum algebra it is rather straightforward to relate the matrix elements  \( \hat{v}_{k} \) to
+those of say \( \hat{v} \) or \( \tilde{v} \).
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec86">Analyzing our results, decomposing the Hamiltonian  </h2>
+
+<p>
+One possible decomposition of the effective interaction is to
+express the \( k \)-th component of the interaction \( \langle
+(\alpha_p\alpha_q)J|\hat{v}_{k}|(\alpha_r\alpha_s)J\rangle  \) in a \( jj \)-coupled basis, where
+\( \hat{v}_k \) is related to the matrix
+elements \( \langle (\alpha_p\alpha_q)J|\hat{v}|(\alpha_r\alpha_s)J\rangle  \) (or \( \langle (\alpha_p\alpha_q)J|\tilde{v}|(\alpha_r\alpha_s)J\rangle  \) 
+through the relation
+
+$$
+\begin{align}
+\langle (\alpha_p\alpha_q)J|\hat{v}_{k}|(\alpha_r\alpha_s)J\rangle&=(-1)^{J}(2k+1)
+\sum_{LL'SS'}\langle
+\alpha_p\alpha_q|LSJ\rangle \langle \alpha_r\alpha_s|L'S'J\rangle
+\left\{ \begin{array}{ccc}
+		       L&S&J\\
+		       S'&L'&k
+		       \end{array}
+		 \right\} \nonumber \\
+& &\times \sum_{J'}(-1)^{J'}(2J'+1)\left\{ \begin{array}{ccc}
+		       L&S&J'\\
+		       S'&L'&k
+		       \end{array}
+		 \right\}
+\sum_{\alpha_{p}'\alpha_{q}'\alpha_{r}'\alpha_{s}'}\langle \alpha_p'\alpha_q'|LSJ'\rangle
+\nonumber\\
+& &\times \langle \alpha_r'\alpha_s'|L'S'J'\rangle \langle
+(\alpha_p'\alpha_q')J'|\hat{v}|(\alpha_r'\alpha_s')J'\rangle .  \label{eq:jj}
+\end{align}$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec87">Analyzing our results, decomposing the Hamiltonian  </h2>
+
+<p>
+The two-particle matrix elements are normalized and antisymmetrized.
+A similar expression applies to the medium-modified two-body interaction \( \tilde{v} \) of 
+Eq. \eqref{eq:twobodyveff} as well.
+The symbol \( \langle \alpha_p\alpha_q|LSJ \rangle  \) is a shorthand
+for the \( LS-jj \) transformation coefficient,
+
+$$
+\begin{equation*}
+\langle \alpha_p\alpha_q|\lambda SJ \rangle = \sqrt{(2j_{p}+1)(2j_{q}+1)(2\lambda+1)(2S+1)}
+\left\{
+\begin{array}{ccc}
+       l_{p}&\frac{1}{2}&j_{p}\\
+       l_{q}&\frac{1}{2}&j_{q}\\
+       \lambda    &S          &J
+\end{array}
+\right\}
+\end{equation*}
+$$
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec88">Analyzing our results, decomposing the Hamiltonian  </h2>
+The transformation from an \( LS \) basis to a \( jj \)-coupled scheme is then given by the relation
+
+$$
+\begin{equation*}
+|(\alpha_p\alpha_q)J\rangle  = \sum_{LS}\langle \alpha_p\alpha_q|LSJ \rangle |(\tilde{\alpha}_p\tilde{\alpha}_q)LSJ\rangle,
+\end{equation*}
+$$
+
+where the symbol like \( \tilde{\alpha}_{p} \) refers to the quantum numbers in an \( LS \) basis, that is
+\( \tilde{\alpha}_{p}=(n_{p},l_{p},s_{p},t_{z_{p}}) \).
+
+<p>
+To derive Eq. \eqref{eq:jj}, we have used the fact that the two-body
+matrix elements of \( \hat{v}_k \) can also be interpreted in the
+representation of the \( LS \)-coupling scheme.
+
+<p>
+<!-- !split --><br><br><br><br><br><br><br><br><br><br>
+
+<h2 id="___sec89">Analyzing our results, decomposing the Hamiltonian  </h2>
+Similar to the
+decomposition in the \( jj \)-scheme, the \( LS \)-coupled matrix element of a
+given component \( k \) $\langle(\tilde{\alpha}_p\tilde{\alpha}_q
+  )LSJ'T\vert \hat{v}_{k}\vert (\tilde{\alpha}_r\tilde{\alpha}_s )LSJ'T\rangle $
+are related to the corresponding matrix elements of the total
+interaction in the \( jj \)-scheme by
+
+$$
+\begin{equation*}
+\begin{array}{ll}
+&\\
+\langle(\tilde{\alpha}_p\tilde{\alpha}_q )LSJ'T\vert\hat{v}_{k}\vert (\tilde{\alpha}_r\tilde{\alpha}_s )L'S'J'T\rangle&=
+{\displaystyle\frac{1}{\sqrt{(1+\delta_{\tilde{\alpha}_p\tilde{\alpha}_q})(1+\delta_{\tilde{\alpha}_r\tilde{\alpha}_s})}}}
+(-1)^{J'}\hat{k}\left\{\begin{array}{ccc}L&S&J'\\S'&L'&k
+\end{array}\right\}
+\\&\\
+&\times {\displaystyle\sum_{J}}(-1)^{J}\hat{J}\left\{\begin{array}{ccc}L&S&J\\S'&L'&k
+\end{array}\right\}
+{\displaystyle \sum_{\alpha_p \alpha_q \alpha_r \alpha_s}}
+\langle \alpha_p\alpha_q|LSJ\rangle
+\langle \alpha_r\alpha_s|L'S'J\rangle
+\\&\\
+&\times\sqrt{(1+\delta_{\alpha_p\alpha_q})(1+\delta_{\alpha_r\alpha_s})}\langle(\alpha_p\alpha_q)JT\vert\hat{v}\vert (\alpha_r\alpha_s)JT\rangle
+.\end{array}
+\end{equation*}
+$$
 
 <p>
 
