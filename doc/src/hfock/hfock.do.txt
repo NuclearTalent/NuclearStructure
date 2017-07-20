@@ -1860,7 +1860,7 @@ through the relation
 		 \right\}
 \sum_{\alpha_{p}'\alpha_{q}'\alpha_{r}'\alpha_{s}'}\langle \alpha_p'\alpha_q'|LSJ'\rangle
 \nonumber\\
-& &\times \langle \alpha_r'\alpha_s'|L'S'J'\rangle \langle
+&\times \langle \alpha_r'\alpha_s'|L'S'J'\rangle \langle
 (\alpha_p'\alpha_q')J'|\hat{v}|(\alpha_r'\alpha_s')J'\rangle .  label{eq:jj}
 \end{align}
 !et
@@ -1907,7 +1907,7 @@ representation of the $LS$-coupling scheme.
 ===== Analyzing our results, decomposing the Hamiltonian  =====
 Similar to the
 decomposition in the $jj$-scheme, the $LS$-coupled matrix element of a
-given component $k$ $\langle(\tilde{\alpha}_p\tilde{\alpha}_q)LSJ'T\vert \hat{v}_{k}\vert (\tilde{\alpha}_r\tilde{\alpha}_s )LSJ'T\rangle $
+given component $k$
 are related to the corresponding matrix elements of the total
 interaction in the $jj$-scheme by
 
