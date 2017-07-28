@@ -11,7 +11,7 @@ Group 4: Liqiang, Paolo and Erin
 
 Group 5: Tiia, Shane, Martin and Ovidiu
 
-Group 6: Udo, Masaaki and Guillaume
+Group 6: Udo, Masaaki and Guillaume, https://github.com/ghaefner/Group07
 
 Group 7: Mahza, Tobias and Giovanni
 
