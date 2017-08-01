@@ -5,7 +5,7 @@ Group 1: Luca, Lucia, Noam and Tor
 
 Group 2: Olivier, Rosa-Belle, David and Anne-Marie
 
-Group 3: Sean, Ashley and Patrick
+Group 3: Sean, Ashley and Patrick (https://github.com/kc9jud/ShellCorretta)
 
 Group 4: Liqiang, Paolo and Erin
 
