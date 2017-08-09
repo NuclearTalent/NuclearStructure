@@ -13,7 +13,7 @@ Group 5: Tiia, Shane, Martin and Ovidiu
 
 Group 6: Udo, Masaaki and Guillaume, https://github.com/ghaefner/Group07
 
-Group 7: Mahza, Tobias and Giovanni
+Group 7: Mahza, Tobias and Giovanni, https://github.com/GioPede/TALENT2017Group8
 
 Group 8: Antonio, Agi and Mathias
 
